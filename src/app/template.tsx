@@ -1,3 +1,4 @@
 export default function Template({ children }: { children: React.ReactNode }) {
-  return <div className="motion-safe:animate-content-appear">{children}</div>;
+  // No animation wrapper - instant navigation
+  return <>{children}</>;
 }

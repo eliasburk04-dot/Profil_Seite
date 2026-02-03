@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import * as Dialog from '@radix-ui/react-dialog';
 import {
@@ -111,8 +112,14 @@ export function MobileNav() {
           <div className="absolute bottom-0 left-0 right-0 border-t border-border p-4">
             <div className="rounded-2xl border border-border-subtle bg-bg-secondary/50 p-3">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-border-accent bg-accent-muted text-sm font-semibold text-accent-solid shadow-glow-sm">
-                  B
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl overflow-hidden">
+                  <Image
+                    src="/logo.png"
+                    alt="Burk-Solutions Logo"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 object-contain"
+                  />
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-semibold text-text-primary">{profile.name}</p>

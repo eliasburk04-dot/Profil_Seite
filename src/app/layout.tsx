@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     default: siteMetadata.title,
     template: `%s | ${siteMetadata.title}`,
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/logo.png',
+  },
   description: siteMetadata.description,
   keywords: siteMetadata.keywords,
   authors: [{ name: 'Elias Burk' }],

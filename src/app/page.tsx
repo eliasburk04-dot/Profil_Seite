@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle, Compass, ShieldCheck, Sparkles, Users } from 'lucide-react';
 import {
   conversion,
@@ -39,7 +40,14 @@ export default function HomePage() {
           </div>
 
           <div className="brand-mark hidden sm:flex" aria-hidden="true">
-            <span className="text-xl font-semibold text-accent-solid">B</span>
+            <Image
+              src="/logo.png"
+              alt="Burk-Solutions Logo"
+              width={48}
+              height={48}
+              className="h-12 w-12 object-contain"
+              priority
+            />
           </div>
         </div>
 

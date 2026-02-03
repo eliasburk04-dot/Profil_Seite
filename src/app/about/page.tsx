@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Building2, CheckCircle } from 'lucide-react';
 import { aboutContent, conversion, profile } from '@/content';
 import { Button, Divider, GlassCard, SectionHeader, SectionReveal } from '@/components/ui';
@@ -24,7 +25,13 @@ export default function AboutPage() {
           </div>
 
           <div className="brand-mark hidden sm:flex" aria-hidden="true">
-            <span className="text-xl font-semibold text-accent-solid">B</span>
+            <Image
+              src="/logo.png"
+              alt="Burk-Solutions Logo"
+              width={48}
+              height={48}
+              className="h-12 w-12 object-contain"
+            />
           </div>
         </div>
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { Briefcase, FolderKanban, Home, Mail, Users, type LucideIcon } from 'lucide-react';
 import { navigation, profile } from '@/content';
@@ -94,8 +95,15 @@ export function Sidebar() {
 
       <div className="rounded-2xl border border-border-subtle bg-bg-secondary/45 p-3">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border-accent bg-accent-muted text-sm font-semibold text-accent-solid shadow-glow-sm">
-            B
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl overflow-hidden">
+            <Image
+              src="/logo.png"
+              alt="Burk-Solutions Logo"
+              width={36}
+              height={36}
+              className="h-9 w-9 object-contain"
+              priority
+            />
           </div>
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold text-text-primary">{profile.name}</p>
