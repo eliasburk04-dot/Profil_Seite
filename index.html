@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil – Dark, No-Scroll</title>
+  <style>
+    :root{
+      /* Dark palette */
+      --bg0:#0a0c10;
+      --bg1:#0b1220;
+      --surface:#0f141b;
+      --surface2:#121a22;
+
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --border: rgba(255,255,255,.08);
+
+      --accent:#7c3aed;           /* Akzentfarbe (violet) */
+      --accentWeak: rgba(124,58,237,.18);
+
+      --r-xl:16px;
+      --r-lg:12px;
+      --r-md:10px;
+      --r-pill:999px;
+
+      --shadow-frame: 0 20px 70px rgba(0,0,0,.55);
+      --shadow-card:  0 10px 24px rgba(0,0,0,.45);
+
+      --pad-frame: 18px;
+      --pad-content: 16px;
+      --gap: 16px;
+
+      --sidebar-w: 220px;
+      --t: 160ms ease;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(124,58,237,.12), transparent 55%),
+        radial-gradient(800px 500px at 80% 15%, rgba(255,255,255,.05), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg0));
+      padding: 32px 18px;
+      overflow:hidden; /* wichtig: keine Scrollbars am Body */
+    }
+
+    .stage{
+      max-width: 1120px;
+      margin: 0 auto;
+      height: calc(100vh - 64px); /* body padding grob abgezogen */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .frame{
+      width: 100%;
+      height: min(680px, calc(100vh - 64px));
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow-frame);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .topbar{
+      height: 40px;
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      padding: 0 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .dot{ width:10px; height:10px; border-radius:50%; background: rgba(255,255,255,.12); }
+    .dot:nth-child(1){ background:#ef4444; }
+    .dot:nth-child(2){ background:#f59e0b; }
+    .dot:nth-child(3){ background:#10b981; }
+
+    .body{
+      display:flex;
+      gap: var(--gap);
+      padding: var(--pad-frame);
+      height: calc(100% - 40px);
+      min-height: 0; /* wichtig für no-scroll layouts */
+    }
+
+    /* Sidebar */
+    .sidebar{
+      width: var(--sidebar-w);
+      flex: 0 0 var(--sidebar-w);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 10px;
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+    }
+
+    .navTitle{
+      font-size: 11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: var(--muted);
+      padding: 8px 10px 2px;
+    }
+
+    .tabs{
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+      padding: 6px;
+      flex: 1 1 auto;
+    }
+
+    .tab{
+      height: 40px;
+      width:100%;
+      border-radius: var(--r-md);
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text);
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      padding: 0 10px;
+      position:relative;
+      transition: background var(--t), border-color var(--t);
+      font-size: 14px;
+    }
+
+    .tab:hover{
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.05);
+    }
+
+    .tab[aria-selected="true"]{
+      background: var(--accentWeak);
+      border-color: rgba(124,58,237,.35);
+      font-weight: 600;
+    }
+
+    .tab[aria-selected="true"]::before{
+      content:"";
+      position:absolute;
+      left: 6px;
+      top: 10px;
+      bottom: 10px;
+      width: 3px;
+      border-radius: 3px;
+      background: var(--accent);
+    }
+    .tab span{ padding-left: 8px; }
+
+    /* Content */
+    .content{
+      flex: 1 1 auto;
+      min-width: 0;
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: var(--pad-content);
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      min-height: 0;
+      overflow:hidden; /* keine inneren Scrollbars */
+    }
+
+    .header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+    }
+
+    h1{
+      margin:0;
+      font-size: 28px;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    .claim{
+      margin-top: 6px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      max-width: 58ch;
+    }
+
+    .avatar{
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(124,58,237,.22), transparent 55%),
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      flex: 0 0 auto;
+    }
+
+    .btnRow{ display:flex; gap: 10px; flex-wrap:wrap; }
+
+    .btn{
+      height: 38px;
+      padding: 0 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight: 600;
+      cursor:pointer;
+      transition: transform var(--t), border-color var(--t), background var(--t);
+      font-size: 14px;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.14); }
+
+    .btnPrimary{
+      background: rgba(124,58,237,.22);
+      border-color: rgba(124,58,237,.45);
+    }
+    .btnPrimary:hover{
+      background: rgba(124,58,237,.28);
+      border-color: rgba(124,58,237,.60);
+    }
+
+    .divider{
+      border:0;
+      border-top: 1px solid var(--border);
+      margin: 2px 0 0;
+    }
+
+    /* About block (compact) */
+    .about p{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      max-width: 70ch;
+    }
+
+    .chips{ display:flex; flex-wrap:wrap; gap: 6px; margin-top: 10px; }
+    .chip{
+      padding: 6px 9px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      font-size: 12px;
+      color: rgba(229,231,235,.92);
+    }
+
+    /* Projects (compact 3x2 grid, no scroll) */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      min-height: 0;
+    }
+    .card{
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      padding: 12px;
+      box-shadow: var(--shadow-card);
+      transition: transform var(--t), border-color var(--t);
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+    }
+    .card:hover{ transform: translateY(-1px); border-color: rgba(124,58,237,.35); }
+
+    .cardTop{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 8px;
+    }
+    .cardTitle{
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cardDesc{
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;     /* max 2 lines */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 2.8em;
+    }
+    .tagRow{ display:flex; flex-wrap:wrap; gap: 6px; }
+    .tag{
+      font-size: 11px;
+      padding: 5px 7px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: rgba(229,231,235,.90);
+    }
+
+    /* Mobile: tabs top, grid 1 col (realistisch: ggf. etwas scrollen) */
+    @media (max-width: 920px){
+      body{ overflow:auto; } /* Mobil nicht hart „no scroll“ erzwingen */
+      .stage{ height:auto; }
+      .frame{ height:auto; }
+      .body{ flex-direction:column; height:auto; }
+      .sidebar{ width:auto; }
+      .tabs{ flex-direction:row; }
+      .tab{ flex:1 1 0; justify-content:center; }
+      .tab[aria-selected="true"]::before{
+        left: 10px; right: 10px;
+        top: auto; bottom: 6px;
+        width: auto; height: 3px;
+      }
+      .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px){
+      .grid{ grid-template-columns: 1fr; }
+      .btn{ width:100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="stage">
+    <section class="frame" aria-label="Profilseite Frame">
+      <div class="topbar" aria-hidden="true">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <div class="body">
+        <aside class="sidebar" aria-label="Navigation">
+          <div class="navTitle">Navigation</div>
+          <nav class="tabs" role="tablist">
+            <button class="tab" role="tab" aria-selected="true"><span>Home</span></button>
+            <button class="tab" role="tab" aria-selected="false"><span>Über mich</span></button>
+            <button class="tab" role="tab" aria-selected="false"><span>Projekte</span></button>
+          </nav>
+        </aside>
+
+        <section class="content" aria-label="Content">
+          <!-- Header (kompakt) -->
+          <div class="header">
+            <div>
+              <h1>Vorname Nachname</h1>
+              <p class="claim">Ich baue klare, minimalistische UIs und präsentiere Projekte ohne visuelles Rauschen.</p>
+            </div>
+            <div class="avatar" aria-hidden="true"></div>
+          </div>
+
+          <div class="btnRow">
+            <button class="btn btnPrimary">Kontakt</button>
+            <button class="btn">Projekte ansehen</button>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Über mich (kompakt) -->
+          <section class="about" aria-label="Über mich">
+            <p>
+              Fokus auf saubere Typografie, konsistente Komponenten und Performance. Ich arbeite strukturiert:
+              Anforderungen → System → Umsetzung → Feinschliff anhand realer Use-Cases.
+            </p>
+            <div class="chips" aria-label="Skills">
+              <span class="chip">UI Design</span><span class="chip">Design Systems</span><span class="chip">HTML/CSS</span>
+              <span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">A11y</span>
+              <span class="chip">Performance</span><span class="chip">Responsive</span>
+            </div>
+          </section>
+
+          <!-- Projekte (6 Karten, kompakt, 3x2) -->
+          <section aria-label="Projekte">
+            <div class="grid">
+              <article class="card">
+                <div class="cardTop"><div class="cardTitle">Projekt Alpha</div></div>
+                <div class="cardDesc">Landingpage + Komponenten, minimalistisch und conversion-orientiert.</div>
+                <div class="tagRow"><span class="tag">UI</span><span class="tag">CSS</span><span class="tag">A11y</span></div>
+              </article>
+
+              <article class="card">
+                <div class="cardTop"><div class="cardTitle">Projekt Beta</div></div>
+                <div class="cardDesc">Profilseite als „Website-in-Website“ mit sauberer Navigation.</div>
+                <div class="tagRow"><span class="tag">Layout</span><span class="tag">UX</span></div>
+              </article>
+
+              <article class="card">
+                <div class="cardTop"><div class="cardTitle">Projekt Gamma</div></div>
+                <div class="cardDesc">Projekt-Grid mit Tags und subtilen States für Hover/Active.</div>
+                <div class="tagRow"><span class="tag">Cards</span><span class="tag">Grid</span></div>
+              </article>
+
+              <article class="card">
+                <div class="cardTop"><div class="cardTitle">Projekt Delta</div></div>
+                <div class="cardDesc">Reduzierte UI, schneller Scan, klare Hierarchie, wenig Ablenkung.</div>
+                <div class="tagRow"><span class="tag">Design</span><span class="tag">System</span></div>
+              </article>
+
+              <article class="card">
+                <div class="cardTop"><div class="cardTitle">Projekt Epsilon</div></div>
+                <div class="cardDesc">Komponenten mit konsistenten States, Fokus-Styles und Kontrast.</div>
+                <div class="tagRow"><span class="tag">A11y</span><span class="tag">States</span></div>
+              </article>
+
+              <article class="card">
+                <div class="cardTop"><div class="cardTitle">Projekt Zeta</div></div>
+                <div class="cardDesc">Performance-first Layout: kompakt, klar, robust in 100vh.</div>
+                <div class="tagRow"><span class="tag">Perf</span><span class="tag">CSS</span></div>
+              </article>
+            </div>
+          </section>
+
+        </section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
