@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     template: `%s | ${siteMetadata.title}`,
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/logo.png',
+    icon: '/favicon-v2.ico',
+    shortcut: '/favicon-v2.ico',
+    apple: '/apple-touch-icon.png',
   },
   description: siteMetadata.description,
   keywords: siteMetadata.keywords,
