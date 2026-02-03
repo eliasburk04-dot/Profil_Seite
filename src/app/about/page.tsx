@@ -1,36 +1,49 @@
 ﻿import type { Metadata } from 'next';
-import { Building2, CheckCircle, Wrench } from 'lucide-react';
-import { profile } from '@/content';
-import { Divider, GlassCard, SectionHeader, SectionReveal } from '@/components/ui';
+import Link from 'next/link';
+import { ArrowRight, Building2, CheckCircle } from 'lucide-react';
+import { aboutContent, conversion, profile } from '@/content';
+import { Button, Divider, GlassCard, SectionHeader, SectionReveal } from '@/components/ui';
 
 export const metadata: Metadata = {
-  title: 'Über uns',
-  description: 'Erfahren Sie mehr über Burk-Solutions: Unsere Arbeitsweise, Kompetenzen und was uns antreibt.',
+  title: aboutContent.title,
+  description: 'Erfahren Sie, wie Burk-Solutions Projekte strukturiert umsetzt und langfristig betreut.',
 };
 
 export default function AboutPage() {
   return (
-    <div className="space-y-11 sm:space-y-12">
+    <div className="section-stack">
       <SectionReveal className="space-y-5">
         <div className="flex items-start justify-between gap-5">
-          <div className="space-y-2.5">
+          <div className="space-y-3">
             <div className="section-badge">
               <Building2 className="h-3.5 w-3.5 text-accent-solid" />
               <span>{profile.company}</span>
             </div>
-            <h1>Über uns</h1>
-            <p className="text-body text-text-secondary">{profile.role}</p>
+            <h1>{aboutContent.title}</h1>
+            <p className="max-w-3xl text-body text-text-secondary">{aboutContent.subtitle}</p>
           </div>
 
           <div className="brand-mark hidden sm:flex" aria-hidden="true">
             <span className="text-xl font-semibold text-accent-solid">B</span>
           </div>
         </div>
+
+        <div className="flex flex-wrap gap-3">
+          <Button asChild variant="primary">
+            <Link href="/contact">
+              {conversion.primaryCtaLabel}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+          <Button asChild variant="secondary">
+            <Link href="/services">{conversion.secondaryCtaLabel}</Link>
+          </Button>
+        </div>
       </SectionReveal>
 
       <SectionReveal delay={0.05} className="space-y-4">
-        {profile.bio.split('\n\n').map((paragraph, index) => (
-          <p key={index} className="max-w-3xl text-body text-text-secondary">
+        {profile.bio.split('\n\n').map((paragraph) => (
+          <p key={paragraph} className="max-w-3xl text-body text-text-secondary">
             {paragraph}
           </p>
         ))}
@@ -38,11 +51,8 @@ export default function AboutPage() {
 
       <Divider />
 
-      <SectionReveal delay={0.1} className="space-y-6">
-        <SectionHeader
-          title="So arbeiten wir"
-          description="Unser Prozess ist strukturiert und transparent – von der ersten Idee bis zum Launch und darüber hinaus."
-        />
+      <SectionReveal delay={0.09} className="space-y-6">
+        <SectionHeader title={profile.workflowTitle} description={profile.workflowDescription} />
 
         <div className="grid gap-4 sm:grid-cols-2">
           {profile.workflow.map((step) => (
@@ -65,8 +75,8 @@ export default function AboutPage() {
         <SectionHeader title={profile.competencies.title} description={profile.competencies.description} />
 
         <div className="grid gap-4 sm:grid-cols-2">
-          {profile.competencies.items.map((item, idx) => (
-            <GlassCard key={idx} hover className="flex gap-4 p-5">
+          {profile.competencies.items.map((item) => (
+            <GlassCard key={item.title} hover className="flex gap-4 p-5">
               <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-success" />
               <div className="space-y-1.5">
                 <h3 className="text-lg font-semibold text-text-primary">{item.title}</h3>
@@ -75,21 +85,14 @@ export default function AboutPage() {
             </GlassCard>
           ))}
         </div>
-
-        <GlassCard variant="subtle" className="flex items-start gap-3 p-4">
-          <Wrench className="mt-0.5 h-4 w-4 shrink-0 text-text-muted" />
-          <p className="text-sm text-text-muted">{profile.competencies.techNote}</p>
-        </GlassCard>
       </SectionReveal>
 
-      <SectionReveal delay={0.14} className="space-y-4">
+      <SectionReveal delay={0.15} className="space-y-4">
         <Divider />
         <GlassCard variant="elevated" glow className="p-6 sm:p-8">
           <blockquote className="space-y-4">
-            <p className="text-lg font-medium italic leading-relaxed text-text-primary">
-              &ldquo;Wir liefern digitale Produkte, die funktionieren, gut aussehen und sich langfristig weiterentwickeln lassen.&rdquo;
-            </p>
-            <footer className="text-sm text-text-muted">— Unser Anspruch bei jedem Projekt</footer>
+            <p className="text-lg font-medium italic leading-relaxed text-text-primary">&ldquo;{aboutContent.quote}&rdquo;</p>
+            <footer className="text-sm text-text-muted">— {aboutContent.quoteAuthor}</footer>
           </blockquote>
         </GlassCard>
       </SectionReveal>

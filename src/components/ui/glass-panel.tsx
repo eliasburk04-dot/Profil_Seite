@@ -20,13 +20,9 @@ export const GlassPanel = forwardRef<HTMLDivElement, GlassPanelProps>(
       >
         {showTopBar && (
           <div
-            className="relative flex h-11 shrink-0 items-center gap-2 border-b border-border px-5"
+            className="relative h-11 shrink-0 border-b border-border"
             aria-hidden="true"
-          >
-            <span className="h-2.5 w-2.5 rounded-full bg-rose-400/75" />
-            <span className="h-2.5 w-2.5 rounded-full bg-amber-300/80" />
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/75" />
-          </div>
+          />
         )}
         {children}
       </div>

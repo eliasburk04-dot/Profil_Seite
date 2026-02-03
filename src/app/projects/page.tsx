@@ -2,45 +2,39 @@
 
 import { useMemo, useState } from 'react';
 import { Building2, Filter, X } from 'lucide-react';
-import { projects } from '@/content';
+import { projects, projectsContent } from '@/content';
 import { cn } from '@/lib/utils';
 import { Button, Divider, GlassCard, ProjectCard, SectionHeader, SectionReveal } from '@/components/ui';
 
-const useCases = Array.from(new Set(projects.map((p) => p.useCase).filter(Boolean) as string[])).sort();
-const allTags = Array.from(new Set(projects.flatMap((p) => p.tags))).sort();
+const useCases = Array.from(new Set(projects.map((project) => project.useCase).filter(Boolean) as string[])).sort();
+const allTags = Array.from(new Set(projects.flatMap((project) => project.tags))).sort();
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
   const filteredProjects = useMemo(() => {
-    if (!activeFilter) return projects;
+    if (!activeFilter) {
+      return projects;
+    }
 
-    return projects.filter(
-      (project) =>
-        project.tags.includes(activeFilter) ||
-        project.useCase === activeFilter ||
-        project.technologies.includes(activeFilter)
-    );
+    return projects.filter((project) => project.tags.includes(activeFilter) || project.useCase === activeFilter);
   }, [activeFilter]);
 
-  const featuredProjects = filteredProjects.filter((p) => p.featured);
-  const otherProjects = filteredProjects.filter((p) => !p.featured);
+  const featuredProjects = filteredProjects.filter((project) => project.featured);
+  const otherProjects = filteredProjects.filter((project) => !project.featured);
 
   return (
-    <div className="space-y-11 sm:space-y-12">
+    <div className="section-stack">
       <SectionReveal className="space-y-4">
-        <h1>Unsere Projekte</h1>
-        <p className="max-w-3xl text-body-lg text-text-secondary">
-          Ausgewählte Arbeiten aus den Bereichen Web-Entwicklung, Web-Apps, interne Tools und Performance-Optimierung.
-          Jedes Projekt steht für strukturiertes Vorgehen und messbare Ergebnisse.
-        </p>
+        <h1>{projectsContent.title}</h1>
+        <p className="max-w-3xl text-body-lg text-text-secondary">{projectsContent.description}</p>
       </SectionReveal>
 
       <SectionReveal delay={0.05} className="space-y-4">
         <GlassCard variant="subtle" className="p-4 sm:p-5">
           <div className="mb-3 flex items-center gap-2 text-sm text-text-muted">
             <Filter className="h-4 w-4" />
-            <span>Filtern nach Branche oder Kategorie</span>
+            <span>{projectsContent.filterHint}</span>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -92,7 +86,7 @@ export default function ProjectsPage() {
 
       {featuredProjects.length > 0 && (
         <SectionReveal delay={0.08} className="space-y-5">
-          <SectionHeader title="Highlights" description="Projekte mit messbaren Ergebnissen und besonderer Bedeutung." />
+          <SectionHeader title={projectsContent.highlightsTitle} description={projectsContent.highlightsDescription} />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
@@ -103,7 +97,7 @@ export default function ProjectsPage() {
 
       {otherProjects.length > 0 && (
         <SectionReveal delay={0.1} className="space-y-5">
-          {featuredProjects.length > 0 && <SectionHeader title="Weitere Projekte" />}
+          {featuredProjects.length > 0 && <SectionHeader title={projectsContent.moreTitle} />}
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {otherProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
@@ -115,7 +109,9 @@ export default function ProjectsPage() {
       {filteredProjects.length === 0 && (
         <SectionReveal delay={0.08}>
           <GlassCard className="flex flex-col items-center gap-4 p-8 text-center">
-            <p className="text-text-secondary">Keine Projekte gefunden für &ldquo;{activeFilter}&rdquo;.</p>
+            <p className="text-text-secondary">
+              {projectsContent.emptyState} &ldquo;{activeFilter}&rdquo;.
+            </p>
             <Button variant="secondary" size="sm" onClick={() => setActiveFilter(null)}>
               Filter zurücksetzen
             </Button>
@@ -126,7 +122,7 @@ export default function ProjectsPage() {
       <SectionReveal delay={0.12} className="space-y-4">
         <Divider glow />
         <GlassCard variant="subtle" className="p-6 text-center">
-          <p className="text-text-muted">Detaillierte Case Studies zu ausgewählten Projekten – Coming Soon.</p>
+          <p className="text-text-muted">{projectsContent.caseStudyHint}</p>
         </GlassCard>
       </SectionReveal>
     </div>

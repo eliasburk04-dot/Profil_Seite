@@ -39,14 +39,14 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       )}
 
       <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
-        {project.technologies.slice(0, 4).map((tech) => (
-          <TagPill key={tech} size="sm">
-            {tech}
+        {project.tags.slice(0, 4).map((tag) => (
+          <TagPill key={tag} size="sm">
+            {tag}
           </TagPill>
         ))}
-        {project.technologies.length > 4 && (
+        {project.tags.length > 4 && (
           <TagPill size="sm" variant="muted">
-            +{project.technologies.length - 4}
+            +{project.tags.length - 4}
           </TagPill>
         )}
       </div>

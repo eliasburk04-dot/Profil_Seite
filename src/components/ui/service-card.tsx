@@ -5,7 +5,7 @@ import * as LucideIcons from 'lucide-react';
 import { CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { GlassCard } from '@/components/ui/glass-card';
-import type { Service } from '@/content';
+import { conversion, type Service } from '@/content';
 import { cn } from '@/lib/utils';
 
 interface ServiceCardProps {
@@ -66,7 +66,7 @@ export function ServiceCard({ service, className, variant = 'compact' }: Service
 
       <div className="mt-auto flex justify-end border-t border-border pt-4">
         <Button asChild variant="primary" size="sm">
-          <Link href="/contact">Projekt anfragen</Link>
+          <Link href="/contact">{conversion.primaryCtaLabel}</Link>
         </Button>
       </div>
     </GlassCard>

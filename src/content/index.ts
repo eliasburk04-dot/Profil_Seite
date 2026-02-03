@@ -1,14 +1,39 @@
-/**
+﻿/**
  * Central content source for Burk-Solutions
- * Edit this file to update site content without touching UI components.
- * 
- * IMPORTANT: All copy uses "Wir"-Form (collective voice).
- * Never use "Ich" - always "Wir", "uns", "unser", "Burk-Solutions".
+ * Alle Texte und Botschaften werden hier gepflegt.
+ * Wir-Form ist verpflichtend.
  */
 
-// =============================================================================
-// PROFILE & IDENTITY
-// =============================================================================
+export type WorkflowStep = {
+  step: number;
+  title: string;
+  description: string;
+};
+
+export type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+export type OrientationPackage = {
+  title: string;
+  subtitle: string;
+  fitFor: string;
+  outcome: string;
+};
+
+export type ContactNeed = {
+  title: string;
+  description: string;
+  icon: 'FileText' | 'Calendar' | 'Euro' | 'MessageSquare';
+};
+
+export const conversion = {
+  primaryCtaLabel: 'Kostenloses Erstgespräch',
+  secondaryCtaLabel: 'Leistungen ansehen',
+  trustLine: 'Antwort innerhalb von 24–48h · unverbindlich · transparent',
+  scrollHint: 'Scrollen für mehr',
+} as const;
 
 export const profile = {
   name: 'Burk-Solutions',
@@ -16,114 +41,254 @@ export const profile = {
   role: 'Digitale Lösungen für Unternehmen',
   email: 'kontakt@burk-solutions.de',
   location: 'Deutschland',
+  availability: 'Aktuell verfügbar für neue Projekte',
 
-  // Primary value proposition - shown in hero (plain German, non-technical)
-  headline: 'Wir bauen Websites und digitale Produkte, die Ergebnisse liefern.',
-  subheadline: 'Mehr Anfragen, klarer Auftritt, schneller online – wir entwickeln digitale Lösungen für Unternehmen, Gründer und wachsende Teams.',
+  headline: 'Wir bauen digitale Auftritte, die Anfragen bringen und im Alltag zuverlässig laufen.',
+  subheadline:
+    'Für Unternehmen, Gründer und Teams, die online klarer auftreten, schneller entscheiden und mit weniger Abstimmungsaufwand wachsen wollen.',
 
-  // Benefits for hero section (plain German)
-  benefits: [
-    'Professioneller Auftritt, der Vertrauen schafft',
-    'Mehr Anfragen durch klare Nutzerführung',
-    'Schnelle Ladezeiten und moderne Technik',
-    'Langfristige Betreuung und Weiterentwicklung',
+  positioningLine:
+    'Wir begleiten von der ersten Zielklärung bis zur laufenden Betreuung – mit klaren Schritten, festen Ansprechpartnern und transparenten Entscheidungen.',
+
+  whyBurk: [
+    'Wir arbeiten zuverlässig mit klaren Zusagen zu Zeitrahmen, Budget und Zuständigkeiten.',
+    'Wir erklären verständlich, damit Entscheidungen schnell und sicher getroffen werden können.',
+    'Wir entwickeln so, dass Ihr Projekt langfristig gepflegt und erweitert werden kann.',
   ],
 
-  // Short pitch for home page
+  benefits: [
+    'Ein professioneller Auftritt, der Vertrauen schafft und Anfragen erleichtert.',
+    'Klare Nutzerführung, damit Interessenten schneller den nächsten Schritt gehen.',
+    'Schnelle, stabile Seiten ohne technische Überraschungen im Tagesgeschäft.',
+    'Langfristige Betreuung, damit Ihr Auftritt mit Ihrem Unternehmen mitwächst.',
+  ],
+
   pitch:
-    'Wir denken in Lösungen, nicht in Technik-Jargon. Bei uns bekommen Sie ein digitales Produkt, das funktioniert, gut aussieht und sich langfristig weiterentwickeln lässt – ohne versteckte Kosten oder komplizierte Übergaben.',
+    'Wir liefern keine komplizierten Prozesse, sondern klare Ergebnisse: mehr Übersicht, weniger Reibung und ein digitales Produkt, das Ihren Vertrieb und Ihr Team spürbar entlastet.',
 
-  // Longer bio for About page
-  bio: `Burk-Solutions ist Ihr Partner für digitale Produkte, die wirklich funktionieren. Wir entwickeln Websites, Web-Anwendungen und digitale Tools für Unternehmen, die online professionell auftreten und mehr Kunden erreichen wollen.
+  bio: `Burk-Solutions ist Ihr Partner für digitale Lösungen, die im Alltag funktionieren. Wir entwickeln Websites, Web-Anwendungen und digitale Werkzeuge für Unternehmen, die online professionell auftreten und Anfragen zuverlässig in Projekte verwandeln möchten.
 
-Unser Ansatz: Zuerst verstehen, dann umsetzen. Wir nehmen uns Zeit, Ihre Ziele und Zielgruppen zu verstehen – und liefern dann eine Lösung, die genau passt. Kein Technik-Geplänkel, keine unnötigen Features, sondern das, was Sie wirklich brauchen.
+Unser Ansatz ist bewusst klar: Wir starten mit Ihren Zielen, priorisieren die wichtigsten Schritte und setzen dann strukturiert um. So entstehen Lösungen, die verständlich bleiben und auch intern gut weitergeführt werden können.
 
-Was uns ausmacht: Wir arbeiten transparent, kommunizieren klar und liefern pünktlich. Nach dem Launch lassen wir Sie nicht allein – wir betreuen, optimieren und entwickeln weiter.`,
+Was uns auszeichnet: Wir kommunizieren offen, halten Zusagen ein und denken langfristig. Nach dem Launch bleiben wir an Ihrer Seite, optimieren weiter und sorgen dafür, dass Ihr digitaler Auftritt mit Ihren Anforderungen wächst.`,
 
-  // Workflow description - "So arbeiten wir"
+  workflowTitle: 'So arbeiten wir',
+  workflowDescription:
+    'Unser Ablauf ist klar und planbar: Ziele klären, Struktur festlegen, sauber umsetzen, langfristig betreuen.',
   workflow: [
     {
       step: 1,
-      title: 'Ziele & Inhalte klären',
-      description:
-        'Was wollen Sie erreichen? Wer sind Ihre Kunden? Wir klären gemeinsam, was Ihre Website oder App leisten soll.',
+      title: 'Ziele klären',
+      description: 'Wir besprechen, welche Ergebnisse Sie erreichen möchten und worauf es in Ihrem Markt wirklich ankommt.',
     },
     {
       step: 2,
-      title: 'Struktur & Design festlegen',
-      description:
-        'Wir entwickeln eine klare Struktur und ein Design, das zu Ihrem Unternehmen passt – modern, übersichtlich und auf Ihre Zielgruppe zugeschnitten.',
+      title: 'Design & Struktur',
+      description: 'Wir definieren eine klare Seitenstruktur und ein Design, das Vertrauen schafft und Entscheidungen erleichtert.',
     },
     {
       step: 3,
       title: 'Umsetzung & Tests',
-      description:
-        'Wir setzen Ihr Projekt technisch sauber um, testen gründlich und stimmen alles mit Ihnen ab.',
+      description: 'Wir setzen Ihr Projekt sauber um, testen gründlich und stimmen die wichtigsten Schritte eng mit Ihnen ab.',
     },
     {
       step: 4,
       title: 'Launch & Betreuung',
-      description:
-        'Nach dem Go-Live sind wir weiter für Sie da: Wartung, Updates, Optimierungen – alles aus einer Hand.',
+      description: 'Nach dem Go-Live begleiten wir weiter mit Wartung, Optimierung und planbaren Weiterentwicklungen.',
     },
-  ],
+  ] satisfies WorkflowStep[],
 
-  // Competencies section - outcomes, not jargon
   competencies: {
     title: 'Was wir können',
-    description: 'Wir setzen Projekte um, die online sichtbar sind, technisch einwandfrei laufen und langfristig betreut werden können.',
+    description:
+      'Wir bauen digitale Lösungen, die sichtbar Ergebnisse liefern und gleichzeitig im Betrieb ruhig, stabil und erweiterbar bleiben.',
     items: [
       {
         title: 'Websites & Landingpages',
-        description: 'Professionelle Unternehmensseiten, die Vertrauen schaffen und Anfragen generieren.',
+        description: 'Klare Seitenstrukturen, die Vertrauen aufbauen und Interessenten zu konkreten Anfragen führen.',
       },
       {
         title: 'Web-Anwendungen',
-        description: 'Digitale Tools, Kundenportale und interne Systeme – genau auf Ihre Prozesse zugeschnitten.',
+        description: 'Digitale Arbeitsbereiche und Kundenportale, die Abläufe vereinfachen und Zeit im Team sparen.',
       },
       {
-        title: 'Mobile Apps',
-        description: 'Apps für iOS und Android aus einer Entwicklung – effizient und zukunftssicher.',
+        title: 'Mobile Lösungen',
+        description: 'Apps und mobile Prozesse, die Ihre Leistungen auch unterwegs zugänglich und nutzbar machen.',
       },
       {
         title: 'Wartung & Weiterentwicklung',
-        description: 'Langfristige Betreuung, Updates und kontinuierliche Verbesserungen.',
+        description: 'Kontinuierliche Betreuung, damit Ihr System sicher bleibt und mit neuen Anforderungen Schritt hält.',
       },
     ],
-    techNote: 'Technik: TypeScript, Flutter, Python – je nach Projektanforderung.',
   },
 
-  // Contact page promises
+  techBackground: {
+    title: 'Technik im Hintergrund',
+    description:
+      'Damit Ihre Lösung langfristig zuverlässig bleibt, arbeiten wir mit einem sauberen Aufbau, klar dokumentierten Entscheidungen und einer Struktur, die spätere Erweiterungen ohne Neustart ermöglicht.',
+    smallPrint: 'Technik: TypeScript · Flutter · Python (je nach Projekt)',
+  },
+
   contactPromises: [
     'Antwort innerhalb von 24–48 Stunden',
-    'Unverbindliches Erstgespräch kostenlos',
-    'Transparente Preise nach Projektumfang',
+    'Kostenloses, unverbindliches Erstgespräch',
+    'Transparente Preise nach Umfang und Priorität',
   ],
 
-  // FAQ for contact page
+  miniFaq: [
+    {
+      question: 'Wie schnell können wir starten?',
+      answer: 'Nach dem Erstgespräch erhalten Sie in kurzer Zeit einen klaren Vorschlag für Ablauf, Aufwand und nächste Schritte.',
+    },
+    {
+      question: 'Wie läuft die Abrechnung?',
+      answer: 'Wir rechnen transparent nach Umfang und Priorität ab. Sie wissen vor dem Start, womit Sie rechnen können.',
+    },
+    {
+      question: 'Bleiben Sie nach dem Launch erreichbar?',
+      answer: 'Ja. Wir begleiten auf Wunsch dauerhaft mit Wartung, Anpassungen und geplanter Weiterentwicklung.',
+    },
+  ] satisfies FAQItem[],
+
   faq: [
     {
       question: 'Wie lange dauert ein typisches Projekt?',
-      answer: 'Eine einfache Website ist in 2–4 Wochen fertig. Komplexere Web-Anwendungen dauern 6–12 Wochen. Im Erstgespräch geben wir Ihnen eine realistische Einschätzung.',
+      answer:
+        'Eine klare Unternehmenswebsite ist oft in 2–4 Wochen umsetzbar. Umfangreichere Anwendungen benötigen mehr Zeit. Wir geben im Erstgespräch eine realistische Planung.',
     },
     {
-      question: 'Was brauchen Sie von uns zu Beginn?',
-      answer: 'Am besten: Eine kurze Beschreibung, was Sie erreichen wollen, und Beispiele von Websites, die Ihnen gefallen. Texte und Bilder können auch später kommen.',
+      question: 'Was kostet eine Zusammenarbeit?',
+      answer:
+        'Wir arbeiten transparent nach Umfang. Sie erhalten eine nachvollziehbare Einschätzung, damit Sie sicher entscheiden können.',
     },
     {
-      question: 'Was kostet eine Website?',
-      answer: 'Wir arbeiten transparent nach Projektumfang. Eine professionelle Unternehmensseite beginnt bei ca. 3.000 €. Im Erstgespräch erstellen wir ein unverbindliches Angebot.',
+      question: 'Was benötigen wir von Ihnen zu Beginn?',
+      answer:
+        'Wichtig sind Ihre Ziele, ein grober Zeitrahmen und vorhandene Inhalte. Den Rest strukturieren wir gemeinsam Schritt für Schritt.',
     },
     {
-      question: 'Können Sie auch bestehende Websites übernehmen?',
-      answer: 'Ja, wir übernehmen gerne Wartung und Weiterentwicklung bestehender Projekte – auch wenn sie nicht von uns gebaut wurden.',
+      question: 'Können Sie auch bestehende Projekte übernehmen?',
+      answer:
+        'Ja. Wir übernehmen laufende Websites und Anwendungen, analysieren den Stand und setzen dann geordnet die nächsten sinnvollen Schritte um.',
     },
-  ],
+    {
+      question: 'Wie geht es nach Ihrer Anfrage weiter?',
+      answer:
+        'Wir melden uns innerhalb von 24–48 Stunden, klären Ihre Ziele in einem Gespräch und senden anschließend einen klaren Vorschlag für den Ablauf.',
+    },
+  ] satisfies FAQItem[],
 } as const;
 
-// =============================================================================
-// SERVICES (marketing-focused, plain German)
-// =============================================================================
+export const homeContent = {
+  heroBadge: 'Burk-Solutions · Digitale Lösungen',
+  whySectionTitle: 'Warum Burk-Solutions',
+  servicesPreviewTitle: 'Unsere Leistungen',
+  projectsPreviewTitle: 'Ausgewählte Projekte',
+  miniFaqTitle: 'Häufige Fragen vor dem Start',
+  miniFaqDescription: 'Kurze Antworten für schnelle Entscheidungen.',
+} as const;
+
+export const aboutContent = {
+  title: 'Über uns',
+  subtitle: 'Wir verbinden klare Kommunikation mit zuverlässiger Umsetzung.',
+  quote:
+    'Wir liefern digitale Lösungen, die verständlich bleiben, zuverlässig laufen und Ihrem Team dauerhaft Arbeit abnehmen.',
+  quoteAuthor: 'Unser Anspruch bei jedem Projekt',
+} as const;
+
+export const servicesContent = {
+  title: 'Unsere Leistungen',
+  description:
+    'Wir unterstützen von der neuen Website bis zur laufenden Weiterentwicklung – mit klaren Zielen, strukturierter Umsetzung und messbarem Nutzen.',
+  detailTitle: 'Im Detail',
+  detailDescription: 'Was wir anbieten, für wen es passt und welchen konkreten Nutzen Sie erwarten können.',
+  valueTitle: 'Warum mit uns arbeiten?',
+  valueDescription: 'Neben sauberer Umsetzung zählt vor allem eine Zusammenarbeit, die im Alltag spürbar entlastet.',
+  valueProps: [
+    'Klare Kommunikation ohne unnötige Fachbegriffe',
+    'Realistische Planung statt leere Versprechen',
+    'Transparente Übergabe und nachvollziehbare Entscheidungen',
+    'Lösungen, die langfristig wartbar und erweiterbar bleiben',
+  ],
+  packagesTitle: 'Pakete zur Orientierung',
+  packagesDescription: 'Für eine schnelle Einordnung vor dem Erstgespräch.',
+  ctaTitle: 'Bereit für den nächsten Schritt?',
+  ctaDescription: 'Lassen Sie uns gemeinsam prüfen, welches Vorgehen für Ihr Ziel am sinnvollsten ist.',
+} as const;
+
+export const projectsContent = {
+  title: 'Unsere Projekte',
+  description:
+    'Ausgewählte Arbeiten aus Website-, App- und Optimierungsprojekten. Jedes Beispiel zeigt, wie wir Ergebnisse strukturiert und nachvollziehbar erreichen.',
+  filterHint: 'Filtern nach Branche oder Kategorie',
+  highlightsTitle: 'Highlights',
+  highlightsDescription: 'Projekte mit klar messbarem Nutzen und hoher Relevanz für unsere Kunden.',
+  moreTitle: 'Weitere Projekte',
+  emptyState: 'Keine Projekte gefunden für',
+  caseStudyHint: 'Detaillierte Case Studies zu ausgewählten Projekten – Coming Soon.',
+} as const;
+
+export const contactContent = {
+  title: 'Kontakt aufnehmen',
+  description:
+    'Sie planen ein neues digitales Projekt oder möchten ein bestehendes System verbessern? Wir melden uns schnell zurück und klären mit Ihnen den sinnvollsten nächsten Schritt.',
+  directMailTitle: 'Per E-Mail',
+  directMailDescription: 'Der direkte Weg für Projektanfragen, Rückfragen und Erstgespräche.',
+  responseTitle: 'Reaktionszeit',
+  responseDescription:
+    'Wir antworten in der Regel innerhalb von 24–48 Stunden. Bei dringenden Themen markieren Sie den Betreff gerne entsprechend.',
+  whatWeNeedTitle: 'Was wir wissen sollten',
+  whatWeNeedDescription: 'Mit diesen Informationen können wir Ihre Anfrage schnell und sinnvoll einordnen.',
+  whatWeNeed: [
+    {
+      title: 'Projektziel',
+      description: 'Was möchten Sie konkret verbessern oder erreichen?',
+      icon: 'FileText',
+    },
+    {
+      title: 'Zeitrahmen',
+      description: 'Gibt es feste Termine oder interne Meilensteine?',
+      icon: 'Calendar',
+    },
+    {
+      title: 'Budget-Rahmen',
+      description: 'Eine grobe Einordnung hilft bei der sinnvollen Priorisierung.',
+      icon: 'Euro',
+    },
+    {
+      title: 'Bestehende Basis',
+      description: 'Gibt es bereits Inhalte, Design oder ein bestehendes System?',
+      icon: 'MessageSquare',
+    },
+  ] satisfies ContactNeed[],
+  faqTitle: 'Häufige Fragen',
+  faqDescription: 'Antworten auf die wichtigsten Fragen vorab.',
+  formTitle: 'Kontaktformular',
+  formDescription: 'Alternativ können Sie das Formular nutzen – wir melden uns zeitnah.',
+  formHint: '* Das Formular ist aktuell ein UI-Entwurf. Bitte nutzen Sie vorerst die E-Mail-Option.',
+  fallbackTitle: 'Lieber direkt per E-Mail?',
+} as const;
+
+export const orientationPackages: OrientationPackage[] = [
+  {
+    title: 'Klarer Start',
+    subtitle: 'Für neue Auftritte und erste Struktur',
+    fitFor: 'Unternehmen, die schnell online klar auftreten möchten.',
+    outcome: 'Ein fokussierter Auftritt mit klarer Botschaft und konkretem nächsten Schritt für Interessenten.',
+  },
+  {
+    title: 'Wachstums-Upgrade',
+    subtitle: 'Für bestehende Seiten mit mehr Potenzial',
+    fitFor: 'Teams, die mehr Anfragen und bessere Abläufe erreichen möchten.',
+    outcome: 'Bessere Nutzerführung, höhere Conversion-Chancen und weniger Reibung im Prozess.',
+  },
+  {
+    title: 'Langfristige Betreuung',
+    subtitle: 'Für Stabilität und planbare Weiterentwicklung',
+    fitFor: 'Unternehmen mit laufendem System und kontinuierlichen Anforderungen.',
+    outcome: 'Sichere Updates, saubere Priorisierung und ein System, das mit Ihrem Alltag mitwächst.',
+  },
+];
 
 export type Service = {
   id: string;
@@ -140,67 +305,57 @@ export const services: Service[] = [
     id: 'unternehmenswebsite',
     title: 'Unternehmenswebsite',
     shortTitle: 'Website',
-    description:
-      'Eine professionelle Website, die Ihr Unternehmen optimal präsentiert und Vertrauen bei potenziellen Kunden schafft.',
-    targetAudience: 'Unternehmen, die eine moderne, professionelle Online-Präsenz benötigen.',
-    result: 'Mehr Sichtbarkeit, mehr Vertrauen, mehr Anfragen.',
+    description: 'Ein klarer digitaler Auftritt, der Vertrauen schafft und den Weg zur Anfrage vereinfacht.',
+    targetAudience: 'Unternehmen, die online professionell wirken und besser gefunden werden möchten.',
+    result: 'Mehr Sichtbarkeit, klarere Kommunikation, mehr qualifizierte Anfragen.',
     icon: 'Globe',
   },
   {
     id: 'landingpage',
     title: 'Landingpage für Anfragen',
     shortTitle: 'Landingpage',
-    description:
-      'Eine fokussierte Seite für Kampagnen, Produktlaunches oder Dienstleistungen – optimiert für Conversions.',
-    targetAudience: 'Unternehmen, die gezielt Leads generieren oder ein Angebot bewerben wollen.',
-    result: 'Höhere Conversion-Rate, messbare Ergebnisse.',
+    description: 'Eine fokussierte Seite für Kampagnen und Angebote mit klarer Führung zum nächsten Schritt.',
+    targetAudience: 'Teams, die ein konkretes Angebot effizient vermarkten möchten.',
+    result: 'Höhere Abschlussquote und bessere Auswertung der Kampagnenwirkung.',
     icon: 'Target',
   },
   {
     id: 'webapp',
     title: 'Web-App & Kundenportal',
     shortTitle: 'Web-App',
-    description:
-      'Digitale Anwendungen, über die Ihre Kunden Bestellungen aufgeben, Termine buchen oder Dokumente einsehen können.',
-    targetAudience: 'Unternehmen, die Kundenprozesse digitalisieren und automatisieren wollen.',
-    result: 'Weniger manuelle Arbeit, besserer Service, zufriedenere Kunden.',
+    description: 'Digitale Prozesse für Kunden und Teams, die Arbeit vereinfachen und Abstimmung sparen.',
+    targetAudience: 'Unternehmen, die interne Abläufe und Kundenkommunikation digital entlasten wollen.',
+    result: 'Weniger manuelle Schritte, klarere Abläufe und bessere Servicequalität.',
     icon: 'LayoutDashboard',
   },
   {
     id: 'wartung',
     title: 'Wartung & Weiterentwicklung',
     shortTitle: 'Wartung',
-    description:
-      'Laufende Betreuung Ihrer Website oder App: Updates, Sicherheit, kleine Anpassungen und Erweiterungen.',
-    targetAudience: 'Unternehmen mit bestehenden digitalen Produkten, die gepflegt werden müssen.',
-    result: 'Immer aktuell, sicher und performant – ohne eigenen Aufwand.',
+    description: 'Regelmäßige Pflege, Sicherheitsupdates und planbare Erweiterungen für Ihren Auftritt.',
+    targetAudience: 'Unternehmen mit bestehenden Systemen, die verlässlich weiterlaufen sollen.',
+    result: 'Stabiler Betrieb, weniger Risiken und planbare Weiterentwicklung.',
     icon: 'Shield',
   },
   {
     id: 'performance',
     title: 'Performance & Optimierung',
     shortTitle: 'Optimierung',
-    description:
-      'Wir machen Ihre Website schneller, besser auffindbar und effektiver – für mehr Anfragen und bessere Rankings.',
-    targetAudience: 'Unternehmen mit langsamen oder veralteten Websites.',
-    result: 'Schnellere Ladezeiten, bessere Google-Platzierung, mehr Conversions.',
+    description: 'Wir verbessern Tempo, Klarheit und Nutzerführung für bessere Ergebnisse im Alltag.',
+    targetAudience: 'Unternehmen mit ausbaufähigem Webauftritt oder sinkender Conversion.',
+    result: 'Schnellere Seiten, bessere Nutzererfahrung und mehr Anfragen.',
     icon: 'Gauge',
   },
   {
     id: 'automatisierung',
     title: 'Automatisierung & Tools',
     shortTitle: 'Automatisierung',
-    description:
-      'Kleine digitale Helfer, die wiederkehrende Aufgaben automatisieren: Formulare, Reports, Benachrichtigungen.',
-    targetAudience: 'Teams, die Zeit bei Routineaufgaben sparen wollen.',
-    result: 'Weniger manuelle Arbeit, weniger Fehler, mehr Zeit für Wichtiges.',
+    description: 'Praktische digitale Helfer für wiederkehrende Aufgaben und klare Prozesse.',
+    targetAudience: 'Teams, die Routinearbeit reduzieren und Fehlerquellen minimieren möchten.',
+    result: 'Mehr Zeit für wichtige Aufgaben und spürbar weniger manuelle Arbeit.',
     icon: 'Cog',
   },
 ];
-
-// =============================================================================
-// PROJECTS (outcome-focused)
-// =============================================================================
 
 export type Project = {
   id: string;
@@ -221,74 +376,64 @@ export const projects: Project[] = [
   {
     id: 'burk-solutions-website',
     title: 'Burk-Solutions Website',
-    description:
-      'Unsere eigene Website: Modern, schnell und als Referenz für professionelle Web-Entwicklung konzipiert.',
+    description: 'Unser eigener Auftritt als Referenz für eine klare Struktur und schnelle Ladezeiten.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    tags: ['Website', 'Portfolio'],
-    outcome: 'Perfekter Lighthouse-Score, extrem schnelle Ladezeiten.',
-    useCase: 'Agentur / Dienstleister',
+    tags: ['Website', 'Positionierung'],
+    outcome: 'Sehr schnelle Ladezeiten und klare Nutzerführung bis zur Anfrage.',
+    useCase: 'Dienstleister',
     featured: true,
   },
   {
     id: 'dashboard-system',
     title: 'Internes Dashboard',
-    description:
-      'Ein maßgeschneidertes Dashboard für ein mittelständisches Unternehmen mit Echtzeit-Daten und Benutzerrollen.',
+    description: 'Eine zentrale Arbeitsoberfläche für ein mittelständisches Team mit klaren Rollen und Prozessen.',
     technologies: ['React', 'TypeScript', 'Node.js'],
-    tags: ['Dashboard', 'Web-App'],
-    outcome: 'Spart dem Team 20 Stunden pro Woche durch automatisierte Prozesse.',
-    useCase: 'Mittelstand / Industrie',
+    tags: ['Dashboard', 'Prozesse'],
+    outcome: '20 Stunden Zeitgewinn pro Woche durch strukturierte Abläufe.',
+    useCase: 'Mittelstand',
     featured: true,
   },
   {
     id: 'mobile-app-mvp',
     title: 'Mobile App (MVP)',
-    description:
-      'Eine Cross-Platform-App für ein Startup im Gesundheitsbereich – von der Idee zum App-Store in 8 Wochen.',
+    description: 'Vom Konzept bis zur marktreifen App in engem Austausch mit dem Gründungsteam.',
     technologies: ['Flutter', 'Firebase'],
     tags: ['Mobile App', 'MVP'],
-    outcome: 'Erfolgreiche Finanzierungsrunde nach der MVP-Präsentation.',
-    useCase: 'Startup / Gesundheit',
+    outcome: 'Schneller Markteintritt und belastbare Grundlage für den nächsten Wachstumsschritt.',
+    useCase: 'Startup',
     featured: true,
   },
   {
     id: 'component-library',
     title: 'Design System',
-    description:
-      'Eine wiederverwendbare Komponentenbibliothek für schnellere Entwicklung und konsistentes Design.',
+    description: 'Ein wiederverwendbares Komponenten-Set für konsistente Oberflächen und schnellere Umsetzung.',
     technologies: ['React', 'TypeScript', 'Storybook'],
-    tags: ['Design System', 'Komponenten'],
-    outcome: '40% schnellere Feature-Entwicklung für das Kundenteam.',
-    useCase: 'Enterprise / Software',
+    tags: ['Design System', 'Teamwork'],
+    outcome: 'Deutlich schnellere Umsetzung neuer Funktionen im Kundenteam.',
+    useCase: 'Software-Team',
     featured: false,
   },
   {
     id: 'performance-optimization',
     title: 'E-Commerce Optimierung',
-    description:
-      'Performance-Audit und Optimierung einer E-Commerce-Plattform mit messbaren Ergebnissen.',
+    description: 'Strukturierte Optimierung eines Shops mit Fokus auf Tempo, Klarheit und Abschlussquote.',
     technologies: ['Next.js', 'Lighthouse'],
     tags: ['Performance', 'E-Commerce'],
-    outcome: 'Ladezeit um 70% reduziert, +15% mehr Verkäufe.',
-    useCase: 'E-Commerce / Handel',
+    outcome: 'Weniger Ladezeit und spürbarer Anstieg der Verkäufe.',
+    useCase: 'Handel',
     featured: false,
   },
   {
     id: 'automation-tooling',
     title: 'Automatisierung Pipeline',
-    description:
-      'Automatisierte Prozesse für ein Entwicklungsteam: Build, Test und Deployment auf Knopfdruck.',
+    description: 'Automatisierte Abläufe für Build, Tests und Auslieferung in einem Entwicklungsteam.',
     technologies: ['GitHub Actions', 'Docker'],
-    tags: ['Automatisierung', 'DevOps'],
-    outcome: 'Deployment-Zeit von 45 auf 5 Minuten reduziert.',
-    useCase: 'Software-Team',
+    tags: ['Automatisierung', 'Effizienz'],
+    outcome: 'Deutlich kürzere Auslieferungszeiten und weniger manuelle Fehler.',
+    useCase: 'Produktteam',
     featured: false,
   },
 ];
-
-// =============================================================================
-// NAVIGATION
-// =============================================================================
 
 export type NavItem = {
   label: string;
@@ -304,10 +449,6 @@ export const navigation: NavItem[] = [
   { label: 'Kontakt', href: '/contact', icon: 'Mail' },
 ];
 
-// =============================================================================
-// FEATURE FLAGS
-// =============================================================================
-
 export const featureFlags = {
   blog: false,
   caseStudies: false,
@@ -316,23 +457,11 @@ export const featureFlags = {
   i18n: false,
 } as const;
 
-// =============================================================================
-// METADATA
-// =============================================================================
-
 export const siteMetadata = {
   title: 'Burk-Solutions | Websites & digitale Produkte',
   description:
-    'Wir entwickeln Websites, Web-Apps und digitale Tools für Unternehmen. Professionell, schnell und mit langfristiger Betreuung. Burk-Solutions – Digitale Lösungen, die Ergebnisse liefern.',
+    'Wir entwickeln Websites, Web-Apps und digitale Werkzeuge für Unternehmen. Klar in der Kommunikation, zuverlässig in der Umsetzung und langfristig betreut.',
   url: 'https://burk-solutions.de',
   locale: 'de_DE',
-  keywords: [
-    'Website erstellen',
-    'Webdesign',
-    'Web-Entwicklung',
-    'Unternehmenswebsite',
-    'Landingpage',
-    'Web-App',
-    'Deutschland',
-  ],
+  keywords: ['Website erstellen', 'Webdesign', 'Digitale Lösungen', 'Unternehmenswebsite', 'Web-App', 'Deutschland'],
 };

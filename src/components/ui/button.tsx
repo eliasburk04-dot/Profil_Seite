@@ -12,6 +12,7 @@ const buttonVariants = cva(
     'relative overflow-hidden transition-all duration-200 ease-out',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary',
     'disabled:pointer-events-none disabled:opacity-55',
+    'active:scale-[0.98]',
     'motion-reduce:transition-none motion-reduce:transform-none',
   ],
   {
