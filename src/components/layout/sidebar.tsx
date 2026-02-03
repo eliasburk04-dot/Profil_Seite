@@ -1,10 +1,18 @@
 ﻿'use client';
 
 import Link from 'next/link';
-import * as LucideIcons from 'lucide-react';
+import { Briefcase, FolderKanban, Home, Mail, Users, type LucideIcon } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { navigation, profile } from '@/content';
 import { cn } from '@/lib/utils';
+
+const navIconMap: Record<string, LucideIcon> = {
+  Home,
+  Users,
+  Briefcase,
+  FolderKanban,
+  Mail,
+};
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -21,9 +29,7 @@ export function Sidebar() {
       <nav className="flex flex-1 flex-col gap-1.5" role="navigation">
         {navigation.map((item) => {
           const isActive = pathname === item.href;
-          const IconComponent = LucideIcons[item.icon as keyof typeof LucideIcons] as React.ComponentType<{
-            className?: string;
-          }>;
+          const IconComponent = navIconMap[item.icon];
 
           return (
             <Link

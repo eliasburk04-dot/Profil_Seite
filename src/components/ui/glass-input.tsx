@@ -1,6 +1,4 @@
-﻿'use client';
-
-import { forwardRef } from 'react';
+﻿import { forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 
 export interface GlassInputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
@@ -36,3 +34,4 @@ export const GlassSelect = forwardRef<HTMLSelectElement, GlassSelectProps>(
 );
 
 GlassSelect.displayName = 'GlassSelect';
+

@@ -1,19 +1,14 @@
 ﻿import type { Metadata, Viewport } from 'next';
-import { Manrope, Sora } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import { AppShell } from '@/components/layout';
 import { siteMetadata } from '@/content';
 import './globals.css';
 
 const manrope = Manrope({
+  weight: ['400', '500', '600'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-manrope',
-});
-
-const sora = Sora({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sora',
 });
 
 export const metadata: Metadata = {
@@ -65,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${manrope.variable} ${sora.variable} dark`}>
+    <html lang="de" className={`${manrope.variable} dark`}>
       <body className="h-dvh w-screen overflow-hidden font-sans">
         <AppShell>{children}</AppShell>
       </body>

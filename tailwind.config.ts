@@ -52,7 +52,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'ui-sans-serif', 'sans-serif'],
-        display: ['var(--font-sora)', 'var(--font-manrope)', 'ui-sans-serif', 'sans-serif'],
+        display: ['var(--font-manrope)', 'ui-sans-serif', 'sans-serif'],
       },
       fontSize: {
         '2xs': ['0.6875rem', { lineHeight: '1rem' }],

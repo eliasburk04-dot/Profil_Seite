@@ -1,6 +1,4 @@
-﻿'use client';
-
-import { ChevronDown, HelpCircle } from 'lucide-react';
+﻿import { ChevronDown, HelpCircle } from 'lucide-react';
 import { GlassCard } from '@/components/ui/glass-card';
 import type { FAQItem } from '@/content';
 import { cn } from '@/lib/utils';
@@ -32,3 +30,4 @@ export function FAQAccordion({ items, className }: FAQAccordionProps) {
     </div>
   );
 }
+

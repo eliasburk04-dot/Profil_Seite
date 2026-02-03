@@ -3,11 +3,27 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import * as Dialog from '@radix-ui/react-dialog';
-import * as LucideIcons from 'lucide-react';
-import { Menu, X } from 'lucide-react';
+import {
+  Briefcase,
+  FolderKanban,
+  Home,
+  Mail,
+  Menu,
+  Users,
+  X,
+  type LucideIcon,
+} from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { navigation, profile } from '@/content';
 import { cn } from '@/lib/utils';
+
+const navIconMap: Record<string, LucideIcon> = {
+  Home,
+  Users,
+  Briefcase,
+  FolderKanban,
+  Mail,
+};
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -52,9 +68,7 @@ export function MobileNav() {
           <nav className="flex flex-col gap-2 p-4" role="navigation">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
-              const IconComponent = LucideIcons[item.icon as keyof typeof LucideIcons] as React.ComponentType<{
-                className?: string;
-              }>;
+              const IconComponent = navIconMap[item.icon];
 
               return (
                 <Link

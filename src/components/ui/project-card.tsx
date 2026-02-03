@@ -1,6 +1,4 @@
-﻿'use client';
-
-import { GlassCard } from '@/components/ui/glass-card';
+﻿import { GlassCard } from '@/components/ui/glass-card';
 import { TagPill } from '@/components/ui/tag-pill';
 import type { Project } from '@/content';
 import { cn } from '@/lib/utils';
@@ -53,3 +51,4 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
     </GlassCard>
   );
 }
+

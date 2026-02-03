@@ -144,7 +144,7 @@
     background:
       radial-gradient(540px 340px at 14% 8%, rgba(138, 248, 238, 0.17), transparent 66%),
       radial-gradient(420px 280px at 80% 12%, rgba(138, 248, 238, 0.09), transparent 72%);
-    filter: blur(36px);
+    filter: blur(24px);
     opacity: 0.62;
   }
 
@@ -200,19 +200,19 @@
 
 @layer components {
   .glass-panel-shell {
-    @apply relative overflow-hidden rounded-4xl border border-border bg-glass-light shadow-glass-xl backdrop-blur-3xl;
+    @apply relative overflow-hidden rounded-4xl border border-border bg-glass-light shadow-glass-xl backdrop-blur-2xl;
   }
 
   .glass-card-surface {
-    @apply relative overflow-hidden rounded-3xl border border-border bg-glass-light shadow-card backdrop-blur-2xl;
+    @apply relative overflow-hidden rounded-3xl border border-border bg-glass-light shadow-card backdrop-blur-xl;
   }
 
   .glass-card-elevated {
-    @apply relative overflow-hidden rounded-3xl border border-border-strong bg-glass-medium shadow-glass-lg backdrop-blur-3xl;
+    @apply relative overflow-hidden rounded-3xl border border-border-strong bg-glass-medium shadow-glass-lg backdrop-blur-2xl;
   }
 
   .glass-card-subtle {
-    @apply relative overflow-hidden rounded-3xl border border-border-subtle bg-glass-subtle shadow-glass-sm backdrop-blur-xl;
+    @apply relative overflow-hidden rounded-3xl border border-border-subtle bg-glass-subtle shadow-glass-sm backdrop-blur-lg;
   }
 
   .glass-reflection::before {
@@ -303,6 +303,28 @@
   .section-stack {
     display: grid;
     gap: var(--section-space);
+  }
+
+  .content-scroll-area {
+    contain: layout paint size;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable both-edges;
+  }
+
+  .animate-section-reveal {
+    animation: sectionReveal 0.48s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes sectionReveal {
+    from {
+      opacity: 0;
+      transform: translateY(var(--reveal-y, 18px));
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .scrollbar-hide {

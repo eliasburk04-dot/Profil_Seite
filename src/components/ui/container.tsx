@@ -1,6 +1,4 @@
-'use client';
-
-import { cn } from '@/lib/utils';
+﻿import { cn } from '@/lib/utils';
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Maximum width constraint */
@@ -33,3 +31,4 @@ export function Container({
     </div>
   );
 }
+

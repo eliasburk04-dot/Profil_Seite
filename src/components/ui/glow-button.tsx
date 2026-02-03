@@ -1,6 +1,4 @@
-﻿'use client';
-
-import { forwardRef } from 'react';
+﻿import { forwardRef } from 'react';
 import { Button, type ButtonProps } from '@/components/ui/button';
 
 export const GlowButton = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -10,3 +8,4 @@ export const GlowButton = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 GlowButton.displayName = 'GlowButton';
+

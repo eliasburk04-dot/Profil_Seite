@@ -1,6 +1,4 @@
-﻿'use client';
-
-import { Sidebar } from './sidebar';
+﻿import { Sidebar } from './sidebar';
 import { MobileNav } from './mobile-nav';
 import { GlassPanel } from '@/components/ui/glass-panel';
 import { StickyCTA } from '@/components/ui';
@@ -14,9 +12,9 @@ export function AppShell({ children }: AppShellProps) {
   return (
     <div className="relative h-dvh w-screen overflow-hidden">
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        <div className="absolute -left-20 -top-24 h-[520px] w-[760px] rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute right-[-10%] top-[-6%] h-[420px] w-[620px] rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute bottom-[-18%] left-1/2 h-[540px] w-[780px] -translate-x-1/2 rounded-full bg-sky-400/10 blur-3xl" />
+        <div className="absolute -left-20 -top-24 h-[500px] w-[720px] rounded-full bg-accent/18 blur-2xl" />
+        <div className="absolute right-[-10%] top-[-6%] h-[400px] w-[560px] rounded-full bg-accent/9 blur-2xl" />
+        <div className="absolute bottom-[-18%] left-1/2 h-[500px] w-[720px] -translate-x-1/2 rounded-full bg-sky-400/8 blur-2xl" />
       </div>
 
       <main className="relative flex h-full w-full items-center justify-center p-2 sm:p-4 lg:p-6">
@@ -40,11 +38,11 @@ export function AppShell({ children }: AppShellProps) {
               <StickyCTA />
 
               <div className="relative flex-1 overflow-hidden">
-                <div className="h-full overflow-y-auto overflow-x-hidden overscroll-contain pb-10">
+                <div className="content-scroll-area h-full overflow-y-auto overflow-x-hidden overscroll-contain pb-10">
                   <div className="mx-auto w-full max-w-5xl p-4 sm:p-6 lg:p-8">{children}</div>
                 </div>
                 <div
-                  className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bg-primary/80 via-bg-primary/20 to-transparent"
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-bg-primary/75 via-bg-primary/20 to-transparent"
                   aria-hidden="true"
                 />
                 <div className="pointer-events-none absolute bottom-3 right-4 rounded-full border border-border-subtle bg-bg-secondary/55 px-2.5 py-1 text-2xs uppercase tracking-[0.1em] text-text-muted">

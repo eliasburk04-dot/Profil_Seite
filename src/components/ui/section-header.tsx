@@ -1,6 +1,4 @@
-﻿'use client';
-
-import { cn } from '@/lib/utils';
+﻿import { cn } from '@/lib/utils';
 
 interface SectionHeaderProps {
   title: string;
@@ -27,3 +25,4 @@ export function SectionHeader({
     </div>
   );
 }
+

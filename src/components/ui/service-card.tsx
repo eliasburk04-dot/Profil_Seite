@@ -1,8 +1,14 @@
-﻿'use client';
-
-import Link from 'next/link';
-import * as LucideIcons from 'lucide-react';
-import { CheckCircle } from 'lucide-react';
+﻿import Link from 'next/link';
+import {
+  CheckCircle,
+  Cog,
+  Gauge,
+  Globe,
+  LayoutDashboard,
+  Shield,
+  Target,
+  type LucideIcon,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { GlassCard } from '@/components/ui/glass-card';
 import { conversion, type Service } from '@/content';
@@ -14,10 +20,17 @@ interface ServiceCardProps {
   variant?: 'full' | 'compact';
 }
 
+const serviceIconMap: Record<string, LucideIcon> = {
+  Globe,
+  Target,
+  LayoutDashboard,
+  Shield,
+  Gauge,
+  Cog,
+};
+
 export function ServiceCard({ service, className, variant = 'compact' }: ServiceCardProps) {
-  const IconComponent = LucideIcons[service.icon as keyof typeof LucideIcons] as React.ComponentType<{
-    className?: string;
-  }>;
+  const IconComponent = serviceIconMap[service.icon];
 
   if (variant === 'compact') {
     return (
