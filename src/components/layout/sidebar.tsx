@@ -2,7 +2,6 @@
 
 import { useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { Briefcase, FolderKanban, Home, Mail, Users, type LucideIcon } from 'lucide-react';
 import { navigation, profile } from '@/content';
@@ -32,7 +31,6 @@ export function Sidebar() {
       });
     };
 
-    // Use requestIdleCallback if available, otherwise use setTimeout
     if ('requestIdleCallback' in window) {
       const idleId = window.requestIdleCallback(prefetchAll, { timeout: 2000 });
       return () => window.cancelIdleCallback(idleId);
@@ -42,7 +40,6 @@ export function Sidebar() {
     }
   }, [pathname, router]);
 
-  // Prefetch on hover/focus for immediate feel
   const handlePrefetch = useCallback(
     (href: string) => {
       router.prefetch(href);
@@ -52,64 +49,48 @@ export function Sidebar() {
 
   return (
     <aside
-      className="glass-card-subtle glass-reflection flex h-full w-[248px] shrink-0 flex-col gap-3 overflow-hidden p-3"
+      className="spatial-sidebar group/sidebar"
       aria-label="Navigation"
     >
-      <div className="px-2.5 py-2">
-        <p className="text-caption uppercase tracking-[0.14em] text-text-muted">{profile.company}</p>
-      </div>
-
-      <nav className="flex flex-1 flex-col gap-1.5" role="navigation">
-        {navigation.map((item) => {
-          const isActive = pathname === item.href;
-          const IconComponent = navIconMap[item.icon];
-
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              prefetch={true}
-              onMouseEnter={() => handlePrefetch(item.href)}
-              onFocus={() => handlePrefetch(item.href)}
-              className={cn(
-                'group relative flex h-11 items-center gap-3 rounded-2xl border px-3.5 text-sm font-medium transition-all duration-200',
-                isActive
-                  ? 'sidebar-active border-border-accent bg-accent-muted text-text-primary'
-                  : 'border-transparent text-text-secondary hover:-translate-y-[1px] hover:border-border hover:bg-glass-subtle hover:text-text-primary'
-              )}
-              aria-current={isActive ? 'page' : undefined}
-            >
-              {isActive && <span className="absolute left-2.5 top-2 bottom-2 w-0.5 rounded-full bg-accent" aria-hidden="true" />}
-
-              {IconComponent && (
-                <IconComponent
-                  className={cn('h-4 w-4 shrink-0 transition-colors', isActive ? 'text-accent-solid' : 'text-text-muted group-hover:text-text-secondary')}
-                />
-              )}
-
-              <span>{item.label}</span>
-            </Link>
-          );
-        })}
-      </nav>
-
-      <div className="rounded-2xl border border-border-subtle bg-bg-secondary/45 p-3">
-        <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl overflow-hidden">
-            <Image
-              src="/logo.png"
-              alt="Burk-Solutions Logo"
-              width={36}
-              height={36}
-              className="h-9 w-9 object-contain"
-              priority
-            />
-          </div>
-          <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-text-primary">{profile.name}</p>
-            <p className="truncate text-xs text-text-muted">{profile.role.split(' & ')[0]}</p>
+      <div className="spatial-sidebar-shell">
+        <div className="spatial-sidebar-top">
+          <div className="spatial-brand">
+            <span className="spatial-brand-dot" aria-hidden="true">
+              {profile.company.charAt(0)}
+            </span>
+            <p className="spatial-brand-label">{profile.company}</p>
           </div>
         </div>
+
+        <nav className="spatial-nav" role="navigation">
+          {navigation.map((item) => {
+            const isActive = pathname === item.href;
+            const IconComponent = navIconMap[item.icon];
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                prefetch={true}
+                onMouseEnter={() => handlePrefetch(item.href)}
+                onFocus={() => handlePrefetch(item.href)}
+                className={cn(
+                  'spatial-nav-item',
+                  isActive && 'is-active'
+                )}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                <span className="spatial-nav-icon" aria-hidden="true">
+                  {IconComponent && <IconComponent className="h-5 w-5" />}
+                </span>
+
+                <span className="spatial-nav-label">
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
+        </nav>
       </div>
     </aside>
   );

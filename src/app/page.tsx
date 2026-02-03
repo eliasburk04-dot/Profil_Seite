@@ -1,6 +1,6 @@
 ﻿import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle, Compass, ShieldCheck, Sparkles, Users } from 'lucide-react';
+import { ArrowRight, CheckCircle, Compass, Search, ShieldCheck, Sparkles } from 'lucide-react';
 import {
   conversion,
   homeContent,
@@ -26,11 +26,12 @@ export default function HomePage() {
 
   return (
     <div className="section-stack">
-      <SectionReveal className="space-y-8">
-        <div className="flex items-start justify-between gap-5">
+      <SectionReveal className="relative space-y-8">
+        <div className="hero-orb pointer-events-none absolute right-[-12%] top-[-28px] hidden h-[420px] w-[420px] lg:block" aria-hidden="true" />
+        <div className="relative z-10 flex items-start justify-between gap-5">
           <div className="space-y-5 sm:space-y-6">
             <div className="section-badge">
-              <Users className="h-3.5 w-3.5 text-accent-solid" />
+              <Search className="h-3.5 w-3.5 text-accent-solid" />
               <span>{homeContent.heroBadge}</span>
             </div>
 
@@ -51,7 +52,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="space-y-3">
+        <div className="relative z-10 space-y-3">
           <div className="flex flex-wrap gap-3">
             <GlowButton asChild>
               <Link href="/contact">
