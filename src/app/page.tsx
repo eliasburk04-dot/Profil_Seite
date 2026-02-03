@@ -27,7 +27,6 @@ export default function HomePage() {
   return (
     <div className="section-stack">
       <SectionReveal className="relative space-y-8">
-        <div className="hero-orb pointer-events-none absolute right-[-12%] top-[-28px] hidden h-[420px] w-[420px] lg:block" aria-hidden="true" />
         <div className="relative z-10 flex items-start justify-between gap-5">
           <div className="space-y-5 sm:space-y-6">
             <div className="section-badge">
