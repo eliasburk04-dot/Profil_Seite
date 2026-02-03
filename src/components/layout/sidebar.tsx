@@ -1,8 +1,9 @@
 ﻿'use client';
 
+import { useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import { Briefcase, FolderKanban, Home, Mail, Users, type LucideIcon } from 'lucide-react';
-import { usePathname } from 'next/navigation';
 import { navigation, profile } from '@/content';
 import { cn } from '@/lib/utils';
 
@@ -16,6 +17,37 @@ const navIconMap: Record<string, LucideIcon> = {
 
 export function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  // Prefetch all navigation routes during idle time
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const prefetchAll = () => {
+      navigation.forEach((item) => {
+        if (item.href !== pathname) {
+          router.prefetch(item.href);
+        }
+      });
+    };
+
+    // Use requestIdleCallback if available, otherwise use setTimeout
+    if ('requestIdleCallback' in window) {
+      const idleId = window.requestIdleCallback(prefetchAll, { timeout: 2000 });
+      return () => window.cancelIdleCallback(idleId);
+    } else {
+      const timeoutId = setTimeout(prefetchAll, 100);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [pathname, router]);
+
+  // Prefetch on hover/focus for immediate feel
+  const handlePrefetch = useCallback(
+    (href: string) => {
+      router.prefetch(href);
+    },
+    [router]
+  );
 
   return (
     <aside
@@ -35,6 +67,9 @@ export function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
+              prefetch={true}
+              onMouseEnter={() => handlePrefetch(item.href)}
+              onFocus={() => handlePrefetch(item.href)}
               className={cn(
                 'group relative flex h-11 items-center gap-3 rounded-2xl border px-3.5 text-sm font-medium transition-all duration-200',
                 isActive

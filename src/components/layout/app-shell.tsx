@@ -1,7 +1,7 @@
-﻿import { Sidebar } from './sidebar';
+import { Sidebar } from './sidebar';
 import { MobileNav } from './mobile-nav';
+import { ScrollReset } from './scroll-reset';
 import { GlassPanel } from '@/components/ui/glass-panel';
-import { StickyCTA } from '@/components/ui';
 import { conversion, profile } from '@/content';
 
 interface AppShellProps {
@@ -35,12 +35,10 @@ export function AppShell({ children }: AppShellProps) {
                 <MobileNav />
               </header>
 
-              <StickyCTA />
-
               <div className="relative flex-1 overflow-hidden">
-                <div className="content-scroll-area h-full overflow-y-auto overflow-x-hidden overscroll-contain pb-10">
+                <ScrollReset className="content-scroll-area h-full overflow-y-auto overflow-x-hidden overscroll-contain pb-10">
                   <div className="mx-auto w-full max-w-5xl p-4 sm:p-6 lg:p-8">{children}</div>
-                </div>
+                </ScrollReset>
                 <div
                   className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-bg-primary/75 via-bg-primary/20 to-transparent"
                   aria-hidden="true"
@@ -56,3 +54,4 @@ export function AppShell({ children }: AppShellProps) {
     </div>
   );
 }
+

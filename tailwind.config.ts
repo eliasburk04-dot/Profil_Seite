@@ -107,6 +107,7 @@ const config: Config = {
         'fade-in': 'fadeIn 0.5s ease-out forwards',
         'fade-in-up': 'fadeInUp 0.55s ease-out forwards',
         'slide-in-left': 'slideInLeft 0.35s ease-out forwards',
+        'content-appear': 'contentAppear 0.15s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
@@ -120,6 +121,10 @@ const config: Config = {
         slideInLeft: {
           '0%': { opacity: '0', transform: 'translateX(-14px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        contentAppear: {
+          '0%': { opacity: '0.85' },
+          '100%': { opacity: '1' },
         },
       },
       transitionDuration: {

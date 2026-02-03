@@ -1,3 +1,3 @@
 export default function Template({ children }: { children: React.ReactNode }) {
-  return <div className="motion-safe:animate-fade-in">{children}</div>;
+  return <div className="motion-safe:animate-content-appear">{children}</div>;
 }

@@ -312,13 +312,13 @@
   }
 
   .animate-section-reveal {
-    animation: sectionReveal 0.48s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: sectionReveal 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   @keyframes sectionReveal {
     from {
-      opacity: 0;
-      transform: translateY(var(--reveal-y, 18px));
+      opacity: 0.7;
+      transform: translateY(var(--reveal-y, 12px));
     }
 
     to {

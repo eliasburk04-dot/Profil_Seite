@@ -1,7 +1,8 @@
 ﻿'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import * as Dialog from '@radix-ui/react-dialog';
 import {
   Briefcase,
@@ -13,7 +14,6 @@ import {
   X,
   type LucideIcon,
 } from 'lucide-react';
-import { usePathname } from 'next/navigation';
 import { navigation, profile } from '@/content';
 import { cn } from '@/lib/utils';
 
@@ -28,10 +28,19 @@ const navIconMap: Record<string, LucideIcon> = {
 export function MobileNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  // Prefetch on hover/focus for immediate navigation feel
+  const handlePrefetch = useCallback(
+    (href: string) => {
+      router.prefetch(href);
+    },
+    [router]
+  );
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -74,6 +83,9 @@ export function MobileNav() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  prefetch={true}
+                  onMouseEnter={() => handlePrefetch(item.href)}
+                  onFocus={() => handlePrefetch(item.href)}
                   className={cn(
                     'group relative flex h-12 items-center gap-3 rounded-2xl border px-4 text-base font-medium transition-all duration-200',
                     isActive

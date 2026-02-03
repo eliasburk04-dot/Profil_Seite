@@ -16,11 +16,13 @@ export function SectionReveal({
   className,
   children,
   delay = 0,
-  y = 18,
+  y = 12,
 }: SectionRevealProps) {
   const Component = as as ElementType;
+  // Reduce delays for faster perceived navigation - cap at 0.08s max
+  const clampedDelay = Math.min(delay, 0.08);
   const style = {
-    animationDelay: delay > 0 ? `${delay}s` : undefined,
+    animationDelay: clampedDelay > 0 ? `${clampedDelay}s` : undefined,
     '--reveal-y': `${y}px`,
   } as CSSProperties & Record<'--reveal-y', string>;
 
