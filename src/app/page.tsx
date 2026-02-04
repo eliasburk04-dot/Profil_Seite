@@ -34,7 +34,7 @@ export default function HomePage() {
               <span>{homeContent.heroBadge}</span>
             </div>
 
-            <h1 className="max-w-3xl text-display-sm sm:text-display">{profile.headline}</h1>
+            <h1 className="hero-headline max-w-3xl text-display-sm sm:text-display">{profile.headline}</h1>
             <p className="max-w-2xl text-body-lg text-text-secondary">{profile.subheadline}</p>
             <p className="max-w-2xl text-body text-text-secondary">{profile.positioningLine}</p>
           </div>
@@ -73,7 +73,7 @@ export default function HomePage() {
           {profile.whyBurk.map((item, index) => {
             const Icon = index === 0 ? ShieldCheck : index === 1 ? Compass : Sparkles;
             return (
-              <GlassCard key={item} variant="subtle" className="flex h-full gap-3 p-5">
+              <GlassCard key={item} variant="subtle" className="why-feature-pill flex h-full gap-3 p-5">
                 <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-border-accent bg-accent-muted">
                   <Icon className="h-4 w-4 text-accent-solid" />
                 </div>

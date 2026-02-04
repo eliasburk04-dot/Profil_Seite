@@ -26,6 +26,11 @@
 
       --shadow-frame: 0 20px 70px rgba(0,0,0,.55);
       --shadow-card:  0 10px 24px rgba(0,0,0,.45);
+      --glass-widget-bg: rgba(255,255,255,.08);
+      --glass-widget-border: rgba(255,255,255,.16);
+      --glass-tab-bg: rgba(255,255,255,.14);
+      --glass-tab-hover: rgba(255,255,255,.20);
+      --glass-tab-active: rgba(255,255,255,.24);
 
       --pad-frame: 18px;
       --pad-content: 16px;
@@ -96,9 +101,12 @@
     .sidebar{
       width: var(--sidebar-w);
       flex: 0 0 var(--sidebar-w);
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
+      background: rgba(20,30,60,.35);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      backdrop-filter: blur(22px) saturate(140%);
+      -webkit-backdrop-filter: blur(22px) saturate(140%);
+      box-shadow: 0 8px 30px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.08);
       padding: 10px;
       display:flex;
       flex-direction:column;
@@ -124,27 +132,32 @@
     .tab{
       height: 40px;
       width:100%;
-      border-radius: var(--r-md);
-      border: 1px solid transparent;
-      background: transparent;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: var(--glass-tab-bg);
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      box-shadow: 0 8px 18px rgba(0,0,0,.20), inset 0 1px 1px rgba(255,255,255,.07);
       color: var(--text);
       cursor:pointer;
       display:flex;
       align-items:center;
-      padding: 0 10px;
+      padding: 0 12px;
       position:relative;
-      transition: background var(--t), border-color var(--t);
+      transition: all 0.24s ease-out;
       font-size: 14px;
     }
 
     .tab:hover{
-      background: rgba(255,255,255,.04);
-      border-color: rgba(255,255,255,.05);
+      background: var(--glass-tab-hover);
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 10px 22px rgba(0,0,0,.24), inset 0 1px 1px rgba(255,255,255,.09);
     }
 
     .tab[aria-selected="true"]{
-      background: var(--accentWeak);
-      border-color: rgba(124,58,237,.35);
+      background: var(--glass-tab-active);
+      border-color: rgba(255,255,255,.26);
+      box-shadow: 0 12px 26px rgba(0,0,0,.28), 0 0 0 1px rgba(124,58,237,.30), inset 0 1px 1px rgba(255,255,255,.11);
       font-weight: 600;
     }
 
@@ -156,17 +169,20 @@
       bottom: 10px;
       width: 3px;
       border-radius: 3px;
-      background: var(--accent);
+      background: rgba(229,231,235,.88);
     }
-    .tab span{ padding-left: 8px; }
+    .tab span{ padding-left: 0; }
 
     /* Content */
     .content{
       flex: 1 1 auto;
       min-width: 0;
-      background: rgba(255,255,255,.02);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
+      background: var(--glass-widget-bg);
+      border: 1px solid var(--glass-widget-border);
+      border-radius: 20px;
+      backdrop-filter: blur(24px) saturate(140%);
+      -webkit-backdrop-filter: blur(24px) saturate(140%);
+      box-shadow: 0 8px 30px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.08);
       padding: var(--pad-content);
       display:flex;
       flex-direction:column;
@@ -267,17 +283,24 @@
       min-height: 0;
     }
     .card{
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 18px;
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(22px) saturate(140%);
+      -webkit-backdrop-filter: blur(22px) saturate(140%);
       padding: 12px;
-      box-shadow: var(--shadow-card);
-      transition: transform var(--t), border-color var(--t);
+      box-shadow: 0 8px 30px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.08);
+      transition: transform var(--t), border-color var(--t), background var(--t), box-shadow var(--t);
       display:flex;
       flex-direction:column;
       gap: 8px;
     }
-    .card:hover{ transform: translateY(-1px); border-color: rgba(124,58,237,.35); }
+    .card:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.10);
+      box-shadow: 0 12px 32px rgba(0,0,0,.38), inset 0 1px 1px rgba(255,255,255,.10);
+    }
 
     .cardTop{
       display:flex;

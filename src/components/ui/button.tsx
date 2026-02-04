@@ -25,9 +25,9 @@ const buttonVariants = cva(
           'active:translate-y-0 active:shadow-button-primary',
         ],
         secondary: [
-          'border-border bg-glass-medium text-text-primary shadow-button',
-          'before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:bg-gradient-to-b before:from-white/12 before:to-transparent',
-          'hover:-translate-y-1 hover:border-border-strong hover:bg-glass-strong hover:shadow-button-hover',
+          'border-white/20 bg-white/10 text-text-primary shadow-button backdrop-blur-lg',
+          'before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:bg-gradient-to-b before:from-white/22 before:to-transparent',
+          'hover:-translate-y-1 hover:border-white/35 hover:bg-white/16 hover:shadow-button-hover',
           'active:translate-y-0 active:shadow-button',
         ],
         ghost: [
@@ -36,8 +36,8 @@ const buttonVariants = cva(
           'active:bg-glass-light',
         ],
         outline: [
-          'border-border-strong bg-glass-subtle text-text-primary shadow-glass-xs',
-          'hover:-translate-y-1 hover:border-border-glow hover:shadow-glow-sm',
+          'border-white/24 bg-white/8 text-text-primary shadow-glass-xs backdrop-blur-lg',
+          'hover:-translate-y-1 hover:border-white/38 hover:shadow-glow-sm',
           'active:translate-y-0',
         ],
       },
