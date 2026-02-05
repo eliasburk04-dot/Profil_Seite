@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { Briefcase, FolderKanban, Home, Mail, Users, type LucideIcon } from 'lucide-react';
 import { navigation, profile } from '@/content';
@@ -56,7 +57,14 @@ export function Sidebar() {
         <div className="spatial-sidebar-top">
           <div className="spatial-brand">
             <span className="spatial-brand-dot" aria-hidden="true">
-              {profile.company.charAt(0)}
+              <Image
+                src="/logo.png"
+                alt=""
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain"
+                priority
+              />
             </span>
             <p className="spatial-brand-label">{profile.company}</p>
           </div>

@@ -1,6 +1,6 @@
 ﻿import type { Metadata, Viewport } from 'next';
 import { Manrope } from 'next/font/google';
-import { AppShell } from '@/components/layout';
+import { AppShell, BackgroundLayer } from '@/components/layout';
 import { siteMetadata } from '@/content';
 import './globals.css';
 
@@ -67,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${manrope.variable} dark`}>
       <body className="h-dvh w-screen overflow-hidden font-sans">
+        <BackgroundLayer />
         <AppShell>{children}</AppShell>
       </body>
     </html>

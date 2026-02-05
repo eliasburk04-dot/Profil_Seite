@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Sidebar } from './sidebar';
 import { MobileNav } from './mobile-nav';
 import { ScrollReset } from './scroll-reset';
@@ -9,17 +10,25 @@ interface AppShellProps {
 
 export function AppShell({ children }: AppShellProps) {
   return (
-    <div className="shell-stage relative h-dvh w-screen overflow-hidden">
+    <div className="shell-stage relative z-10 h-dvh w-screen overflow-hidden">
       <main className="relative flex h-full w-full items-center justify-center p-2 sm:p-4 lg:-translate-y-4 lg:p-6">
-        <div className="mx-auto h-[min(900px,calc(100dvh-1rem))] w-[min(1180px,calc(100vw-1rem))] sm:h-[min(900px,calc(100dvh-2rem))] sm:w-[min(1180px,calc(100vw-2rem))] lg:h-[min(900px,calc(100dvh-3rem))] lg:w-[min(1180px,calc(100vw-3rem))]">
-          <div className="shell-layout flex h-full items-stretch gap-4 overflow-hidden sm:gap-5 lg:gap-7">
+        <div className="mx-auto h-[min(900px,calc(100dvh-1rem))] w-[min(1320px,calc(100vw-1rem))] sm:h-[min(900px,calc(100dvh-2rem))] sm:w-[min(1320px,calc(100vw-2rem))] lg:h-[min(900px,calc(100dvh-3rem))] lg:w-[min(1320px,calc(100vw-3rem))]">
+          <div className="shell-layout flex h-full items-stretch gap-4 overflow-hidden sm:gap-5 lg:gap-7 lg:overflow-visible">
             <div className="hidden h-full lg:block lg:w-[248px] lg:shrink-0">
               <Sidebar />
             </div>
 
             <div className="shell-content-surface glass-reflection relative flex h-full min-w-0 flex-1 flex-col overflow-hidden rounded-3xl">
               <header className="flex h-14 shrink-0 items-center justify-between border-b border-border px-4 lg:hidden">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-text-secondary">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-text-secondary">
+                  <Image
+                    src="/logo.png"
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="h-6 w-6 object-contain"
+                    aria-hidden="true"
+                  />
                   {profile.company}
                 </span>
                 <MobileNav />

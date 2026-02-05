@@ -1,6 +1,6 @@
 ﻿import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle, Compass, Search, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle, Compass, ShieldCheck, Sparkles, User } from 'lucide-react';
 import {
   conversion,
   homeContent,
@@ -26,48 +26,59 @@ export default function HomePage() {
 
   return (
     <div className="section-stack">
-      <SectionReveal className="relative space-y-8">
-        <div className="relative z-10 flex items-start justify-between gap-5">
-          <div className="space-y-5 sm:space-y-6">
-            <div className="section-badge">
-              <Search className="h-3.5 w-3.5 text-accent-solid" />
-              <span>{homeContent.heroBadge}</span>
+      {/* Hero Section */}
+      <SectionReveal className="relative flex min-h-[40vh] flex-col justify-center py-2">
+        
+        {/* Hero Content Block - Grouped as single unit */}
+        <div className="relative w-full max-w-[52rem]">
+          <div className="relative z-10 flex flex-col gap-4">
+            {/* Badge & Logo Row */}
+            <div className="flex w-full items-center justify-between">
+              <div className="section-badge">
+                <User className="h-3.5 w-3.5 text-accent-solid" />
+                <span className="uppercase tracking-wider">{homeContent.heroBadge}</span>
+              </div>
+
+              <div className="hidden sm:flex h-10 w-10 items-center justify-center rounded-full border border-accent/30 bg-accent/10 shadow-glow cursor-default overflow-hidden" aria-hidden="true">
+                <Image
+                  src="/logo.png"
+                  alt=""
+                  width={26}
+                  height={26}
+                  className="h-[26px] w-[26px] object-contain"
+                />
+              </div>
             </div>
 
-            <h1 className="hero-headline max-w-3xl text-display-sm sm:text-display">{profile.headline}</h1>
-            <p className="max-w-2xl text-body-lg text-text-secondary">{profile.subheadline}</p>
-            <p className="max-w-2xl text-body text-text-secondary">{profile.positioningLine}</p>
-          </div>
+            {/* Headline */}
+            <h1 className="hero-headline max-w-none text-display-sm leading-[1.1] sm:text-display">{profile.headline}</h1>
+            
+            {/* Description Block */}
+            <div className="max-w-3xl space-y-2">
+              <p className="text-body-lg leading-relaxed text-text-secondary">{profile.subheadline}</p>
+              <p className="text-body leading-relaxed text-text-secondary opacity-80">{profile.positioningLine}</p>
+            </div>
 
-          <div className="brand-mark hidden sm:flex" aria-hidden="true">
-            <Image
-              src="/logo.png"
-              alt="Burk-Solutions Logo"
-              width={48}
-              height={48}
-              className="h-12 w-12 object-contain"
-              priority
-            />
+            {/* CTA Buttons */}
+            <div className="space-y-2 pt-2">
+              <div className="flex flex-wrap gap-3">
+                <GlowButton asChild className="px-6 py-6 text-base">
+                  <Link href="/contact">
+                    {conversion.primaryCtaLabel}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </GlowButton>
+                <Button asChild variant="secondary" className="border-white/10 bg-white/5 px-6 py-6 text-base hover:bg-white/10">
+                  <Link href="/services">{conversion.secondaryCtaLabel}</Link>
+                </Button>
+              </div>
+              <p className="pl-1 text-sm text-text-muted opacity-70">{conversion.trustLine}</p>
+            </div>
           </div>
-        </div>
-
-        <div className="relative z-10 space-y-3">
-          <div className="flex flex-wrap gap-3">
-            <GlowButton asChild>
-              <Link href="/contact">
-                {conversion.primaryCtaLabel}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </GlowButton>
-            <Button asChild variant="secondary">
-              <Link href="/services">{conversion.secondaryCtaLabel}</Link>
-            </Button>
-          </div>
-          <p className="text-sm text-text-muted">{conversion.trustLine}</p>
         </div>
       </SectionReveal>
 
-      <SectionReveal delay={0.05} className="space-y-4">
+      <SectionReveal delay={0.05} className="space-y-4 pt-6">
         <SectionHeader title={homeContent.whySectionTitle} description="Was Kunden an unserer Zusammenarbeit besonders schätzen." />
         <div className="grid gap-4 md:grid-cols-3">
           {profile.whyBurk.map((item, index) => {

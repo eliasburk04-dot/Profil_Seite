@@ -64,7 +64,17 @@ export function MobileNav() {
           )}
         >
           <div className="flex h-14 items-center justify-between border-b border-border px-4">
-            <p className="text-caption uppercase tracking-[0.14em] text-text-secondary">{profile.company}</p>
+            <div className="inline-flex items-center gap-2">
+              <Image
+                src="/logo.png"
+                alt=""
+                width={22}
+                height={22}
+                className="h-[22px] w-[22px] object-contain"
+                aria-hidden="true"
+              />
+              <p className="text-caption uppercase tracking-[0.14em] text-text-secondary">{profile.company}</p>
+            </div>
             <Dialog.Close asChild>
               <button
                 className="flex h-9 w-9 items-center justify-center rounded-2xl border border-border bg-glass-subtle text-text-secondary transition-all duration-200 hover:border-border-strong hover:text-text-primary"
