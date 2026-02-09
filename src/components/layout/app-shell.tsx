@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Sidebar } from './sidebar';
 import { MobileNav } from './mobile-nav';
 import { ScrollReset } from './scroll-reset';
@@ -42,6 +43,22 @@ export function AppShell({ children }: AppShellProps) {
                   className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-bg-primary/75 via-bg-primary/20 to-transparent"
                   aria-hidden="true"
                 />
+                <div className="absolute bottom-3 left-4 z-10 text-[11px] text-text-muted opacity-55 transition-opacity hover:opacity-90">
+                  <span className="mr-2">Rechtliches für Stirnraten-Spiel:</span>
+                  <Link
+                    href="/stirnraten/datenschutz"
+                    className="underline decoration-dotted underline-offset-2 hover:text-text-primary"
+                  >
+                    Datenschutzerklärung
+                  </Link>
+                  <span className="mx-1">·</span>
+                  <Link
+                    href="/stirnraten/impressum"
+                    className="underline decoration-dotted underline-offset-2 hover:text-text-primary"
+                  >
+                    Impressum
+                  </Link>
+                </div>
                 <div className="scroll-hint-bob pointer-events-none absolute bottom-3 right-4 rounded-full border border-border-subtle bg-bg-secondary/55 px-2.5 py-1 text-2xs uppercase tracking-[0.1em] text-text-muted">
                   {conversion.scrollHint}
                 </div>

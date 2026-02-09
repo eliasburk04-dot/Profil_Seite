@@ -129,7 +129,7 @@ export default function ContactPage() {
                 <label htmlFor="email" className="text-sm font-medium text-text-primary">
                   E-Mail *
                 </label>
-                <GlassInput id="email" type="email" name="email" placeholder="ihre@email.de" required />
+                <GlassInput id="email" type="email" name="email" placeholder="eliasburk04@gmail.com" required />
               </div>
             </div>
 

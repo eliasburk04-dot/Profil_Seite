@@ -39,7 +39,7 @@ export const profile = {
   name: 'Burk-Solutions',
   company: 'Burk-Solutions',
   role: 'Digitale Lösungen für Unternehmen',
-  email: 'kontakt@burk-solutions.de',
+  email: 'eliasburk04@gmail.com',
   location: 'Deutschland',
   availability: 'Aktuell verfügbar für neue Projekte',
 
