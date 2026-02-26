@@ -447,6 +447,7 @@ export const navigation: NavItem[] = [
   { label: 'Leistungen', href: '/services', icon: 'Briefcase' },
   { label: 'Projekte', href: '/projects', icon: 'FolderKanban' },
   { label: 'Kontakt', href: '/contact', icon: 'Mail' },
+  { label: 'Apps', href: '/apps', icon: 'Smartphone' },
 ];
 
 export const featureFlags = {

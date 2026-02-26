@@ -11,6 +11,7 @@ import {
   Home,
   Mail,
   Menu,
+  Smartphone,
   Users,
   X,
   type LucideIcon,
@@ -24,6 +25,7 @@ const navIconMap: Record<string, LucideIcon> = {
   Briefcase,
   FolderKanban,
   Mail,
+  Smartphone,
 };
 
 export function MobileNav() {

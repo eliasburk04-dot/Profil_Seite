@@ -4,7 +4,7 @@ import { useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
-import { Briefcase, FolderKanban, Home, Mail, Users, type LucideIcon } from 'lucide-react';
+import { Briefcase, FolderKanban, Home, Mail, Smartphone, Users, type LucideIcon } from 'lucide-react';
 import { navigation, profile } from '@/content';
 import { cn } from '@/lib/utils';
 
@@ -14,6 +14,7 @@ const navIconMap: Record<string, LucideIcon> = {
   Briefcase,
   FolderKanban,
   Mail,
+  Smartphone,
 };
 
 export function Sidebar() {
