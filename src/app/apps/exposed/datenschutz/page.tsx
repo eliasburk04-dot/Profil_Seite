@@ -108,8 +108,8 @@ export default function ExposedDatenschutzPage() {
             <section className="space-y-3">
                 <h2>5. Jugendschutz</h2>
                 <p className="text-body text-text-secondary">
-                    EXPOSED ist mit 17+ eingestuft und enthält optionale NSFW-Inhalte für Erwachsene.
-                    Wir erheben wissentlich keine personenbezogenen Daten von Kindern unter 17 Jahren.
+                    EXPOSED ist mit 18+ eingestuft und enthält optionale NSFW-Inhalte für Erwachsene.
+                    Wir erheben wissentlich keine personenbezogenen Daten von Kindern unter 18 Jahren.
                     Der NSFW-Modus ist standardmäßig deaktiviert und muss explizit aktiviert werden.
                     Falls du glaubst, dass ein Kind über unsere App personenbezogene Daten bereitgestellt hat,
                     kontaktiere uns bitte, damit wir entsprechende Maßnahmen ergreifen können.
@@ -158,7 +158,7 @@ export default function ExposedDatenschutzPage() {
                 <p className="text-body text-text-secondary">
                     Elias Burk
                     <br />
-                    E-Mail: <a href="mailto:elias@burk-solutions.de">elias@burk-solutions.de</a>
+                    E-Mail: <a href="mailto:eliasburk04@gmail.com">eliasburk04@gmail.com</a>
                 </p>
             </section>
         </div>
