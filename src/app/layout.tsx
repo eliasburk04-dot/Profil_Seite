@@ -1,6 +1,7 @@
 ﻿import type { Metadata, Viewport } from 'next';
 import { Inter, Source_Serif_4 } from 'next/font/google';
 import { AppShell, BackgroundLayer } from '@/components/layout';
+import { OrganizationJsonLd, WebSiteJsonLd, ServiceJsonLd } from '@/components/seo/json-ld';
 import { siteMetadata } from '@/content';
 import './globals.css';
 
@@ -77,6 +78,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de" className="dark">
       <body className={`min-h-screen w-full overflow-x-hidden font-sans ${inter.variable} ${sourceSerif.variable}`}>
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
+        <ServiceJsonLd />
         <BackgroundLayer />
         <AppShell>{children}</AppShell>
       </body>

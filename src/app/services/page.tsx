@@ -14,9 +14,9 @@ import {
 import { createPageMetadata } from '@/lib/metadata';
 
 export const metadata = createPageMetadata({
-  title: servicesContent.title,
+  title: 'Leistungen – Websites, Web Apps & Mobile Apps entwickeln lassen',
   description:
-    'Burk-Solutions entwickelt Websites, Automatisierungen und Integrationen für Unternehmen mit klaren Zielen und sauberer Umsetzung.',
+    'Burk-Solutions bietet drei Leistungsbereiche: professionelle Websites & Landingpages, leistungsfähige Web Apps und native mobile Apps für iOS & Android. Jetzt Erstgespräch vereinbaren.',
   path: '/services',
 });
 

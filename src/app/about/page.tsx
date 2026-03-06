@@ -13,9 +13,9 @@ import {
 import { createPageMetadata } from '@/lib/metadata';
 
 export const metadata = createPageMetadata({
-  title: aboutContent.title,
+  title: 'Über Burk-Solutions – Ihre Agentur für Websites, Web Apps & Mobile Apps',
   description:
-    'Erfahren Sie, wie Burk-Solutions digitale Projekte strukturiert umsetzt und langfristig betreut.',
+    'Lernen Sie Burk-Solutions kennen: Ihr Partner für professionelle Websites, Web Apps und mobile Apps. Spezialisiert auf React, Next.js und Flutter – aus Ludwigsburg, Deutschland.',
   path: '/about',
 });
 

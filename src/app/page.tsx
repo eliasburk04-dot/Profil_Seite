@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { FAQJsonLd } from '@/components/seo/json-ld';
+import { createPageMetadata } from '@/lib/metadata';
 import {
   conversion,
   homeContent,
@@ -19,9 +21,17 @@ import {
   ServiceCard,
 } from '@/components/ui';
 
+export const metadata = createPageMetadata({
+  title: 'Burk-Solutions | Websites, Web Apps & Mobile Apps entwickeln lassen',
+  description:
+    'Burk-Solutions entwickelt professionelle Websites, leistungsfähige Web Apps und native mobile Apps für Unternehmen. Kostenlose Erstberatung – aus Deutschland.',
+  path: '/',
+});
+
 export default function HomePage() {
   return (
     <div className="section-stack">
+      <FAQJsonLd items={profile.faq} />
       <SectionReveal>
         <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-24 px-6 sm:px-8">
 

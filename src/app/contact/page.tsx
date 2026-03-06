@@ -19,9 +19,9 @@ const needIcons = {
 } as const;
 
 export const metadata = createPageMetadata({
-  title: contactContent.title,
+  title: 'Kontakt – Kostenloses Erstgespräch für Ihr Website- oder App-Projekt',
   description:
-    'Nehmen Sie Kontakt zu Burk-Solutions auf. Wir antworten schnell, transparent und mit einem klaren Vorschlag für die nächsten Schritte.',
+    'Starten Sie Ihr digitales Projekt mit Burk-Solutions. Kostenloses, unverbindliches Erstgespräch für Websites, Web Apps und mobile Apps. Antwort innerhalb von 24–48h.',
   path: '/contact',
 });
 
