@@ -33,7 +33,7 @@ export default function HomePage() {
     <div className="section-stack">
       <FAQJsonLd items={profile.faq} />
       <SectionReveal>
-        <section className="relative min-h-screen flex flex-col items-center justify-center pb-32 px-6 sm:px-8">
+        <section className="relative min-h-screen flex flex-col items-center justify-center py-24 px-6 sm:px-8">
 
           <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto w-full space-y-10">
             <div className="section-badge w-fit bg-white/5 border border-white/10 text-white/80 rounded-full px-4 py-1.5 flex items-center gap-2 backdrop-blur-md">
