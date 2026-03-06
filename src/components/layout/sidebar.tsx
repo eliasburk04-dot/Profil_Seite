@@ -4,7 +4,15 @@ import { useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
-import { Briefcase, FolderKanban, Home, Mail, Smartphone, Users, type LucideIcon } from 'lucide-react';
+import {
+  Briefcase,
+  FolderKanban,
+  Home,
+  Mail,
+  Smartphone,
+  Users,
+  type LucideIcon,
+} from 'lucide-react';
 import { navigation, profile } from '@/content';
 import { cn } from '@/lib/utils';
 
@@ -50,10 +58,7 @@ export function Sidebar() {
   );
 
   return (
-    <aside
-      className="spatial-sidebar group/sidebar"
-      aria-label="Navigation"
-    >
+    <aside className="spatial-sidebar group/sidebar" aria-label="Navigation">
       <div className="spatial-sidebar-shell">
         <div className="spatial-sidebar-top">
           <div className="spatial-brand">
@@ -83,19 +88,14 @@ export function Sidebar() {
                 prefetch={true}
                 onMouseEnter={() => handlePrefetch(item.href)}
                 onFocus={() => handlePrefetch(item.href)}
-                className={cn(
-                  'spatial-nav-item',
-                  isActive && 'is-active'
-                )}
+                className={cn('spatial-nav-item', isActive && 'is-active')}
                 aria-current={isActive ? 'page' : undefined}
               >
                 <span className="spatial-nav-icon" aria-hidden="true">
                   {IconComponent && <IconComponent className="h-5 w-5" />}
                 </span>
 
-                <span className="spatial-nav-label">
-                  {item.label}
-                </span>
+                <span className="spatial-nav-label">{item.label}</span>
               </Link>
             );
           })}

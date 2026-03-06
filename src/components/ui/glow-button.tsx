@@ -50,4 +50,3 @@ export const GlowButton = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 GlowButton.displayName = 'GlowButton';
-

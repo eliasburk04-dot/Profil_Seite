@@ -1,107 +1,126 @@
-﻿import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight, Building2, CheckCircle } from 'lucide-react';
-import { aboutContent, conversion, profile } from '@/content';
-import { Button, Divider, GlassCard, SectionHeader, SectionReveal } from '@/components/ui';
+import { ArrowRight, CheckCircle2, Quote } from 'lucide-react';
+import { aboutContent, conversion, homeContent, profile, servicesContent } from '@/content';
+import {
+  Button,
+  CtaBand,
+  GlassCard,
+  PageHero,
+  ProcessTimeline,
+  SectionHeader,
+  SectionReveal,
+} from '@/components/ui';
+import { createPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: aboutContent.title,
-  description: 'Erfahren Sie, wie Burk-Solutions Projekte strukturiert umsetzt und langfristig betreut.',
-};
+  description:
+    'Erfahren Sie, wie Burk-Solutions digitale Projekte strukturiert umsetzt und langfristig betreut.',
+  path: '/about',
+});
 
 export default function AboutPage() {
+  const bioParagraphs = profile.bio.split('\n\n');
+
   return (
     <div className="section-stack">
-      <SectionReveal className="space-y-5">
-        <div className="flex items-start justify-between gap-5">
-          <div className="space-y-3">
-            <div className="section-badge">
-              <Building2 className="h-3.5 w-3.5 text-accent-solid" />
-              <span>{profile.company}</span>
+      <SectionReveal>
+        <PageHero
+          badge={aboutContent.title}
+          title={aboutContent.subtitle}
+          description={bioParagraphs[0]}
+          supportingText={aboutContent.quote}
+          actions={
+            <>
+              <Button asChild variant="primary" size="lg">
+                <Link href="/contact">
+                  {conversion.primaryCtaLabel}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="secondary" size="lg">
+                <Link href="/services">{conversion.secondaryCtaLabel}</Link>
+              </Button>
+            </>
+          }
+          stats={[
+            { value: `${profile.workflow.length} Schritte`, label: 'klar definierter Ablauf' },
+            { value: 'Verlässlich', label: 'transparente Kommunikation im Projekt' },
+            { value: 'Langfristig', label: 'Weiterentwicklung nach dem Launch' },
+          ]}
+        />
+      </SectionReveal>
+
+      <SectionReveal delay={0.05} className="space-y-6">
+        <SectionHeader title={aboutContent.title} description={profile.positioningLine} />
+
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)]">
+          <div className="grid gap-4">
+            {bioParagraphs.map((paragraph) => (
+              <GlassCard key={paragraph} variant="subtle" className="p-5 sm:p-6">
+                <p className="text-body-sm text-text-secondary">{paragraph}</p>
+              </GlassCard>
+            ))}
+          </div>
+
+          <GlassCard className="p-6 sm:p-7">
+            <div className="space-y-5">
+              <p className="text-eyebrow uppercase text-white/48">{homeContent.whySectionTitle}</p>
+              <ul className="space-y-4">
+                {profile.whyBurk.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-tone-green" />
+                    <span className="text-sm text-text-secondary">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <h1>{aboutContent.title}</h1>
-            <p className="max-w-3xl text-body text-text-secondary">{aboutContent.subtitle}</p>
-          </div>
-
-          <div className="brand-mark hidden sm:flex" aria-hidden="true">
-            <Image
-              src="/logo.png"
-              alt="Burk-Solutions Logo"
-              width={48}
-              height={48}
-              className="h-12 w-12 object-contain"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-wrap gap-3">
-          <Button asChild variant="primary">
-            <Link href="/contact">
-              {conversion.primaryCtaLabel}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-          <Button asChild variant="secondary">
-            <Link href="/services">{conversion.secondaryCtaLabel}</Link>
-          </Button>
+          </GlassCard>
         </div>
       </SectionReveal>
 
-      <SectionReveal delay={0.05} className="space-y-4">
-        {profile.bio.split('\n\n').map((paragraph) => (
-          <p key={paragraph} className="max-w-3xl text-body text-text-secondary">
-            {paragraph}
-          </p>
-        ))}
-      </SectionReveal>
+      <SectionReveal delay={0.08} className="space-y-6">
+        <SectionHeader
+          title={profile.competencies.title}
+          description={profile.competencies.description}
+        />
 
-      <Divider />
-
-      <SectionReveal delay={0.09} className="space-y-6">
-        <SectionHeader title={profile.workflowTitle} description={profile.workflowDescription} />
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          {profile.workflow.map((step) => (
-            <GlassCard key={step.step} hover className="flex gap-4 p-5">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-border-accent bg-accent-muted text-sm font-semibold text-accent-solid">
-                {step.step}
-              </div>
-              <div className="space-y-1.5">
-                <h3 className="text-lg font-semibold text-text-primary">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-text-secondary">{step.description}</p>
-              </div>
-            </GlassCard>
-          ))}
-        </div>
-      </SectionReveal>
-
-      <Divider glow />
-
-      <SectionReveal delay={0.12} className="space-y-6">
-        <SectionHeader title={profile.competencies.title} description={profile.competencies.description} />
-
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {profile.competencies.items.map((item) => (
-            <GlassCard key={item.title} hover className="flex gap-4 p-5">
-              <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-success" />
-              <div className="space-y-1.5">
-                <h3 className="text-lg font-semibold text-text-primary">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-text-secondary">{item.description}</p>
+            <GlassCard key={item.title} variant="subtle" className="p-5 sm:p-6">
+              <div className="space-y-3">
+                <h3 className="text-[1.35rem] leading-[1.08] tracking-[-0.03em]">{item.title}</h3>
+                <p className="text-body-sm text-text-secondary">{item.description}</p>
               </div>
             </GlassCard>
           ))}
         </div>
       </SectionReveal>
 
-      <SectionReveal delay={0.15} className="space-y-4">
-        <Divider />
-        <GlassCard variant="elevated" glow className="p-6 sm:p-8">
-          <blockquote className="space-y-4">
-            <p className="text-lg font-medium italic leading-relaxed text-text-primary">&ldquo;{aboutContent.quote}&rdquo;</p>
-            <footer className="text-sm text-text-muted">— {aboutContent.quoteAuthor}</footer>
-          </blockquote>
-        </GlassCard>
+      <SectionReveal delay={0.11} className="space-y-6">
+        <SectionHeader title={profile.workflowTitle} description={profile.workflowDescription} />
+        <ProcessTimeline steps={profile.workflow} />
+      </SectionReveal>
+
+      <SectionReveal delay={0.14}>
+        <CtaBand
+          eyebrow="Zusammenarbeit"
+          title={servicesContent.ctaTitle}
+          description={profile.pitch}
+          actions={
+            <>
+              <Button asChild variant="primary" size="lg">
+                <Link href="/contact">
+                  {conversion.primaryCtaLabel}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="secondary" size="lg">
+                <Link href="/services">Leistungen ansehen</Link>
+              </Button>
+            </>
+          }
+        />
       </SectionReveal>
     </div>
   );

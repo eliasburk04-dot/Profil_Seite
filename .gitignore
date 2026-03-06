@@ -37,9 +37,12 @@ next-env.d.ts
 
 # Testing
 coverage/
+playwright-report/
+test-results/
 
 # Vercel
 .vercel
 
 # Misc
 *.log
+.env*.local

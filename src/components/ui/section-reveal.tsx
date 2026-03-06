@@ -1,4 +1,7 @@
-import type { ElementType, ReactNode } from 'react';
+'use client';
+
+import type { ReactNode } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 type RevealElement = 'div' | 'section' | 'article';
@@ -16,12 +19,26 @@ export function SectionReveal({
   as = 'section',
   className,
   children,
+  delay = 0,
+  y = 20,
 }: SectionRevealProps) {
-  const Component = as as ElementType;
+  const shouldReduceMotion = useReducedMotion();
+  const MotionComponent =
+    as === 'div' ? motion.div : as === 'article' ? motion.article : motion.section;
 
   return (
-    <Component className={cn(className)}>
+    <MotionComponent
+      className={cn(className)}
+      initial={shouldReduceMotion ? false : { opacity: 0, y }}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.55,
+        delay: shouldReduceMotion ? 0 : delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
       {children}
-    </Component>
+    </MotionComponent>
   );
 }

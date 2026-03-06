@@ -1,18 +1,15 @@
-﻿import type { Metadata } from 'next';
-import { ArrowRight, Calendar, CheckCircle, Clock, Euro, FileText, Mail, MessageSquare } from 'lucide-react';
+import { Calendar, Euro, FileText, Mail, MessageSquare } from 'lucide-react';
 import { contactContent, conversion, profile } from '@/content';
 import {
-  Button,
-  Divider,
+  ContactForm,
   FAQAccordion,
   GlassCard,
-  GlassInput,
-  GlassSelect,
-  GlassTextarea,
-  GlowButton,
+  PageHero,
   SectionHeader,
   SectionReveal,
+  TagPill,
 } from '@/components/ui';
+import { createPageMetadata } from '@/lib/metadata';
 
 const needIcons = {
   FileText,
@@ -21,182 +18,116 @@ const needIcons = {
   MessageSquare,
 } as const;
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: contactContent.title,
   description:
     'Nehmen Sie Kontakt zu Burk-Solutions auf. Wir antworten schnell, transparent und mit einem klaren Vorschlag für die nächsten Schritte.',
-};
+  path: '/contact',
+});
 
 export default function ContactPage() {
   return (
     <div className="section-stack">
-      <SectionReveal className="space-y-5">
-        <h1>{contactContent.title}</h1>
-        <p className="max-w-3xl text-body-lg text-text-secondary">{contactContent.description}</p>
-        <p className="text-sm text-text-muted">{conversion.trustLine}</p>
+      <SectionReveal>
+        <PageHero
+          badge={contactContent.title}
+          title="Starten Sie Ihr digitales Projekt."
+          description={contactContent.description}
+          supportingText={conversion.trustLine}
+          stats={[
+            { value: '24–48h', label: 'typische Rückmeldung' },
+            { value: 'Kostenlos', label: 'unverbindliches Erstgespräch' },
+            { value: 'Transparent', label: 'klare Einordnung vor dem Start' },
+          ]}
+        />
       </SectionReveal>
 
-      <SectionReveal delay={0.05}>
-        <GlassCard className="p-5">
-          <div className="flex flex-wrap gap-x-8 gap-y-3">
-            {profile.contactPromises.map((promise) => (
-              <div key={promise} className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 shrink-0 text-success" />
-                <span className="text-sm text-text-primary">{promise}</span>
-              </div>
-            ))}
-          </div>
-        </GlassCard>
-      </SectionReveal>
-
-      <SectionReveal delay={0.08} className="grid gap-4 md:grid-cols-2">
-        <GlassCard variant="elevated" className="flex flex-col gap-4 p-6">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border-accent bg-accent-muted shadow-glow-sm">
-            <Mail className="h-6 w-6 text-accent-solid" />
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-text-primary">{contactContent.directMailTitle}</h3>
-            <p className="text-text-secondary">{contactContent.directMailDescription}</p>
-          </div>
-          <GlowButton asChild className="mt-auto w-fit">
-            <a href={`mailto:${profile.email}`}>
-              {conversion.primaryCtaLabel}
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </GlowButton>
-        </GlassCard>
-
-        <GlassCard className="flex flex-col gap-4 p-6">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-glass-medium">
-            <Clock className="h-6 w-6 text-text-secondary" />
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-text-primary">{contactContent.responseTitle}</h3>
-            <p className="text-text-secondary">{contactContent.responseDescription}</p>
-          </div>
-          <div className="mt-auto flex items-center gap-2 text-sm text-text-muted">
-            <span className="h-2 w-2 rounded-full bg-success" />
-            {profile.availability}
-          </div>
-        </GlassCard>
-      </SectionReveal>
-
-      <Divider />
-
-      <SectionReveal delay={0.1} className="space-y-4">
-        <SectionHeader title={contactContent.whatWeNeedTitle} description={contactContent.whatWeNeedDescription} />
-
-        <GlassCard className="p-6">
-          <ul className="grid gap-4 sm:grid-cols-2">
-            {contactContent.whatWeNeed.map((entry) => {
-              const Icon = needIcons[entry.icon];
-              return (
-                <li key={entry.title} className="flex gap-3">
-                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-accent-solid" />
-                  <div>
-                    <p className="font-medium text-text-primary">{entry.title}</p>
-                    <p className="text-sm text-text-secondary">{entry.description}</p>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </GlassCard>
-      </SectionReveal>
-
-      <Divider glow />
-
-      <SectionReveal delay={0.12} className="space-y-4">
-        <SectionHeader title={contactContent.faqTitle} description={contactContent.faqDescription} />
-        <FAQAccordion items={profile.faq} />
-      </SectionReveal>
-
-      <Divider />
-
-      <SectionReveal delay={0.14} className="space-y-4">
-        <SectionHeader title={contactContent.formTitle} description={contactContent.formDescription} />
-
-        <GlassCard className="p-6 sm:p-8">
-          <form className="space-y-5">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-text-primary">
-                  Name *
-                </label>
-                <GlassInput id="name" name="name" placeholder="Ihr Name" required />
+      <SectionReveal
+        delay={0.05}
+        className="grid gap-6 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]"
+      >
+        <div className="space-y-6">
+          <GlassCard variant="subtle" className="p-5 sm:p-6">
+            <div className="space-y-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-white/[0.05] text-accent-solid">
+                <Mail className="h-5 w-5" />
               </div>
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-text-primary">
-                  E-Mail *
-                </label>
-                <GlassInput id="email" type="email" name="email" placeholder="eliasburk04@gmail.com" required />
+                <p className="text-eyebrow uppercase text-white/48">
+                  {contactContent.directMailTitle}
+                </p>
+                <p className="text-body-sm text-text-secondary">
+                  {contactContent.directMailDescription}
+                </p>
               </div>
+              <a href={`mailto:${profile.email}`} className="text-sm font-medium text-white hover:text-accent-solid">
+                {profile.email}
+              </a>
             </div>
+          </GlassCard>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="space-y-2">
-                <label htmlFor="company" className="text-sm font-medium text-text-primary">
-                  Unternehmen
-                </label>
-                <GlassInput id="company" name="company" placeholder="Ihr Unternehmen (optional)" />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="budget" className="text-sm font-medium text-text-primary">
-                  Budget-Rahmen
-                </label>
-                <GlassSelect id="budget" name="budget" defaultValue="">
-                  <option value="">Bitte wählen...</option>
-                  <option value="small">Unter 3.000 €</option>
-                  <option value="medium">3.000 – 10.000 €</option>
-                  <option value="large">10.000 – 25.000 €</option>
-                  <option value="enterprise">Über 25.000 €</option>
-                  <option value="unknown">Noch unklar</option>
-                </GlassSelect>
-              </div>
+          <GlassCard variant="subtle" className="p-5 sm:p-6">
+            <div className="space-y-4">
+              <TagPill variant="accent">{profile.availability}</TagPill>
+              <ul className="space-y-3">
+                {profile.contactPromises.map((promise) => (
+                  <li key={promise} className="text-sm text-text-secondary">
+                    {promise}
+                  </li>
+                ))}
+              </ul>
             </div>
+          </GlassCard>
 
-            <div className="space-y-2">
-              <label htmlFor="subject" className="text-sm font-medium text-text-primary">
-                Betreff *
-              </label>
-              <GlassInput id="subject" name="subject" placeholder="Worum geht es?" required />
-            </div>
+          <GlassCard variant="subtle" className="p-6 sm:p-7">
+            <SectionHeader
+              title={contactContent.whatWeNeedTitle}
+              description={contactContent.whatWeNeedDescription}
+              className="space-y-2"
+            />
+            <ul className="mt-6 grid gap-4">
+              {contactContent.whatWeNeed.map((entry) => {
+                const Icon = needIcons[entry.icon];
 
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium text-text-primary">
-                Nachricht *
-              </label>
-              <GlassTextarea
-                id="message"
-                name="message"
-                rows={5}
-                placeholder="Beschreiben Sie Ihr Projekt oder Anliegen..."
-                required
-              />
-            </div>
+                return (
+                  <li
+                    key={entry.title}
+                    className="rounded-[1.4rem] border border-white/8 bg-black/18 p-4"
+                  >
+                    <div className="flex gap-3">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.05] text-accent-solid">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <div className="space-y-1">
+                        <p className="font-medium text-white">{entry.title}</p>
+                        <p className="text-sm text-text-secondary">{entry.description}</p>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </GlassCard>
 
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-xs text-text-muted">{contactContent.formHint}</p>
-              <Button type="button" variant="primary" disabled>
-                Nachricht senden
-              </Button>
-            </div>
-          </form>
-        </GlassCard>
-      </SectionReveal>
+          <GlassCard variant="subtle" className="p-6 sm:p-7">
+            <SectionHeader
+              title={contactContent.faqTitle}
+              description={contactContent.faqDescription}
+              className="space-y-2"
+            />
+            <FAQAccordion items={profile.faq} className="mt-6" />
+          </GlassCard>
+        </div>
 
-      <SectionReveal delay={0.16}>
-        <GlassCard variant="subtle" className="flex flex-col items-center gap-3 p-6 text-center sm:flex-row sm:justify-between sm:text-left">
-          <div>
-            <p className="font-medium text-text-primary">{contactContent.fallbackTitle}</p>
-            <p className="text-sm text-text-muted">{profile.email}</p>
+        <GlassCard variant="elevated" className="p-6 sm:p-8">
+          <SectionHeader
+            title={contactContent.formTitle}
+            description={contactContent.formDescription}
+            className="space-y-2"
+          />
+          <div className="mt-6">
+            <ContactForm recipientEmail={profile.email} formHint={contactContent.formHint} />
           </div>
-          <Button asChild variant="secondary">
-            <a href={`mailto:${profile.email}`}>
-              <Mail className="h-4 w-4" />
-              E-Mail öffnen
-            </a>
-          </Button>
         </GlassCard>
       </SectionReveal>
     </div>

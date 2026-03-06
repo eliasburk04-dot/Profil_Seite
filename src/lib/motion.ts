@@ -1,6 +1,6 @@
 /**
  * Motion Design Tokens - Centralized animation configuration
- * 
+ *
  * All durations, easings, and animation values in one place.
  * Use CSS custom properties for CSS-based animations and
  * export JS values for any JS-based animation needs.

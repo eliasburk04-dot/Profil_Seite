@@ -1,10 +1,11 @@
-﻿import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
 interface SectionHeaderProps {
   title: string;
   description?: string;
   className?: string;
   align?: 'left' | 'center';
+  eyebrow?: string;
 }
 
 export function SectionHeader({
@@ -12,17 +13,38 @@ export function SectionHeader({
   description,
   className,
   align = 'left',
+  eyebrow,
 }: SectionHeaderProps) {
+  const centered = align === 'center';
+
   return (
-    <div className={cn('space-y-3', align === 'center' && 'text-center', className)}>
-      <div className={cn('h-px w-16 rounded-full bg-accent/70', align === 'center' && 'mx-auto')} />
-      <h2 className="text-heading sm:text-[1.9rem]">{title}</h2>
-      {description && (
-        <p className={cn('max-w-2xl text-body text-text-secondary', align === 'center' && 'mx-auto')}>
-          {description}
-        </p>
-      )}
+    <div className={cn('space-y-4', centered && 'text-center', className)}>
+      <div
+        className={cn(
+          'inline-flex items-center gap-3 text-eyebrow uppercase text-white/60',
+          centered && 'mx-auto'
+        )}
+      >
+        <span className="h-px w-12 bg-white/18" />
+        <span>{eyebrow ?? 'Burk-Solutions'}</span>
+      </div>
+      <div className={cn('space-y-3', centered && 'mx-auto max-w-3xl')}>
+        <h2>
+          {title.split(' ').length > 1 ? (
+            <>
+              {title.split(' ').slice(0, -1).join(' ')}{' '}
+              <span className="rich-accent">{title.split(' ').slice(-1)[0]}</span>
+            </>
+          ) : (
+            title
+          )}
+        </h2>
+        {description && (
+          <p className={cn('max-w-2xl text-body text-text-secondary', centered && 'mx-auto')}>
+            {description}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
-

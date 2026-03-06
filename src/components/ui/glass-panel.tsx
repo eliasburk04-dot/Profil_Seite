@@ -17,10 +17,7 @@ export const GlassPanel = forwardRef<HTMLDivElement, GlassPanelProps>(
         {...props}
       >
         {showTopBar && (
-          <div
-            className="relative h-11 shrink-0 border-b border-border"
-            aria-hidden="true"
-          />
+          <div className="relative h-11 shrink-0 border-b border-border" aria-hidden="true" />
         )}
         {children}
       </div>
@@ -29,4 +26,3 @@ export const GlassPanel = forwardRef<HTMLDivElement, GlassPanelProps>(
 );
 
 GlassPanel.displayName = 'GlassPanel';
-

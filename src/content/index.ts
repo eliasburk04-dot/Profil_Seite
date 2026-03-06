@@ -28,6 +28,28 @@ export type ContactNeed = {
   icon: 'FileText' | 'Calendar' | 'Euro' | 'MessageSquare';
 };
 
+export type AppLink = {
+  label: string;
+  href: string;
+};
+
+export type AppEntry = {
+  name: string;
+  description: string;
+  links: AppLink[];
+};
+
+export type FooterLink = {
+  label: string;
+  href: string;
+};
+
+export type LegalSection = {
+  title: string;
+  paragraphs: string[];
+  items?: string[];
+};
+
 export const conversion = {
   primaryCtaLabel: 'Kostenloses Erstgespräch',
   secondaryCtaLabel: 'Leistungen ansehen',
@@ -79,22 +101,26 @@ Was uns auszeichnet: Wir kommunizieren offen, halten Zusagen ein und denken lang
     {
       step: 1,
       title: 'Ziele klären',
-      description: 'Wir besprechen, welche Ergebnisse Sie erreichen möchten und worauf es in Ihrem Markt wirklich ankommt.',
+      description:
+        'Wir besprechen, welche Ergebnisse Sie erreichen möchten und worauf es in Ihrem Markt wirklich ankommt.',
     },
     {
       step: 2,
       title: 'Design & Struktur',
-      description: 'Wir definieren eine klare Seitenstruktur und ein Design, das Vertrauen schafft und Entscheidungen erleichtert.',
+      description:
+        'Wir definieren eine klare Seitenstruktur und ein Design, das Vertrauen schafft und Entscheidungen erleichtert.',
     },
     {
       step: 3,
       title: 'Umsetzung & Tests',
-      description: 'Wir setzen Ihr Projekt sauber um, testen gründlich und stimmen die wichtigsten Schritte eng mit Ihnen ab.',
+      description:
+        'Wir setzen Ihr Projekt sauber um, testen gründlich und stimmen die wichtigsten Schritte eng mit Ihnen ab.',
     },
     {
       step: 4,
       title: 'Launch & Betreuung',
-      description: 'Nach dem Go-Live begleiten wir weiter mit Wartung, Optimierung und planbaren Weiterentwicklungen.',
+      description:
+        'Nach dem Go-Live begleiten wir weiter mit Wartung, Optimierung und planbaren Weiterentwicklungen.',
     },
   ] satisfies WorkflowStep[],
 
@@ -105,19 +131,23 @@ Was uns auszeichnet: Wir kommunizieren offen, halten Zusagen ein und denken lang
     items: [
       {
         title: 'Websites & Landingpages',
-        description: 'Klare Seitenstrukturen, die Vertrauen aufbauen und Interessenten zu konkreten Anfragen führen.',
+        description:
+          'Klare Seitenstrukturen, die Vertrauen aufbauen und Interessenten zu konkreten Anfragen führen.',
       },
       {
         title: 'Web-Anwendungen',
-        description: 'Digitale Arbeitsbereiche und Kundenportale, die Abläufe vereinfachen und Zeit im Team sparen.',
+        description:
+          'Digitale Arbeitsbereiche und Kundenportale, die Abläufe vereinfachen und Zeit im Team sparen.',
       },
       {
         title: 'Mobile Lösungen',
-        description: 'Apps und mobile Prozesse, die Ihre Leistungen auch unterwegs zugänglich und nutzbar machen.',
+        description:
+          'Apps und mobile Prozesse, die Ihre Leistungen auch unterwegs zugänglich und nutzbar machen.',
       },
       {
         title: 'Wartung & Weiterentwicklung',
-        description: 'Kontinuierliche Betreuung, damit Ihr System sicher bleibt und mit neuen Anforderungen Schritt hält.',
+        description:
+          'Kontinuierliche Betreuung, damit Ihr System sicher bleibt und mit neuen Anforderungen Schritt hält.',
       },
     ],
   },
@@ -138,15 +168,18 @@ Was uns auszeichnet: Wir kommunizieren offen, halten Zusagen ein und denken lang
   miniFaq: [
     {
       question: 'Wie schnell können wir starten?',
-      answer: 'Nach dem Erstgespräch erhalten Sie in kurzer Zeit einen klaren Vorschlag für Ablauf, Aufwand und nächste Schritte.',
+      answer:
+        'Nach dem Erstgespräch erhalten Sie in kurzer Zeit einen klaren Vorschlag für Ablauf, Aufwand und nächste Schritte.',
     },
     {
       question: 'Wie läuft die Abrechnung?',
-      answer: 'Wir rechnen transparent nach Umfang und Priorität ab. Sie wissen vor dem Start, womit Sie rechnen können.',
+      answer:
+        'Wir rechnen transparent nach Umfang und Priorität ab. Sie wissen vor dem Start, womit Sie rechnen können.',
     },
     {
       question: 'Bleiben Sie nach dem Launch erreichbar?',
-      answer: 'Ja. Wir begleiten auf Wunsch dauerhaft mit Wartung, Anpassungen und geplanter Weiterentwicklung.',
+      answer:
+        'Ja. Wir begleiten auf Wunsch dauerhaft mit Wartung, Anpassungen und geplanter Weiterentwicklung.',
     },
   ] satisfies FAQItem[],
 
@@ -183,7 +216,6 @@ export const homeContent = {
   heroBadge: 'Burk-Solutions · Digitale Lösungen',
   whySectionTitle: 'Warum Burk-Solutions',
   servicesPreviewTitle: 'Unsere Leistungen',
-  projectsPreviewTitle: 'Ausgewählte Projekte',
   miniFaqTitle: 'Häufige Fragen vor dem Start',
   miniFaqDescription: 'Kurze Antworten für schnelle Entscheidungen.',
 } as const;
@@ -199,11 +231,13 @@ export const aboutContent = {
 export const servicesContent = {
   title: 'Unsere Leistungen',
   description:
-    'Wir unterstützen von der neuen Website bis zur laufenden Weiterentwicklung – mit klaren Zielen, strukturierter Umsetzung und messbarem Nutzen.',
+    'Wir bündeln Strategie, Design und Umsetzung in drei klaren Leistungsbereichen: Websites, Automatisierungen und Integrationen.',
   detailTitle: 'Im Detail',
-  detailDescription: 'Was wir anbieten, für wen es passt und welchen konkreten Nutzen Sie erwarten können.',
+  detailDescription:
+    'Was wir anbieten, für wen es passt und welchen konkreten Nutzen Sie erwarten können.',
   valueTitle: 'Warum mit uns arbeiten?',
-  valueDescription: 'Neben sauberer Umsetzung zählt vor allem eine Zusammenarbeit, die im Alltag spürbar entlastet.',
+  valueDescription:
+    'Neben sauberer Umsetzung zählt vor allem eine Zusammenarbeit, die im Alltag spürbar entlastet.',
   valueProps: [
     'Klare Kommunikation ohne unnötige Fachbegriffe',
     'Realistische Planung statt leere Versprechen',
@@ -213,20 +247,11 @@ export const servicesContent = {
   packagesTitle: 'Pakete zur Orientierung',
   packagesDescription: 'Für eine schnelle Einordnung vor dem Erstgespräch.',
   ctaTitle: 'Bereit für den nächsten Schritt?',
-  ctaDescription: 'Lassen Sie uns gemeinsam prüfen, welches Vorgehen für Ihr Ziel am sinnvollsten ist.',
+  ctaDescription:
+    'Lassen Sie uns gemeinsam prüfen, welches Vorgehen für Ihr Ziel am sinnvollsten ist.',
 } as const;
 
-export const projectsContent = {
-  title: 'Unsere Projekte',
-  description:
-    'Ausgewählte Arbeiten aus Website-, App- und Optimierungsprojekten. Jedes Beispiel zeigt, wie wir Ergebnisse strukturiert und nachvollziehbar erreichen.',
-  filterHint: 'Filtern nach Branche oder Kategorie',
-  highlightsTitle: 'Highlights',
-  highlightsDescription: 'Projekte mit klar messbarem Nutzen und hoher Relevanz für unsere Kunden.',
-  moreTitle: 'Weitere Projekte',
-  emptyState: 'Keine Projekte gefunden für',
-  caseStudyHint: 'Detaillierte Case Studies zu ausgewählten Projekten – Coming Soon.',
-} as const;
+
 
 export const contactContent = {
   title: 'Kontakt aufnehmen',
@@ -238,7 +263,8 @@ export const contactContent = {
   responseDescription:
     'Wir antworten in der Regel innerhalb von 24–48 Stunden. Bei dringenden Themen markieren Sie den Betreff gerne entsprechend.',
   whatWeNeedTitle: 'Was wir wissen sollten',
-  whatWeNeedDescription: 'Mit diesen Informationen können wir Ihre Anfrage schnell und sinnvoll einordnen.',
+  whatWeNeedDescription:
+    'Mit diesen Informationen können wir Ihre Anfrage schnell und sinnvoll einordnen.',
   whatWeNeed: [
     {
       title: 'Projektziel',
@@ -265,8 +291,35 @@ export const contactContent = {
   faqDescription: 'Antworten auf die wichtigsten Fragen vorab.',
   formTitle: 'Kontaktformular',
   formDescription: 'Alternativ können Sie das Formular nutzen – wir melden uns zeitnah.',
-  formHint: '* Das Formular ist aktuell ein UI-Entwurf. Bitte nutzen Sie vorerst die E-Mail-Option.',
+  formHint:
+    '* Das Formular erstellt einen E-Mail-Entwurf. So können Sie Ihre Anfrage direkt mit allen Angaben versenden.',
   fallbackTitle: 'Lieber direkt per E-Mail?',
+} as const;
+
+export const appsContent = {
+  title: 'Apps',
+  description: 'Hier finden Sie die Datenschutzerklärungen und Impressums unserer mobilen Apps.',
+  introTitle: 'Rechtliches & Informationen',
+  introDescription:
+    'Alle appbezogenen Datenschutz- und Impressumsseiten sind gebündelt erreichbar und folgen derselben klaren Struktur wie unser Hauptauftritt.',
+  apps: [
+    {
+      name: 'Stirnraten',
+      description: 'Das beliebte Ratespiel für Gruppen.',
+      links: [
+        { label: 'Datenschutzerklärung', href: '/apps/stirnraten/datenschutz' },
+        { label: 'Impressum', href: '/apps/stirnraten/impressum' },
+      ],
+    },
+    {
+      name: 'EXPOSED – Party Game',
+      description: 'Das Partyspiel für unvergessliche Abende.',
+      links: [
+        { label: 'Datenschutzerklärung', href: '/apps/exposed/datenschutz' },
+        { label: 'Impressum', href: '/apps/exposed/impressum' },
+      ],
+    },
+  ] satisfies AppEntry[],
 } as const;
 
 export const orientationPackages: OrientationPackage[] = [
@@ -274,7 +327,8 @@ export const orientationPackages: OrientationPackage[] = [
     title: 'Klarer Start',
     subtitle: 'Für neue Auftritte und erste Struktur',
     fitFor: 'Unternehmen, die schnell online klar auftreten möchten.',
-    outcome: 'Ein fokussierter Auftritt mit klarer Botschaft und konkretem nächsten Schritt für Interessenten.',
+    outcome:
+      'Ein fokussierter Auftritt mit klarer Botschaft und konkretem nächsten Schritt für Interessenten.',
   },
   {
     title: 'Wachstums-Upgrade',
@@ -286,7 +340,8 @@ export const orientationPackages: OrientationPackage[] = [
     title: 'Langfristige Betreuung',
     subtitle: 'Für Stabilität und planbare Weiterentwicklung',
     fitFor: 'Unternehmen mit laufendem System und kontinuierlichen Anforderungen.',
-    outcome: 'Sichere Updates, saubere Priorisierung und ein System, das mit Ihrem Alltag mitwächst.',
+    outcome:
+      'Sichere Updates, saubere Priorisierung und ein System, das mit Ihrem Alltag mitwächst.',
   },
 ];
 
@@ -302,138 +357,41 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    id: 'unternehmenswebsite',
-    title: 'Unternehmenswebsite',
-    shortTitle: 'Website',
-    description: 'Ein klarer digitaler Auftritt, der Vertrauen schafft und den Weg zur Anfrage vereinfacht.',
-    targetAudience: 'Unternehmen, die online professionell wirken und besser gefunden werden möchten.',
-    result: 'Mehr Sichtbarkeit, klarere Kommunikation, mehr qualifizierte Anfragen.',
+    id: 'websites',
+    title: 'Websites & Landingpages',
+    shortTitle: 'Websites',
+    description:
+      'Klar strukturierte Auftritte für Unternehmen, Angebote und Kampagnen, die Vertrauen schaffen und Anfragen sauber führen.',
+    targetAudience:
+      'Unternehmen, die online professionell auftreten, Leistungen verständlich erklären und aus Besuchern Gespräche machen möchten.',
+    result: 'Mehr Sichtbarkeit, klarere Positionierung und bessere Conversion im Erstkontakt.',
     icon: 'Globe',
   },
   {
-    id: 'landingpage',
-    title: 'Landingpage für Anfragen',
-    shortTitle: 'Landingpage',
-    description: 'Eine fokussierte Seite für Kampagnen und Angebote mit klarer Führung zum nächsten Schritt.',
-    targetAudience: 'Teams, die ein konkretes Angebot effizient vermarkten möchten.',
-    result: 'Höhere Abschlussquote und bessere Auswertung der Kampagnenwirkung.',
-    icon: 'Target',
-  },
-  {
-    id: 'webapp',
-    title: 'Web-App & Kundenportal',
-    shortTitle: 'Web-App',
-    description: 'Digitale Prozesse für Kunden und Teams, die Arbeit vereinfachen und Abstimmung sparen.',
-    targetAudience: 'Unternehmen, die interne Abläufe und Kundenkommunikation digital entlasten wollen.',
-    result: 'Weniger manuelle Schritte, klarere Abläufe und bessere Servicequalität.',
-    icon: 'LayoutDashboard',
-  },
-  {
-    id: 'wartung',
-    title: 'Wartung & Weiterentwicklung',
-    shortTitle: 'Wartung',
-    description: 'Regelmäßige Pflege, Sicherheitsupdates und planbare Erweiterungen für Ihren Auftritt.',
-    targetAudience: 'Unternehmen mit bestehenden Systemen, die verlässlich weiterlaufen sollen.',
-    result: 'Stabiler Betrieb, weniger Risiken und planbare Weiterentwicklung.',
-    icon: 'Shield',
-  },
-  {
-    id: 'performance',
-    title: 'Performance & Optimierung',
-    shortTitle: 'Optimierung',
-    description: 'Wir verbessern Tempo, Klarheit und Nutzerführung für bessere Ergebnisse im Alltag.',
-    targetAudience: 'Unternehmen mit ausbaufähigem Webauftritt oder sinkender Conversion.',
-    result: 'Schnellere Seiten, bessere Nutzererfahrung und mehr Anfragen.',
-    icon: 'Gauge',
-  },
-  {
-    id: 'automatisierung',
-    title: 'Automatisierung & Tools',
+    id: 'automatisierungen',
+    title: 'Automatisierungen & KI-Workflows',
     shortTitle: 'Automatisierung',
-    description: 'Praktische digitale Helfer für wiederkehrende Aufgaben und klare Prozesse.',
-    targetAudience: 'Teams, die Routinearbeit reduzieren und Fehlerquellen minimieren möchten.',
-    result: 'Mehr Zeit für wichtige Aufgaben und spürbar weniger manuelle Arbeit.',
+    description:
+      'Praktische Systeme für wiederkehrende Abläufe, Lead-Handling, interne Routinen und saubere Übergaben zwischen Tools.',
+    targetAudience:
+      'Teams, die Zeit verlieren durch manuelle Prozesse, doppelte Pflege oder unklare Zuständigkeiten.',
+    result: 'Weniger Reibung im Tagesgeschäft, schnellere Abläufe und mehr Zeit für wertschöpfende Arbeit.',
     icon: 'Cog',
   },
-];
-
-export type Project = {
-  id: string;
-  title: string;
-  description: string;
-  technologies: string[];
-  tags: string[];
-  outcome: string;
-  useCase?: string;
-  featured: boolean;
-  links?: {
-    live?: string;
-    code?: string;
-  };
-};
-
-export const projects: Project[] = [
   {
-    id: 'burk-solutions-website',
-    title: 'Burk-Solutions Website',
-    description: 'Unser eigener Auftritt als Referenz für eine klare Struktur und schnelle Ladezeiten.',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    tags: ['Website', 'Positionierung'],
-    outcome: 'Sehr schnelle Ladezeiten und klare Nutzerführung bis zur Anfrage.',
-    useCase: 'Dienstleister',
-    featured: true,
-  },
-  {
-    id: 'dashboard-system',
-    title: 'Internes Dashboard',
-    description: 'Eine zentrale Arbeitsoberfläche für ein mittelständisches Team mit klaren Rollen und Prozessen.',
-    technologies: ['React', 'TypeScript', 'Node.js'],
-    tags: ['Dashboard', 'Prozesse'],
-    outcome: '20 Stunden Zeitgewinn pro Woche durch strukturierte Abläufe.',
-    useCase: 'Mittelstand',
-    featured: true,
-  },
-  {
-    id: 'mobile-app-mvp',
-    title: 'Mobile App (MVP)',
-    description: 'Vom Konzept bis zur marktreifen App in engem Austausch mit dem Gründungsteam.',
-    technologies: ['Flutter', 'Firebase'],
-    tags: ['Mobile App', 'MVP'],
-    outcome: 'Schneller Markteintritt und belastbare Grundlage für den nächsten Wachstumsschritt.',
-    useCase: 'Startup',
-    featured: true,
-  },
-  {
-    id: 'component-library',
-    title: 'Design System',
-    description: 'Ein wiederverwendbares Komponenten-Set für konsistente Oberflächen und schnellere Umsetzung.',
-    technologies: ['React', 'TypeScript', 'Storybook'],
-    tags: ['Design System', 'Teamwork'],
-    outcome: 'Deutlich schnellere Umsetzung neuer Funktionen im Kundenteam.',
-    useCase: 'Software-Team',
-    featured: false,
-  },
-  {
-    id: 'performance-optimization',
-    title: 'E-Commerce Optimierung',
-    description: 'Strukturierte Optimierung eines Shops mit Fokus auf Tempo, Klarheit und Abschlussquote.',
-    technologies: ['Next.js', 'Lighthouse'],
-    tags: ['Performance', 'E-Commerce'],
-    outcome: 'Weniger Ladezeit und spürbarer Anstieg der Verkäufe.',
-    useCase: 'Handel',
-    featured: false,
-  },
-  {
-    id: 'automation-tooling',
-    title: 'Automatisierung Pipeline',
-    description: 'Automatisierte Abläufe für Build, Tests und Auslieferung in einem Entwicklungsteam.',
-    technologies: ['GitHub Actions', 'Docker'],
-    tags: ['Automatisierung', 'Effizienz'],
-    outcome: 'Deutlich kürzere Auslieferungszeiten und weniger manuelle Fehler.',
-    useCase: 'Produktteam',
-    featured: false,
+    id: 'integrationen',
+    title: 'Integrationen & Kundenportale',
+    shortTitle: 'Integrationen',
+    description:
+      'Digitale Oberflächen, Portale und Systemverbindungen, die Datenflüsse ordnen und Zusammenarbeit spürbar vereinfachen.',
+    targetAudience:
+      'Unternehmen, die mehrere Tools verbinden, Kunden sauber anbinden oder interne Prozesse digital bündeln möchten.',
+    result: 'Ein ruhigerer Betrieb mit klaren Datenwegen, weniger Medienbrüchen und besserer Servicequalität.',
+    icon: 'LayoutDashboard',
   },
 ];
+
+
 
 export type NavItem = {
   label: string;
@@ -445,7 +403,6 @@ export const navigation: NavItem[] = [
   { label: 'Home', href: '/', icon: 'Home' },
   { label: 'Über uns', href: '/about', icon: 'Users' },
   { label: 'Leistungen', href: '/services', icon: 'Briefcase' },
-  { label: 'Projekte', href: '/projects', icon: 'FolderKanban' },
   { label: 'Kontakt', href: '/contact', icon: 'Mail' },
   { label: 'Apps', href: '/apps', icon: 'Smartphone' },
 ];
@@ -458,11 +415,132 @@ export const featureFlags = {
   i18n: false,
 } as const;
 
+export const siteFooter = {
+  summary: profile.pitch,
+  navigationTitle: 'Seiten',
+  contactTitle: 'Kontakt',
+  contactDescription: 'Für Projektanfragen, Rückfragen und Erstgespräche.',
+  legalTitle: 'Rechtliches',
+  navigationLinks: navigation satisfies FooterLink[],
+  legalLinks: [
+    { label: 'Datenschutz', href: '/datenschutz' },
+    { label: 'Impressum', href: '/impressum' },
+    { label: 'Apps', href: '/apps' },
+  ] satisfies FooterLink[],
+  supportLinks: [
+    { label: 'Stirnraten Datenschutz', href: '/apps/stirnraten/datenschutz' },
+    { label: 'Stirnraten Impressum', href: '/apps/stirnraten/impressum' },
+  ] satisfies FooterLink[],
+  copyright: `© ${new Date().getFullYear()} Burk-Solutions. Klare digitale Lösungen mit langfristigem Anspruch.`,
+} as const;
+
+export const siteLegal = {
+  privacy: {
+    title: 'Datenschutzerklärung',
+    description: 'Informationen zur Verarbeitung personenbezogener Daten auf dieser Website.',
+    effectiveDate: 'Stand: 5. März 2026',
+    sections: [
+      {
+        title: '1. Verantwortlicher',
+        paragraphs: [
+          'Verantwortlich für die Datenverarbeitung auf dieser Website ist Elias Burk, Burk-Solutions, Friedrich-Naumann Straße 11, 71636 Ludwigsburg, Deutschland.',
+          `Bei Fragen zum Datenschutz erreichen Sie uns per E-Mail unter ${profile.email}.`,
+        ],
+      },
+      {
+        title: '2. Zugriff auf die Website',
+        paragraphs: [
+          'Beim Aufruf dieser Website werden technisch erforderliche Informationen verarbeitet, damit die Seite ausgeliefert, abgesichert und stabil betrieben werden kann.',
+          'Dazu können insbesondere IP-Adresse, Zeitpunkt des Zugriffs, angeforderte Datei, Referrer, Browsertyp und Betriebssystem gehören.',
+        ],
+      },
+      {
+        title: '3. Kontaktaufnahme',
+        paragraphs: [
+          'Wenn Sie uns per E-Mail kontaktieren oder über das Kontaktformular eine Anfrage vorbereiten, verarbeiten wir die von Ihnen mitgeteilten Angaben, um Ihre Anfrage einzuordnen und zu beantworten.',
+          'Die Verarbeitung erfolgt ausschließlich für die Kommunikation zu Ihrem Anliegen und nur so lange, wie dies für die Bearbeitung erforderlich ist.',
+        ],
+      },
+      {
+        title: '4. Cookies, Analyse und Tracking',
+        paragraphs: [
+          'Auf dieser Website werden aktuell keine eigenen Analyse- oder Tracking-Dienste eingesetzt.',
+          'Es werden keine Marketing-Cookies, keine personalisierten Werbeprofile und keine zusätzlichen Tracking-Skripte für Kampagnenmessung eingebunden.',
+        ],
+      },
+      {
+        title: '5. Ihre Rechte',
+        paragraphs: [
+          'Sie haben nach Maßgabe der gesetzlichen Voraussetzungen insbesondere das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie auf Widerspruch gegen bestimmte Verarbeitungen.',
+          'Außerdem besteht ein Beschwerderecht bei einer zuständigen Datenschutzaufsichtsbehörde.',
+        ],
+      },
+      {
+        title: '6. Änderungen dieser Erklärung',
+        paragraphs: [
+          'Wir passen diese Datenschutzerklärung an, wenn sich Inhalte, technische Abläufe oder gesetzliche Anforderungen ändern.',
+        ],
+      },
+    ] satisfies LegalSection[],
+  },
+  imprint: {
+    title: 'Impressum',
+    description: 'Angaben gemäß § 5 DDG für den Webauftritt von Burk-Solutions.',
+    effectiveDate: 'Stand: 5. März 2026',
+    sections: [
+      {
+        title: '1. Anbieter',
+        paragraphs: ['Elias Burk', 'Friedrich-Naumann Straße 11', '71636 Ludwigsburg, Deutschland'],
+      },
+      {
+        title: '2. Kontakt',
+        paragraphs: [`E-Mail: ${profile.email}`, 'Telefon: nicht angegeben'],
+      },
+      {
+        title: '3. Inhaltlich verantwortlich',
+        paragraphs: ['Elias Burk', 'Friedrich-Naumann Straße 11', '71636 Ludwigsburg, Deutschland'],
+      },
+      {
+        title: '4. Verbraucherstreitbeilegung',
+        paragraphs: [
+          'Es besteht keine Bereitschaft und keine Verpflichtung zur Teilnahme an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle.',
+        ],
+      },
+      {
+        title: '5. Haftung für Inhalte',
+        paragraphs: [
+          'Als Diensteanbieter sind wir gemäß den allgemeinen Gesetzen für eigene Inhalte auf diesen Seiten verantwortlich. Wir übernehmen jedoch keine Gewähr für die Aktualität, Vollständigkeit und Richtigkeit der bereitgestellten Inhalte.',
+        ],
+      },
+      {
+        title: '6. Haftung für Links',
+        paragraphs: [
+          'Diese Website kann Links zu externen Websites Dritter enthalten, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.',
+        ],
+      },
+      {
+        title: '7. Urheberrecht',
+        paragraphs: [
+          'Die durch den Seitenbetreiber erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.',
+        ],
+      },
+    ] satisfies LegalSection[],
+  },
+} as const;
+
 export const siteMetadata = {
   title: 'Burk-Solutions | Websites & digitale Produkte',
   description:
     'Wir entwickeln Websites, Web-Apps und digitale Werkzeuge für Unternehmen. Klar in der Kommunikation, zuverlässig in der Umsetzung und langfristig betreut.',
   url: 'https://burk-solutions.de',
   locale: 'de_DE',
-  keywords: ['Website erstellen', 'Webdesign', 'Digitale Lösungen', 'Unternehmenswebsite', 'Web-App', 'Deutschland'],
+  keywords: [
+    'Website erstellen',
+    'Webdesign',
+    'Digitale Lösungen',
+    'Unternehmenswebsite',
+    'Web-App',
+    'Deutschland',
+  ],
+  ogImage: '/logo.png',
 };

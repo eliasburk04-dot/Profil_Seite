@@ -10,10 +10,12 @@
 A professional portfolio and digital services marketing website for Elias Burk / Burk-Solutions. It presents the developer as a trusted partner for web development, mobile apps, and technical consulting.
 
 **Who is the audience?**
+
 - Companies, founders, SMEs, and tech-driven clients looking for professional development services
 - The site serves as both portfolio AND sales tool
 
 **Tech Stack:**
+
 - **Framework**: Next.js 14+ (App Router)
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS with custom design tokens
@@ -70,6 +72,7 @@ src/
 ### The Single Source of Truth: `src/content/index.ts`
 
 **ALL content must be edited in this file.** This includes:
+
 - Profile information (name, bio, pitch)
 - Skills (grouped with descriptions)
 - Services (marketing-focused offerings)
@@ -78,14 +81,15 @@ src/
 - Site metadata
 
 **Content types:**
+
 ```typescript
-profile     // Name, company, headline, bio, workflow
-skills      // SkillCategory[] - grouped skills with context
-services    // Service[] - detailed service offerings
-projects    // Project[] - portfolio items with tags/tech
-navigation  // NavItem[] - sidebar links
-featureFlags // Feature toggles for future features
-siteMetadata // SEO metadata
+profile; // Name, company, headline, bio, workflow
+skills; // SkillCategory[] - grouped skills with context
+services; // Service[] - detailed service offerings
+projects; // Project[] - portfolio items with tags/tech
+navigation; // NavItem[] - sidebar links
+featureFlags; // Feature toggles for future features
+siteMetadata; // SEO metadata
 ```
 
 ### Adding a New Project
@@ -140,29 +144,29 @@ The design follows an Apple-inspired "Liquid Glass" aesthetic. Key principles:
 ### Color Tokens (in `tailwind.config.ts`)
 
 ```typescript
-bg-primary      // #0a0c10 - deepest background
-bg-surface      // #0f141b - card backgrounds
-glass-subtle    // rgba(255,255,255,0.02)
-glass-light     // rgba(255,255,255,0.04)
-border          // rgba(255,255,255,0.08)
-border-accent   // rgba(124,58,237,0.35)
-accent          // #7c3aed - primary accent (violet)
-text-primary    // #e5e7eb
-text-secondary  // #9ca3af
+bg - primary; // #0a0c10 - deepest background
+bg - surface; // #0f141b - card backgrounds
+glass - subtle; // rgba(255,255,255,0.02)
+glass - light; // rgba(255,255,255,0.04)
+border; // rgba(255,255,255,0.08)
+border - accent; // rgba(124,58,237,0.35)
+accent; // #7c3aed - primary accent (violet)
+text - primary; // #e5e7eb
+text - secondary; // #9ca3af
 ```
 
 ### Component Usage
 
-| Component | Use For |
-|-----------|---------|
-| `GlassCard` | Content containers, cards |
-| `GlassPanel` | Large frame containers |
-| `Button` | CTAs, actions |
-| `TagPill` | Technologies, categories |
-| `ProjectCard` | Project grid items |
-| `ServiceCard` | Service listings |
-| `SectionHeader` | Section titles |
-| `Divider` | Visual separation |
+| Component       | Use For                   |
+| --------------- | ------------------------- |
+| `GlassCard`     | Content containers, cards |
+| `GlassPanel`    | Large frame containers    |
+| `Button`        | CTAs, actions             |
+| `TagPill`       | Technologies, categories  |
+| `ProjectCard`   | Project grid items        |
+| `ServiceCard`   | Service listings          |
+| `SectionHeader` | Section titles            |
+| `Divider`       | Visual separation         |
 
 ---
 
@@ -231,31 +235,34 @@ Or connect the GitHub repo to Vercel for automatic deployments.
 
 These features are planned but not yet implemented. The architecture supports them:
 
-| Feature | Status | Notes |
-|---------|--------|-------|
-| Blog/Insights | `featureFlags.blog` | MDX support ready |
-| Case Studies | `featureFlags.caseStudies` | Project detail pages |
-| Downloadable CV | `featureFlags.downloadableCV` | PDF generation |
-| Analytics | `featureFlags.analytics` | Vercel/Plausible hook |
-| i18n (DE/EN) | `featureFlags.i18n` | next-intl ready |
-| Contact Form Backend | - | Currently UI stub only |
+| Feature              | Status                        | Notes                  |
+| -------------------- | ----------------------------- | ---------------------- |
+| Blog/Insights        | `featureFlags.blog`           | MDX support ready      |
+| Case Studies         | `featureFlags.caseStudies`    | Project detail pages   |
+| Downloadable CV      | `featureFlags.downloadableCV` | PDF generation         |
+| Analytics            | `featureFlags.analytics`      | Vercel/Plausible hook  |
+| i18n (DE/EN)         | `featureFlags.i18n`           | next-intl ready        |
+| Contact Form Backend | -                             | Currently UI stub only |
 
 ---
 
 ## Architecture Decisions
 
 ### Why Next.js App Router?
+
 - Best-in-class static generation
 - Zero-config Vercel deployment
 - Excellent TypeScript support
 - Future-proof routing
 
 ### Why Custom Components (not full shadcn/ui)?
+
 - More control over Liquid Glass aesthetic
 - Smaller bundle size
 - Easier to maintain specific design language
 
 ### Why Central Content Source?
+
 - Single file for all content edits
 - Type-safe content updates
 - Easy for non-devs to understand structure
@@ -265,13 +272,13 @@ These features are planned but not yet implemented. The architecture supports th
 
 ## Key Files for Quick Reference
 
-| File | Purpose |
-|------|---------|
-| `src/content/index.ts` | ALL content |
-| `tailwind.config.ts` | Design tokens |
-| `src/app/globals.css` | Global styles |
-| `src/components/ui/` | Reusable components |
-| `src/components/layout/app-shell.tsx` | Main layout |
+| File                                  | Purpose             |
+| ------------------------------------- | ------------------- |
+| `src/content/index.ts`                | ALL content         |
+| `tailwind.config.ts`                  | Design tokens       |
+| `src/app/globals.css`                 | Global styles       |
+| `src/components/ui/`                  | Reusable components |
+| `src/components/layout/app-shell.tsx` | Main layout         |
 
 ---
 
@@ -282,4 +289,4 @@ For technical questions about the codebase, refer to this document first.
 
 ---
 
-*Last updated: February 2026*
+_Last updated: February 2026_

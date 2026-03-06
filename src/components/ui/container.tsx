@@ -8,12 +8,7 @@ interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 /**
  * Container - Responsive max-width container with consistent padding
  */
-export function Container({
-  className,
-  size = 'lg',
-  children,
-  ...props
-}: ContainerProps) {
+export function Container({ className, size = 'lg', children, ...props }: ContainerProps) {
   return (
     <div
       className={cn(
@@ -31,4 +26,3 @@ export function Container({
     </div>
   );
 }
-

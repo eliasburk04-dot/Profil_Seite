@@ -3,6 +3,13 @@ const nextConfig = {
   // Strict mode for better development experience
   reactStrictMode: true,
 
+  generateBuildId: async () => {
+    const vercelCommit = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 20);
+    const githubCommit = process.env.GITHUB_SHA?.slice(0, 20);
+
+    return vercelCommit || githubCommit || `build-${Date.now()}`;
+  },
+
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
@@ -39,6 +46,18 @@ const nextConfig = {
           {
             key: 'X-XSS-Protection',
             value: '1; mode=block',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
           },
         ],
       },
