@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import {
+  AppWindow,
   CheckCircle2,
-  Cog,
   Globe,
-  LayoutDashboard,
+  Smartphone,
   type LucideIcon,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -19,8 +19,8 @@ interface ServiceCardProps {
 
 const serviceIconMap: Record<string, LucideIcon> = {
   Globe,
-  Cog,
-  LayoutDashboard,
+  AppWindow,
+  Smartphone,
 };
 
 export function ServiceCard({ service, className, variant = 'compact' }: ServiceCardProps) {

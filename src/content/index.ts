@@ -60,17 +60,17 @@ export const conversion = {
 export const profile = {
   name: 'Burk-Solutions',
   company: 'Burk-Solutions',
-  role: 'Digitale Lösungen für Unternehmen',
+  role: 'Websites, Web Apps & Mobile Apps',
   email: 'eliasburk04@gmail.com',
   location: 'Deutschland',
   availability: 'Aktuell verfügbar für neue Projekte',
 
-  headline: 'Wir bauen digitale Auftritte, die Anfragen bringen und im Alltag zuverlässig laufen.',
+  headline: 'Wir entwickeln Websites, Web Apps und mobile Apps, die Ergebnisse liefern.',
   subheadline:
-    'Für Unternehmen, Gründer und Teams, die online klarer auftreten, schneller entscheiden und mit weniger Abstimmungsaufwand wachsen wollen.',
+    'Für Unternehmen, Gründer und Teams, die mit einer starken Website, einer leistungsfähigen Web-App oder einer eigenen mobilen App wachsen wollen.',
 
   positioningLine:
-    'Wir begleiten von der ersten Zielklärung bis zur laufenden Betreuung – mit klaren Schritten, festen Ansprechpartnern und transparenten Entscheidungen.',
+    'Von der ersten Idee bis zum fertigen Produkt – wir entwickeln Websites, Web-Anwendungen und native Apps mit klarer Struktur und langfristiger Betreuung.',
 
   whyBurk: [
     'Wir arbeiten zuverlässig mit klaren Zusagen zu Zeitrahmen, Budget und Zuständigkeiten.',
@@ -79,20 +79,20 @@ export const profile = {
   ],
 
   benefits: [
-    'Ein professioneller Auftritt, der Vertrauen schafft und Anfragen erleichtert.',
-    'Klare Nutzerführung, damit Interessenten schneller den nächsten Schritt gehen.',
-    'Schnelle, stabile Seiten ohne technische Überraschungen im Tagesgeschäft.',
-    'Langfristige Betreuung, damit Ihr Auftritt mit Ihrem Unternehmen mitwächst.',
+    'Professionelle Websites, die Vertrauen schaffen und Anfragen bringen.',
+    'Web Apps, die Abläufe vereinfachen und Teams spürbar entlasten.',
+    'Mobile Apps auf iOS und Android, die Ihre Idee in die Hände Ihrer Nutzer bringen.',
+    'Langfristige Betreuung, damit Ihr Produkt mit Ihrem Unternehmen mitwächst.',
   ],
 
   pitch:
-    'Wir liefern keine komplizierten Prozesse, sondern klare Ergebnisse: mehr Übersicht, weniger Reibung und ein digitales Produkt, das Ihren Vertrieb und Ihr Team spürbar entlastet.',
+    'Wir entwickeln digitale Produkte in drei klaren Bereichen: Websites & Landingpages, Web Apps und mobile Apps. Kein Overhead, keine leeren Versprechen – sondern Ergebnisse, die Ihr Geschäft voranbringen.',
 
-  bio: `Burk-Solutions ist Ihr Partner für digitale Lösungen, die im Alltag funktionieren. Wir entwickeln Websites, Web-Anwendungen und digitale Werkzeuge für Unternehmen, die online professionell auftreten und Anfragen zuverlässig in Projekte verwandeln möchten.
+  bio: `Burk-Solutions entwickelt Websites, Web Apps und mobile Apps für Unternehmen, die digital wachsen wollen. Ob professioneller Webauftritt, leistungsfähige Web-Anwendung oder native App für iOS und Android – wir liefern Lösungen, die im Alltag funktionieren.
 
-Unser Ansatz ist bewusst klar: Wir starten mit Ihren Zielen, priorisieren die wichtigsten Schritte und setzen dann strukturiert um. So entstehen Lösungen, die verständlich bleiben und auch intern gut weitergeführt werden können.
+Unser Ansatz ist bewusst klar: Wir starten mit Ihren Zielen, wählen die richtige Technologie und setzen dann strukturiert um. So entstehen Produkte, die Nutzer überzeugen und langfristig weiterentwickelt werden können.
 
-Was uns auszeichnet: Wir kommunizieren offen, halten Zusagen ein und denken langfristig. Nach dem Launch bleiben wir an Ihrer Seite, optimieren weiter und sorgen dafür, dass Ihr digitaler Auftritt mit Ihren Anforderungen wächst.`,
+Was uns auszeichnet: Wir decken das gesamte Spektrum moderner Software-Entwicklung ab – von responsiven Websites über komplexe Web-Anwendungen bis hin zu nativen mobilen Apps. Alles aus einer Hand, mit einem festen Ansprechpartner.`,
 
   workflowTitle: 'So arbeiten wir',
   workflowDescription:
@@ -125,29 +125,24 @@ Was uns auszeichnet: Wir kommunizieren offen, halten Zusagen ein und denken lang
   ] satisfies WorkflowStep[],
 
   competencies: {
-    title: 'Was wir können',
+    title: 'Was wir entwickeln',
     description:
-      'Wir bauen digitale Lösungen, die sichtbar Ergebnisse liefern und gleichzeitig im Betrieb ruhig, stabil und erweiterbar bleiben.',
+      'Wir sind spezialisiert auf drei Bereiche: Websites & Landingpages, Web Apps und mobile Apps. Jedes Produkt wird sauber geplant, modern umgesetzt und langfristig betreut.',
     items: [
       {
         title: 'Websites & Landingpages',
         description:
-          'Klare Seitenstrukturen, die Vertrauen aufbauen und Interessenten zu konkreten Anfragen führen.',
+          'Professionelle Webauftritte, die Vertrauen schaffen, Anfragen bringen und auf allen Geräten überzeugen.',
       },
       {
-        title: 'Web-Anwendungen',
+        title: 'Web Apps',
         description:
-          'Digitale Arbeitsbereiche und Kundenportale, die Abläufe vereinfachen und Zeit im Team sparen.',
+          'Leistungsfähige Web-Anwendungen wie Dashboards, Portale und interne Tools, die Prozesse vereinfachen.',
       },
       {
-        title: 'Mobile Lösungen',
+        title: 'Mobile Apps',
         description:
-          'Apps und mobile Prozesse, die Ihre Leistungen auch unterwegs zugänglich und nutzbar machen.',
-      },
-      {
-        title: 'Wartung & Weiterentwicklung',
-        description:
-          'Kontinuierliche Betreuung, damit Ihr System sicher bleibt und mit neuen Anforderungen Schritt hält.',
+          'Native und Cross-Platform-Apps für iOS und Android – von der Idee bis zur Veröffentlichung im Store.',
       },
     ],
   },
@@ -155,8 +150,8 @@ Was uns auszeichnet: Wir kommunizieren offen, halten Zusagen ein und denken lang
   techBackground: {
     title: 'Technik im Hintergrund',
     description:
-      'Damit Ihre Lösung langfristig zuverlässig bleibt, arbeiten wir mit einem sauberen Aufbau, klar dokumentierten Entscheidungen und einer Struktur, die spätere Erweiterungen ohne Neustart ermöglicht.',
-    smallPrint: 'Technik: TypeScript · Flutter · Python (je nach Projekt)',
+      'Wir arbeiten mit modernen Technologien und einem sauberen Aufbau, damit Ihr Produkt langfristig stabil, erweiterbar und wartbar bleibt.',
+    smallPrint: 'Technik: Next.js · React · Flutter · TypeScript · Node.js',
   },
 
   contactPromises: [
@@ -213,25 +208,25 @@ Was uns auszeichnet: Wir kommunizieren offen, halten Zusagen ein und denken lang
 } as const;
 
 export const homeContent = {
-  heroBadge: 'Burk-Solutions · Digitale Lösungen',
+  heroBadge: 'Burk-Solutions · Websites, Web Apps & Apps',
   whySectionTitle: 'Warum Burk-Solutions',
-  servicesPreviewTitle: 'Unsere Leistungen',
+  servicesPreviewTitle: 'Unsere Spezialisierungen',
   miniFaqTitle: 'Häufige Fragen vor dem Start',
   miniFaqDescription: 'Kurze Antworten für schnelle Entscheidungen.',
 } as const;
 
 export const aboutContent = {
   title: 'Über uns',
-  subtitle: 'Wir verbinden klare Kommunikation mit zuverlässiger Umsetzung.',
+  subtitle: 'Spezialisiert auf Websites, Web Apps und mobile Apps – alles aus einer Hand.',
   quote:
-    'Wir liefern digitale Lösungen, die verständlich bleiben, zuverlässig laufen und Ihrem Team dauerhaft Arbeit abnehmen.',
+    'Wir entwickeln digitale Produkte, die Nutzer überzeugen, zuverlässig laufen und mit Ihrem Unternehmen wachsen.',
   quoteAuthor: 'Unser Anspruch bei jedem Projekt',
 } as const;
 
 export const servicesContent = {
   title: 'Unsere Leistungen',
   description:
-    'Wir bündeln Strategie, Design und Umsetzung in drei klaren Leistungsbereichen: Websites, Automatisierungen und Integrationen.',
+    'Wir entwickeln in drei klaren Bereichen: Websites & Landingpages, Web Apps und mobile Apps – von der Idee bis zum fertigen Produkt.',
   detailTitle: 'Im Detail',
   detailDescription:
     'Was wir anbieten, für wen es passt und welchen konkreten Nutzen Sie erwarten können.',
@@ -324,24 +319,24 @@ export const appsContent = {
 
 export const orientationPackages: OrientationPackage[] = [
   {
-    title: 'Klarer Start',
-    subtitle: 'Für neue Auftritte und erste Struktur',
-    fitFor: 'Unternehmen, die schnell online klar auftreten möchten.',
+    title: 'Website & Landingpage',
+    subtitle: 'Für professionelle Webauftritte',
+    fitFor: 'Unternehmen und Gründer, die online überzeugend auftreten und Anfragen generieren möchten.',
     outcome:
-      'Ein fokussierter Auftritt mit klarer Botschaft und konkretem nächsten Schritt für Interessenten.',
+      'Ein moderner Webauftritt, der Vertrauen schafft, Interessenten führt und messbar Ergebnisse liefert.',
   },
   {
-    title: 'Wachstums-Upgrade',
-    subtitle: 'Für bestehende Seiten mit mehr Potenzial',
-    fitFor: 'Teams, die mehr Anfragen und bessere Abläufe erreichen möchten.',
-    outcome: 'Bessere Nutzerführung, höhere Conversion-Chancen und weniger Reibung im Prozess.',
+    title: 'Web App',
+    subtitle: 'Für digitale Produkte und interne Tools',
+    fitFor: 'Teams, die ein Dashboard, Portal oder eine SaaS-Lösung brauchen, die Abläufe vereinfacht.',
+    outcome: 'Eine leistungsfähige Web-Anwendung, die Prozesse automatisiert und im Alltag Zeit spart.',
   },
   {
-    title: 'Langfristige Betreuung',
-    subtitle: 'Für Stabilität und planbare Weiterentwicklung',
-    fitFor: 'Unternehmen mit laufendem System und kontinuierlichen Anforderungen.',
+    title: 'Mobile App',
+    subtitle: 'Für iOS und Android',
+    fitFor: 'Unternehmen mit einer App-Idee oder dem Bedarf, ihre Lösung mobil zugänglich zu machen.',
     outcome:
-      'Sichere Updates, saubere Priorisierung und ein System, das mit Ihrem Alltag mitwächst.',
+      'Eine native oder Cross-Platform-App, die im Store veröffentlicht wird und Nutzer begeistert.',
   },
 ];
 
@@ -361,33 +356,33 @@ export const services: Service[] = [
     title: 'Websites & Landingpages',
     shortTitle: 'Websites',
     description:
-      'Klar strukturierte Auftritte für Unternehmen, Angebote und Kampagnen, die Vertrauen schaffen und Anfragen sauber führen.',
+      'Professionelle Webauftritte für Unternehmen, Angebote und Kampagnen – schnell, responsive und optimiert für Anfragen.',
     targetAudience:
-      'Unternehmen, die online professionell auftreten, Leistungen verständlich erklären und aus Besuchern Gespräche machen möchten.',
-    result: 'Mehr Sichtbarkeit, klarere Positionierung und bessere Conversion im Erstkontakt.',
+      'Unternehmen und Gründer, die online überzeugend auftreten und aus Besuchern Kunden machen möchten.',
+    result: 'Mehr Sichtbarkeit, stärkeres Vertrauen und messbar bessere Conversion.',
     icon: 'Globe',
   },
   {
-    id: 'automatisierungen',
-    title: 'Automatisierungen & KI-Workflows',
-    shortTitle: 'Automatisierung',
+    id: 'web-apps',
+    title: 'Web Apps',
+    shortTitle: 'Web Apps',
     description:
-      'Praktische Systeme für wiederkehrende Abläufe, Lead-Handling, interne Routinen und saubere Übergaben zwischen Tools.',
+      'Leistungsfähige Web-Anwendungen wie Dashboards, Kundenportale, SaaS-Plattformen und interne Tools – modern und skalierbar.',
     targetAudience:
-      'Teams, die Zeit verlieren durch manuelle Prozesse, doppelte Pflege oder unklare Zuständigkeiten.',
-    result: 'Weniger Reibung im Tagesgeschäft, schnellere Abläufe und mehr Zeit für wertschöpfende Arbeit.',
-    icon: 'Cog',
+      'Teams und Unternehmen, die digitale Produkte brauchen, die Prozesse vereinfachen und im Browser laufen.',
+    result: 'Schnellere Abläufe, weniger manuelle Arbeit und ein Produkt, das mit Ihren Anforderungen wächst.',
+    icon: 'AppWindow',
   },
   {
-    id: 'integrationen',
-    title: 'Integrationen & Kundenportale',
-    shortTitle: 'Integrationen',
+    id: 'mobile-apps',
+    title: 'Mobile Apps',
+    shortTitle: 'Apps',
     description:
-      'Digitale Oberflächen, Portale und Systemverbindungen, die Datenflüsse ordnen und Zusammenarbeit spürbar vereinfachen.',
+      'Native und Cross-Platform-Apps für iOS und Android – von der Konzeption über die Entwicklung bis zur Store-Veröffentlichung.',
     targetAudience:
-      'Unternehmen, die mehrere Tools verbinden, Kunden sauber anbinden oder interne Prozesse digital bündeln möchten.',
-    result: 'Ein ruhigerer Betrieb mit klaren Datenwegen, weniger Medienbrüchen und besserer Servicequalität.',
-    icon: 'LayoutDashboard',
+      'Unternehmen mit einer App-Idee oder dem Ziel, ihre Lösung mobil für Kunden und Teams zugänglich zu machen.',
+    result: 'Eine App, die Nutzer begeistert, zuverlässig funktioniert und im App Store überzeugt.',
+    icon: 'Smartphone',
   },
 ];
 

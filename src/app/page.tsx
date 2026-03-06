@@ -33,7 +33,7 @@ export default function HomePage() {
 
             <div className="space-y-6 w-full">
               <h1 className="text-[clamp(3rem,7vw,5.5rem)] leading-[1.05] tracking-[-0.04em] font-medium max-w-[900px] mx-auto text-white">
-                Wir bauen <span className="rich-accent">digitale</span> Produkte, die den Unterschied <span className="rich-accent">machen.</span>
+                Websites, Web Apps & <span className="rich-accent">mobile</span> Apps, die den Unterschied <span className="rich-accent">machen.</span>
               </h1>
               <p className="max-w-2xl mx-auto text-[clamp(1.1rem,1.5vw,1.25rem)] leading-relaxed text-white/60">
                 {profile.subheadline}
