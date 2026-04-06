@@ -314,6 +314,14 @@ export const appsContent = {
         { label: 'Impressum', href: '/apps/exposed/impressum' },
       ],
     },
+    {
+      name: 'Glow Era',
+      description: 'Dein personalisierter Glow-Up Coach.',
+      links: [
+        { label: 'Datenschutzerklärung', href: '/apps/glow-era/datenschutz' },
+        { label: 'Impressum', href: '/apps/glow-era/impressum' },
+      ],
+    },
   ] satisfies AppEntry[],
 } as const;
 
