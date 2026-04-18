@@ -299,14 +299,6 @@ export const appsContent = {
     'Alle appbezogenen Datenschutz- und Impressumsseiten sind gebündelt erreichbar und folgen derselben klaren Struktur wie unser Hauptauftritt.',
   apps: [
     {
-      name: 'EXPOSED – Party Game',
-      description: 'Das Partyspiel für unvergessliche Abende.',
-      links: [
-        { label: 'Datenschutzerklärung', href: '/apps/exposed/datenschutz' },
-        { label: 'Impressum', href: '/apps/exposed/impressum' },
-      ],
-    },
-    {
       name: 'Glow Era',
       description: 'Dein personalisierter Glow-Up Coach.',
       links: [
@@ -423,8 +415,6 @@ export const siteFooter = {
     { label: 'Apps', href: '/apps' },
   ] satisfies FooterLink[],
   supportLinks: [
-    { label: 'EXPOSED Datenschutz', href: '/apps/exposed/datenschutz' },
-    { label: 'EXPOSED Impressum', href: '/apps/exposed/impressum' },
     { label: 'Glow Era Datenschutz', href: '/apps/glow-era/datenschutz' },
     { label: 'Glow Era Impressum', href: '/apps/glow-era/impressum' },
   ] satisfies FooterLink[],
