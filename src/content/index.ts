@@ -299,14 +299,6 @@ export const appsContent = {
     'Alle appbezogenen Datenschutz- und Impressumsseiten sind gebündelt erreichbar und folgen derselben klaren Struktur wie unser Hauptauftritt.',
   apps: [
     {
-      name: 'Stirnraten',
-      description: 'Das beliebte Ratespiel für Gruppen.',
-      links: [
-        { label: 'Datenschutzerklärung', href: '/apps/stirnraten/datenschutz' },
-        { label: 'Impressum', href: '/apps/stirnraten/impressum' },
-      ],
-    },
-    {
       name: 'EXPOSED – Party Game',
       description: 'Das Partyspiel für unvergessliche Abende.',
       links: [
@@ -431,8 +423,10 @@ export const siteFooter = {
     { label: 'Apps', href: '/apps' },
   ] satisfies FooterLink[],
   supportLinks: [
-    { label: 'Stirnraten Datenschutz', href: '/apps/stirnraten/datenschutz' },
-    { label: 'Stirnraten Impressum', href: '/apps/stirnraten/impressum' },
+    { label: 'EXPOSED Datenschutz', href: '/apps/exposed/datenschutz' },
+    { label: 'EXPOSED Impressum', href: '/apps/exposed/impressum' },
+    { label: 'Glow Era Datenschutz', href: '/apps/glow-era/datenschutz' },
+    { label: 'Glow Era Impressum', href: '/apps/glow-era/impressum' },
   ] satisfies FooterLink[],
   copyright: `© ${new Date().getFullYear()} Burk-Solutions. Klare digitale Lösungen mit langfristigem Anspruch.`,
 } as const;

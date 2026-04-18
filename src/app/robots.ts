@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/apps/exposed/', '/apps/stirnraten/'],
+      disallow: ['/apps/exposed/'],
     },
     sitemap: `${siteMetadata.url}/sitemap.xml`,
     host: siteMetadata.url,
