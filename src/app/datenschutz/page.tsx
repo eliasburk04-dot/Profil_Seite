@@ -1,20 +1,9 @@
-import { LegalDocument } from '@/components/ui';
-import { siteLegal } from '@/content';
-import { createPageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+import { LegalPage } from '@/components/leanbulk/legal-page';
+import { privacy } from '@/content/legal';
 
-export const metadata = createPageMetadata({
-  title: siteLegal.privacy.title,
-  description: siteLegal.privacy.description,
-  path: '/datenschutz',
-});
+export const metadata: Metadata = { title: 'Datenschutz – LeanBulk', description: privacy.description };
 
 export default function PrivacyPage() {
-  return (
-    <LegalDocument
-      title={siteLegal.privacy.title}
-      description={siteLegal.privacy.description}
-      effectiveDate={siteLegal.privacy.effectiveDate}
-      sections={siteLegal.privacy.sections}
-    />
-  );
+  return <LegalPage document={privacy} />;
 }

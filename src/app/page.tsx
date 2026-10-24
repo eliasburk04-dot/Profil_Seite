@@ -1,120 +1,165 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
-import { FAQJsonLd } from '@/components/seo/json-ld';
-import { createPageMetadata } from '@/lib/metadata';
-import {
-  conversion,
-  homeContent,
-  profile,
-  services,
-  servicesContent,
-} from '@/content';
-import {
-  Button,
-  CtaBand,
-  FAQAccordion,
-  GlassCard,
-  HeroRibbonBackground,
-  ProcessTimeline,
-  SectionHeader,
-  SectionReveal,
-  ServiceCard,
-} from '@/components/ui';
+import { Barbell } from '@/components/leanbulk/barbell';
+import { GymLog } from '@/components/leanbulk/gym-log';
+import { ScanDemo } from '@/components/leanbulk/scan-demo';
+import { StickyJoin } from '@/components/leanbulk/sticky-join';
+import { TodayDemo } from '@/components/leanbulk/today-demo';
+import { WaitlistForm } from '@/components/leanbulk/waitlist-form';
+import { WeightTrend } from '@/components/leanbulk/weight-trend';
 
-export const metadata = createPageMetadata({
-  title: 'Burk-Solutions | Websites, Web Apps & Mobile Apps entwickeln lassen',
-  description:
-    'Burk-Solutions entwickelt professionelle Websites, leistungsfähige Web Apps und native mobile Apps für Unternehmen. Kostenlose Erstberatung – aus Deutschland.',
-  path: '/',
-});
+const PRIVACY_SPEC = [
+  { term: 'Speicherort', detail: 'Auf deinem iPhone. Die App funktioniert auch offline.' },
+  { term: 'Konto', detail: 'Brauchst du nicht. Kein Login, keine Cloud.' },
+  { term: 'Apple Health', detail: 'Nur lesen, nur nach deiner Freigabe: Schritte und Aktivitätsenergie.' },
+  { term: 'Export', detail: 'Vollständige Sicherung mit Wiederherstellung, dazu CSV für Tabellen.' },
+];
 
-export default function HomePage() {
+export default function LeanBulkPage() {
   return (
-    <div className="section-stack">
-      <FAQJsonLd items={profile.faq} />
-      <SectionReveal>
-        <section className="relative min-h-screen flex flex-col items-center justify-center py-24 px-6 sm:px-8">
+    <>
+      <a href="#inhalt" className="lb-skip">
+        Zum Inhalt springen
+      </a>
 
-          <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto w-full space-y-10">
-            <div className="section-badge w-fit bg-white/5 border border-white/10 text-white/80 rounded-full px-4 py-1.5 flex items-center gap-2 backdrop-blur-md">
-              <Sparkles className="h-3.5 w-3.5" />
-              <span className="text-xs tracking-wider uppercase font-semibold">{homeContent.heroBadge}</span>
-            </div>
+      <header className="lb-top">
+        <span className="lb-wordmark">LeanBulk</span>
+        <span className="lb-top__tag">Für iPhone · Start bald</span>
+      </header>
 
-            <div className="space-y-6 w-full">
-              <h1 className="text-[clamp(3rem,7vw,5.5rem)] leading-[1.05] tracking-[-0.04em] font-medium max-w-[900px] mx-auto text-white">
-                Websites, Web Apps & <span className="rich-accent">mobile</span> Apps, die den Unterschied <span className="rich-accent">machen.</span>
-              </h1>
-              <p className="max-w-2xl mx-auto text-[clamp(1.1rem,1.5vw,1.25rem)] leading-relaxed text-white/60">
-                {profile.subheadline}
-              </p>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-              <Button asChild variant="primary" size="lg" className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6 text-base font-medium h-auto border border-transparent transition-all">
-                <Link href="/contact">
-                  {conversion.primaryCtaLabel}
-                </Link>
-              </Button>
-              <Button asChild variant="secondary" size="lg" className="bg-[#1c1c1c]/40 text-white hover:bg-[#2c2c2c]/60 border border-white/10 rounded-full px-8 py-6 text-base font-medium h-auto backdrop-blur-xl transition-all">
-                <Link href="/services">{conversion.secondaryCtaLabel}</Link>
-              </Button>
-            </div>
-
-
+      <main id="inhalt">
+        <section className="lb-hero" aria-labelledby="hero-title">
+          <h1 id="hero-title" className="lb-display lb-hero__title">
+            <span>Masse.</span>
+            <span>Aber sauber.</span>
+          </h1>
+          <Barbell className="lb-hero__bar" initialPlates={4} />
+          <div className="lb-hero__body">
+            <p className="lb-lead">
+              LeanBulk ist die iPhone-App für deinen Lean Bulk. Kalorien, Makros, Gewicht, Schritte und dein
+              Training an einem Ort, mit einem Ziel, das sich nicht verbiegt.
+            </p>
+            <WaitlistForm id="warteliste-oben" />
           </div>
         </section>
-      </SectionReveal>
 
+        <section className="lb-field lb-field--red" aria-labelledby="ziel-title">
+          <div className="lb-split">
+            <div className="lb-copy">
+              <p className="lb-plate-mark" aria-hidden="true">25</p>
+              <h2 id="ziel-title" className="lb-display lb-h2">
+                Dein Ziel bleibt dein Ziel.
+              </h2>
+              <p>
+                Du legst dein Kalorienziel fest, und dabei bleibt es. Schritte aus Apple Health, Cardio und
+                Training laufen als eigener Aktivitätsverbrauch daneben.
+              </p>
+              <p>
+                Keine Kalorien, die du dir „zurückverdienst“. Kein Ziel, das jeden Tag woanders liegt. Nur die
+                Zahl, die du dir vorgenommen hast.
+              </p>
+            </div>
+            <TodayDemo />
+          </div>
+        </section>
 
+        <section className="lb-field lb-field--blue" aria-labelledby="scan-title">
+          <div className="lb-split lb-split--flip">
+            <div className="lb-copy">
+              <p className="lb-plate-mark" aria-hidden="true">20</p>
+              <h2 id="scan-title" className="lb-display lb-h2">
+                Scannen statt schätzen.
+              </h2>
+              <p>
+                Barcode scannen oder in Open Food Facts suchen, Menge eintippen, fertig. Kalorien und Makros
+                rechnet LeanBulk selbst.
+              </p>
+              <p>
+                Eigene Lebensmittel legst du einmal an. Dein Standard-Frühstück speicherst du als Vorlage und
+                trägst es danach mit zwei Taps ein.
+              </p>
+            </div>
+            <ScanDemo />
+          </div>
+        </section>
 
-      <SectionReveal delay={0.08} className="space-y-6">
-        <SectionHeader
-          title={homeContent.servicesPreviewTitle}
-          description={profile.competencies.description}
-          eyebrow={servicesContent.title}
-        />
-        <div className="grid gap-4 lg:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
-        </div>
-      </SectionReveal>
+        <section className="lb-field lb-field--yellow" aria-labelledby="gym-title">
+          <div className="lb-split">
+            <div className="lb-copy">
+              <p className="lb-plate-mark" aria-hidden="true">15</p>
+              <h2 id="gym-title" className="lb-display lb-h2">
+                Jeder Satz zählt.
+              </h2>
+              <p>
+                Übungen anlegen, Arbeitsgewicht und Satzzahl festlegen, im Training Gewicht und Wiederholungen
+                pro Satz eintragen. Die Historie zeigt dir schwarz auf gelb, ob du stärker wirst.
+              </p>
+            </div>
+            <GymLog />
+          </div>
+        </section>
 
-      <SectionReveal delay={0.11} className="space-y-6">
-        <SectionHeader title={profile.workflowTitle} description={profile.workflowDescription} />
-        <ProcessTimeline steps={profile.workflow} />
-      </SectionReveal>
+        <section className="lb-field lb-field--green" aria-labelledby="trend-title">
+          <div className="lb-split lb-split--flip">
+            <div className="lb-copy">
+              <p className="lb-plate-mark" aria-hidden="true">10</p>
+              <h2 id="trend-title" className="lb-display lb-h2">
+                Der Trend zählt, nicht der Tag.
+              </h2>
+              <p>
+                Ein Gewicht pro Tag, dazu der 7-Tage-Durchschnitt. Wasser und Salz schwanken, der Schnitt zeigt
+                dir, ob dein Aufbau sauber läuft.
+              </p>
+              <p className="lb-import">
+                <span className="lb-import__raw">Mo, 06.10.26: 76,2kg</span>
+                <span className="lb-import__note">
+                  Alte Werte aus der Notizen-App fügst du einfach ein. LeanBulk erkennt sie und zeigt dir vor dem
+                  Speichern eine Vorschau.
+                </span>
+              </p>
+            </div>
+            <WeightTrend />
+          </div>
+        </section>
 
+        <section className="lb-field lb-field--chalk" aria-labelledby="daten-title">
+          <div className="lb-privacy">
+            <p className="lb-plate-mark" aria-hidden="true">5</p>
+            <h2 id="daten-title" className="lb-display lb-h2">
+              Deine Daten bleiben bei dir.
+            </h2>
+            <dl className="lb-spec">
+              {PRIVACY_SPEC.map((row) => (
+                <div key={row.term} className="lb-spec__row">
+                  <dt>{row.term}</dt>
+                  <dd>{row.detail}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
 
-      <SectionReveal delay={0.17} className="space-y-6">
-        <SectionHeader
-          title={homeContent.miniFaqTitle}
-          description={homeContent.miniFaqDescription}
-        />
-        <FAQAccordion items={profile.miniFaq} />
-      </SectionReveal>
+        <section id="warteliste" className="lb-close" aria-labelledby="close-title">
+          <h2 id="close-title" className="lb-display lb-h2 lb-close__title">
+            Leg die letzte Scheibe auf.
+          </h2>
+          <Barbell className="lb-close__bar" initialPlates={4} />
+          <p className="lb-lead">
+            Trag dich ein, und du erfährst als Erstes, wenn LeanBulk startet.
+          </p>
+          <WaitlistForm id="warteliste-unten" />
+        </section>
+      </main>
 
-      <SectionReveal delay={0.2}>
-        <CtaBand
-          eyebrow="Projektstart"
-          title={servicesContent.ctaTitle}
-          description={servicesContent.ctaDescription}
-          actions={
-            <>
-              <Button asChild variant="primary" size="lg" data-testid="home-final-cta">
-                <Link href="/contact">
-                  {conversion.primaryCtaLabel}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="secondary" size="lg">
-                <Link href="/services">Leistungen ansehen</Link>
-              </Button>
-            </>
-          }
-        />
-      </SectionReveal>
-    </div>
+      <footer className="lb-footer">
+        <span>© {new Date().getFullYear()} Elias Burk</span>
+        <nav aria-label="Rechtliches">
+          <Link href="/impressum">Impressum</Link>
+          <Link href="/datenschutz">Datenschutz</Link>
+        </nav>
+        <p className="lb-footer__note">Alle Werte in den App-Ansichten sind Beispielwerte.</p>
+      </footer>
+
+      <StickyJoin heroFormId="warteliste-oben" finalFormId="warteliste-unten" />
+    </>
   );
 }

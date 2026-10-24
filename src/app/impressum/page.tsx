@@ -1,20 +1,9 @@
-import { LegalDocument } from '@/components/ui';
-import { siteLegal } from '@/content';
-import { createPageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+import { LegalPage } from '@/components/leanbulk/legal-page';
+import { imprint } from '@/content/legal';
 
-export const metadata = createPageMetadata({
-  title: siteLegal.imprint.title,
-  description: siteLegal.imprint.description,
-  path: '/impressum',
-});
+export const metadata: Metadata = { title: 'Impressum – LeanBulk', description: imprint.description };
 
 export default function ImprintPage() {
-  return (
-    <LegalDocument
-      title={siteLegal.imprint.title}
-      description={siteLegal.imprint.description}
-      effectiveDate={siteLegal.imprint.effectiveDate}
-      sections={siteLegal.imprint.sections}
-    />
-  );
+  return <LegalPage document={imprint} />;
 }

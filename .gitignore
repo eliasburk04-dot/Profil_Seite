@@ -46,3 +46,6 @@ test-results/
 # Misc
 *.log
 .env*.local
+
+# Local waitlist storage (dev only)
+.data/

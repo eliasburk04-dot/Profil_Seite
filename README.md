@@ -1,56 +1,39 @@
-﻿# Burk-Solutions Portfolio
+# LeanBulk – Website
 
-Premium Portfolio-Website für Burk-Solutions auf Basis von Next.js, TypeScript und Tailwind CSS.
+Landingpage mit Warteliste für die iPhone-App **LeanBulk**. Gedacht als Ziel für den Link in der Instagram-Bio, deshalb mobile-first.
 
 ## Stack
 
-- Next.js 14 (App Router)
-- TypeScript (strict)
-- Tailwind CSS
-- Framer Motion (subtil)
-- Radix UI primitives
+- Next.js 14 (App Router), TypeScript
+- Eigenes CSS (`src/app/leanbulk.css`), kein Tailwind
+- Framer Motion für die Hantel, die Satz-Häkchen und den Gewichtsverlauf
+- lucide-react für Icons
 
-## Development
+## Entwicklung
 
 ```bash
 npm install
-npm run dev
+npm run dev -- -H 0.0.0.0   # auch im lokalen Netz erreichbar, z. B. vom Handy
 ```
 
-Wichtige Befehle:
+- `npm run build` – Production-Build
+- `npm run lint` / `npm run typecheck`
+- `npm test` – Playwright-Tests (iPhone- und Desktop-Viewport)
 
-- `npm run dev` – lokaler Dev-Server
-- `npm run build` – Production Build
-- `npm run start` – Production Server lokal
-- `npm run lint` – ESLint
-- `npm run format` – Prettier
+## Warteliste
 
-## Content
+`POST /api/waitlist` mit `{ email, source }`. Lokal landen die Einträge in `.data/waitlist.json` (gitignored).
+`?ref=insta` oder `?utm_source=…` im Link wird als Quelle mitgespeichert.
 
-Alle Inhalte liegen zentral in `src/content/index.ts`.
+**Vor dem Livegang:** Auf Vercel ist das Dateisystem schreibgeschützt. `src/lib/waitlist.ts` muss dann auf einen echten Speicher umgestellt werden, also eine Datenbank oder einen Mail-Anbieter mit Double-Opt-in. Die Datenschutzerklärung (`src/content/legal.ts`) muss diesen Anbieter und das Hosting nennen.
 
-## Glass Theme Tokens
+## Struktur
 
-Die Visual Tokens für das neue Dark-Glass-Design liegen in:
-
-- `src/styles/glass.css` (Single Source of Truth für Farben, Opacity, Blur, Border, Glow, Shadows, Radii, Spacing)
-- `tailwind.config.ts` (Tailwind-Mapping auf die CSS-Variablen)
-
-Wichtige Regler:
-
-- `--glass-opacity-*` steuert Flächen-Transparenz
-- `--blur-*` steuert Weichzeichner
-- `--border-alpha-*` steuert Border-Intensität
-- `--shadow-*` steuert Depth/Glow
-- `--accent-rgb` und `--accent-alpha-*` steuern Cyan-Glow-Farbe und Intensität
-
-## Deployment
-
-```bash
-vercel --prod
 ```
-
-## Hinweise
-
-- Design- und Interaktionslogik ist in wiederverwendbaren Komponenten unter `src/components/ui/` gekapselt.
-- Kontaktformular nutzt konsistente Input-Komponenten (`GlassInput`, `GlassSelect`, `GlassTextarea`).
+src/app/page.tsx              Landingpage
+src/app/impressum, datenschutz Rechtliches
+src/app/api/waitlist          Wartelisten-Endpunkt
+src/components/leanbulk/      Hantel, Formular, App-Screens, Charts
+src/content/legal.ts          Texte für Impressum und Datenschutz
+docs/leanbulk-landing-brief.md Design-Richtung
+```
