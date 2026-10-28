@@ -36,8 +36,8 @@ Die Texte wurden eigenständig aus den tatsächlichen Datenflüssen formuliert. 
 
 ## Vor Veröffentlichung der Website noch konkret klären
 
-1. **Betreiber**: Anschrift vom Nutzer am 28.10.2026 bestätigt; Telefon als zweiter direkter Kommunikationskanal am 28.10.2026 ergänzt. Offen: vorhandene USt-/W-IdNr. (nur eintragen, wenn vorhanden und vom Nutzer genannt).
-2. **Hosting**: bestehendes Projekt war HTTP 503 `DEPLOYMENT_PAUSED`, lokale Vercel-CLI nicht angemeldet. Nutzer hat Aktivierung/Anmeldung zugesagt. Passender kommerzieller Tarif, DPA, Datenregionen, Subprozessoren, Sicherheits-/Zugriffslogs und konkrete Speicherdauern sind accountabhängig. Die Datenschutzerklärung danach konkretisieren.
+1. **Betreiber**: Anschrift und Telefon am 28.10.2026 bestätigt; laut Nutzer keine USt-/W-IdNr. vorhanden. Erledigt.
+2. **Hosting**: Nutzerentscheidung 28.10.2026: vorerst Vercel Hobby; Risiken siehe `legal-review-2026-10-28.md`, Abschnitt 1. Ursprünglich war das bestehende Projekt HTTP 503 `DEPLOYMENT_PAUSED`, lokale Vercel-CLI nicht angemeldet. Nutzer hat Aktivierung/Anmeldung zugesagt. Passender kommerzieller Tarif, DPA, Datenregionen, Subprozessoren, Sicherheits-/Zugriffslogs und konkrete Speicherdauern sind accountabhängig. Die Datenschutzerklärung danach konkretisieren.
 3. **Support-Postfach**: verwendetes Gmail-Kontomodell und seine Vertragsgrundlage prüfen; ein geeignetes geschäftliches Postfach mit nachvollziehbarer Löschroutine erwägen. Keine Gesundheitsdateien anfordern. Eine vorhandene Datenschutzvereinbarung wird nicht fingiert.
 
 ## Vor App-Store-Einreichung gesondert prüfen

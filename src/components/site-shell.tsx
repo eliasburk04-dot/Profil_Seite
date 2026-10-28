@@ -68,6 +68,16 @@ export function Footer() {
     </footer>
   );
 }
+/** Colours the sentence after the first full stop, echoing the hero headline. */
+export function TwoTone({ text }: { text: string }) {
+  const split = text.indexOf('. ');
+  if (split < 0) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, split + 1)} <em>{text.slice(split + 2)}</em>
+    </>
+  );
+}
 export function BackLink() {
   return (
     <a href="/" className="back-link">

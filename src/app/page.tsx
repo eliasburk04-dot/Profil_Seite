@@ -1,6 +1,6 @@
 import { ArrowRight, Check, ShieldCheck, Heart, ArrowUpRight, Plus } from 'lucide-react';
 import { site } from '@/content';
-import { PhoneShot } from '@/components/site-shell';
+import { PhoneShot, TwoTone } from '@/components/site-shell';
 export default function Home() {
   const h = site.home;
   const structuredData = {
@@ -21,27 +21,38 @@ export default function Home() {
           __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
         }}
       />
-      <section className="hero container">
-        <div className="hero-copy">
-          <h1>
-            {h.headline[0]}
-            <br />
-            <em>{h.headline[1]}</em>
+      <section className="hero-stage" aria-labelledby="hero-title">
+        <div className="hero-stage-copy container">
+          <h1 id="hero-title">
+            <span className="hero-line">{h.headline[0]}</span>
+            <span className="hero-line">
+              <em>{h.headline[1]}</em>
+            </span>
           </h1>
           <p className="hero-intro">{h.intro}</p>
-          <a className="button" href="#funktionen">
-            {h.primary}
-            <ArrowRight size={20} aria-hidden="true" />
-          </a>
+          <div className="hero-actions">
+            <a className="button button-light" href="#funktionen">
+              {h.primary}
+              <ArrowRight size={20} aria-hidden="true" />
+            </a>
+            <a className="hero-secondary" href={site.links.support}>
+              {h.secondary}
+            </a>
+          </div>
           <p className="launch-status">
             <span />
             {h.status}
           </p>
         </div>
-        <figure className="hero-figure">
-          <div className="hero-visual">
-            <div className="hero-visual-title">{h.heroCaption}</div>
-            <PhoneShot src="/screens/today.webp" alt={h.features[0].alt} priority />
+        <figure className="hero-trio">
+          <div className="trio-phone trio-side trio-left">
+            <PhoneShot src={h.features[1].image} alt={h.features[1].alt} priority />
+          </div>
+          <div className="trio-phone trio-center">
+            <PhoneShot src={h.features[0].image} alt={h.features[0].alt} priority />
+          </div>
+          <div className="trio-phone trio-side trio-right">
+            <PhoneShot src={h.features[2].image} alt={h.features[2].alt} priority />
           </div>
           <figcaption>{site.ui.synthetic}</figcaption>
         </figure>
@@ -56,7 +67,9 @@ export default function Home() {
       </div>
       <section className="features container" id="funktionen">
         <div className="section-heading">
-          <h2>{h.featuresTitle}</h2>
+          <h2>
+            <TwoTone text={h.featuresTitle} />
+          </h2>
           <p>{h.featuresIntro}</p>
         </div>
         {h.features.map((feature, index) => (
@@ -98,7 +111,9 @@ export default function Home() {
                   </svg>
                 )}
               </span>
-              <h3>{feature.title}</h3>
+              <h3>
+                <TwoTone text={feature.title} />
+              </h3>
               <p>{feature.text}</p>
               <p className="secondary-copy">{feature.detail}</p>
             </div>
@@ -176,7 +191,9 @@ export default function Home() {
         </div>
       </section>
       <section className="care container">
-        <h2>{h.careTitle}</h2>
+        <h2>
+          <TwoTone text={h.careTitle} />
+        </h2>
         <div>
           <p>{h.careText}</p>
           <p>{h.careYouth}</p>
@@ -200,15 +217,15 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="final-cta container">
-        <div>
+      <section className="final-stage">
+        <div className="final-cta container">
           <h2>{h.finalTitle}</h2>
           <p>{h.finalText}</p>
+          <a className="button button-light" href={site.links.support}>
+            {site.ui.support}
+            <ArrowRight size={20} aria-hidden="true" />
+          </a>
         </div>
-        <a className="button" href={site.links.support}>
-          {site.ui.support}
-          <ArrowRight size={20} aria-hidden="true" />
-        </a>
       </section>
     </>
   );

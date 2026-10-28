@@ -16,7 +16,7 @@ Menschen, die Lean Bulk für Ernährung, Gewicht und Krafttraining kennenlernen 
 
 ## Capabilities and Constraints
 
-Die App ist zum dokumentierten Stand noch nicht im App Store veröffentlicht. Tracking und Sicherung sind kostenlos; Premium ist ein Apple-Abo. Keine Website-Käufe, Konten, Newsletter, Uploads oder Kontaktformular-Attrappen. E-Mail-Support bleibt ein bewusst geöffneter Mailto-Link. Alle App-Abbildungen verwenden synthetische Daten. Quelle für Funktionsumfang: LeanBulk/docs/requirements.md und aktuelle App-Implementierung.
+Die Website tritt ohne Vorbereitungshinweis auf; der App-Store-Link folgt, sobald die App-ID feststeht. Tracking und Sicherung sind kostenlos; Premium ist ein Apple-Abo. Keine Website-Käufe, Konten, Newsletter, Uploads oder Kontaktformular-Attrappen. E-Mail-Support bleibt ein bewusst geöffneter Mailto-Link. Alle App-Abbildungen verwenden synthetische Daten. Quelle für Funktionsumfang: LeanBulk/docs/requirements.md und aktuelle App-Implementierung.
 
 ## Brand Commitments
 
@@ -28,4 +28,4 @@ App-Icon und Nunito Sans aus dem LeanBulk-Repository. Frische native Simulatorau
 
 ## Open Decisions
 
-Steuerangaben (USt-/W-IdNr., falls vorhanden), Hostingtarif und konkrete Vertrags-/Logkonfiguration vor Veröffentlichung bestätigen. Betreiberadresse und Telefon am 28.10.2026 bestätigt; Website seit 28.10.2026 auf Vercel veröffentlicht. Eine rechtliche Gesamtfreigabe ist nicht erfolgt.
+Hosting bleibt laut Nutzer vorerst Vercel Hobby (Vertrags- und Auftragsverarbeitungsrisiko dokumentiert in docs/legal-review-2026-10-28.md). Keine Steuernummern vorhanden. App-Store-ID für den Store-Link fehlt noch. Eine rechtliche Gesamtfreigabe ist nicht erfolgt.

@@ -15,7 +15,7 @@ export type DocumentContent = {
 };
 export const site = {
   name: 'Lean Bulk',
-  url: 'https://burk-solutions-portfolio.vercel.app',
+  url: 'https://www.burk-solutions.de',
   email: 'eliasburk04@gmail.com',
   phone: '0176 74736492',
   phoneHref: 'tel:+4917674736492',
@@ -74,7 +74,7 @@ export const site = {
     helpTitle: 'Hilfe & Kontakt',
     legalTitle: 'Rechtliches',
     copyright: '© 2026 Elias Burk · Lean Bulk',
-    note: 'Für iPhone. Veröffentlichung im App Store in Vorbereitung.',
+    note: 'Lean Bulk für iPhone.',
     links: [
       {
         label: 'Datenschutz',
@@ -120,7 +120,7 @@ export const site = {
       'Essen, Gewicht und Krafttraining gehören zusammen. Halte sie an einem Ort fest – und erkenne, wie sich dein Alltag entwickelt.',
     primary: 'Funktionen entdecken',
     secondary: 'Fragen zur App?',
-    status: 'Für iPhone · App-Store-Start in Vorbereitung',
+    status: 'Für iPhone · Kostenlos mit optionalem Premium-Abo',
     heroCaption: 'Dein Tag. Essen, Ziele und Bewegung auf einen Blick.',
     trust: ['Ohne Nutzerkonto', 'Dein Journal lokal', 'Keine Werbung'],
     featuresTitle: 'Weniger Wechseln. Mehr Überblick.',
@@ -181,7 +181,7 @@ export const site = {
     premium: {
       name: 'Premium',
       subtitle: 'Für den nächsten Schritt',
-      month: '4,99 € / Monat',
+      month: 'oder 4,99 € im Monatsabo',
       year: '29,99 € / Jahr',
       trial: '7 Tage kostenlos testen beim Jahresabo, sofern du berechtigt bist.',
       items: [
@@ -194,7 +194,7 @@ export const site = {
       ],
     },
     priceNote:
-      'Geplante Startpreise für Deutschland. Maßgeblich sind der in der App und im Apple-Kaufdialog angezeigte Gesamtpreis, die Währung und die Angebotsberechtigung. Der Kauf erfolgt ausschließlich in der App über Apple; auf dieser Website gibt es keinen Kaufabschluss.',
+      'Startpreise für Deutschland. Maßgeblich sind der in der App und im Apple-Kaufdialog angezeigte Gesamtpreis, die Währung und die Angebotsberechtigung. Der Kauf erfolgt ausschließlich in der App über Apple; auf dieser Website gibt es keinen Kaufabschluss.',
     renewal:
       'Abos verlängern sich automatisch, bis du sie rechtzeitig bei Apple kündigst. Bei einer kostenlosen Testphase kündige mindestens 24 Stunden vor deren Ende. Nach Abo-Ende bleiben deine Daten, übernommenen Pläne und bestätigten Ziele erhalten.',
     usageLink: 'Alle Informationen zu Nutzung und Abos',
@@ -367,8 +367,8 @@ export const documents = {
         title: 'Online-Produktsuche und Barcode-Abruf',
         paragraphs: [
           'Der allgemeine Lebensmittelkatalog ist lokal vorhanden. Die ergänzende Markenproduktsuche sendet deinen Suchtext automatisch nach einer kurzen Eingabepause an Open Food Facts. Beim Abruf eines Barcodes wird die Produktnummer gesendet. Auch Seitenwechsel innerhalb der Online-Ergebnisse lösen Anfragen aus. Gib in die Produktsuche keine Namen, Geburtsdaten oder Gesundheitsangaben ein.',
-          'Empfänger ist der gemeinnützige Verein Open Food Facts, Frankreich. Die Verbindung geht direkt von deinem Gerät an search.openfoodfacts.org beziehungsweise world.openfoodfacts.org. Dabei erhält der Dienst technisch notwendige Verbindungsdaten einschließlich IP-Adresse, Anfragedatum und App-Kennung. Journal, Mahlzeitenhistorie und Kamerabilder werden nicht mitgeschickt.',
-          'Die Anfrage dient der von dir aufgerufenen Produktsuche (Art. 6 Abs. 1 Buchst. b DSGVO). Online-Abrufe kannst du vermeiden, indem du offline arbeitest oder eigene Lebensmittel manuell anlegst. Übernommene Produkte bleiben lokal wiederverwendbar. Die Speicherdauer beim unabhängigen Anbieter richtet sich nach dessen eigener Erklärung; wir steuern sie nicht.',
+          'Empfänger ist der gemeinnützige Verein Open Food Facts, 21 rue des Iles, 94100 Saint-Maur-des-Fossés, Frankreich. Die Verbindung geht direkt von deinem Gerät an search.openfoodfacts.org beziehungsweise world.openfoodfacts.org. Dabei erhält der Dienst technisch notwendige Verbindungsdaten einschließlich IP-Adresse, Anfragedatum und App-Kennung. Journal, Mahlzeitenhistorie und Kamerabilder werden nicht mitgeschickt.',
+          'Die Anfrage dient der von dir aufgerufenen Produktsuche (Art. 6 Abs. 1 Buchst. b DSGVO). Online-Abrufe kannst du vermeiden, indem du offline arbeitest oder eigene Lebensmittel manuell anlegst. Übernommene Produkte bleiben lokal wiederverwendbar. Open Food Facts ist für seine Verarbeitung selbst verantwortlich und gibt in seiner Datenschutzerklärung für Server-Protokolle mit IP-Adressen eine Aufbewahrung von bis zu drei Jahren an; wir steuern das nicht.',
         ],
         links: [
           {
@@ -427,16 +427,12 @@ export const documents = {
           'Die Website wird über Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, USA, ausgeliefert. Beim Aufruf werden insbesondere IP-Adresse, Zeitpunkt, angefragte Adresse, technische Browser-/Verbindungsangaben und gegebenenfalls Fehler- und Sicherheitsinformationen verarbeitet, um Seiten auszuliefern und Angriffe abzuwehren.',
           'Rechtsgrundlage ist Art. 6 Abs. 1 Buchst. f DSGVO. Unser berechtigtes Interesse ist eine sichere und zuverlässig erreichbare Informations- und Supportwebsite. Wir betreiben keine Besucherprofile, Werbetracker, Web-Analytics oder Sitzungsaufzeichnungen im Website-Code. Schriftdateien und Abbildungen werden vom selben Webauftritt ausgeliefert; Videos und Social-Media-Inhalte sind nicht extern eingebettet.',
           'Der Website-Code setzt keine Analyse- oder Marketing-Cookies und speichert keine Besucherdaten in localStorage. Technisch erforderliche Netzwerk- und Cachefunktionen des Browsers und des Hosters bleiben möglich. Für rein notwendige Vorgänge gilt § 25 Abs. 2 TDDDG; zusätzliche Trackingfunktionen würden vor ihrer Aktivierung neu bewertet und gegebenenfalls erst nach Einwilligung eingesetzt.',
-          'Vercel verarbeitet technische Betriebsdaten nach dem vereinbarten Hostingvertrag und seinen Löschregeln. Die konkrete Aufbewahrung hängt von Protokollart und Hostingkonfiguration ab; wir betreiben keinen eigenen zusätzlichen Besucher-Logspeicher. Bei einem dokumentierten Sicherheitsvorfall können erforderliche Daten bis zur Klärung erhalten bleiben.',
+          'Vercel verarbeitet diese technischen Betriebsdaten nach seinen Nutzungsbedingungen und seiner Datenschutzerklärung. Nach eigener Angabe bewahrt Vercel sie nur so lange auf, wie es für Betrieb, Sicherheit und gesetzliche Pflichten nötig ist, und löscht oder anonymisiert sie danach; eine feste Frist nennt Vercel nicht. Wir betreiben keinen eigenen zusätzlichen Besucher-Logspeicher und werten keine Zugriffsprotokolle aus.',
         ],
         links: [
           {
             label: 'Vercel-Datenschutzhinweise',
             href: 'https://vercel.com/legal/privacy-notice',
-          },
-          {
-            label: 'Vercel-Auftragsverarbeitungsbedingungen',
-            href: 'https://vercel.com/legal/dpa',
           },
         ],
       },
@@ -460,7 +456,7 @@ export const documents = {
         title: 'Empfänger und Verarbeitung im Ausland',
         paragraphs: [
           'Vercel ist ein US-Anbieter. Auch bei Apple, Google und von dir gewählten Speicheranbietern kann eine Verarbeitung außerhalb der EU beziehungsweise der Schweiz stattfinden. App-Journalwerte gehen nicht automatisch an den Website-Hoster oder per Support-E-Mail an den Entwickler.',
-          'Vercel verweist auf seine Zertifizierungen nach EU-US und Swiss-US Data Privacy Framework sowie auf vertragliche Garantien für Drittlandtransfers. Ob und welche Garantie für einen konkreten Anbieter und Datenfluss greift, richtet sich nach dem jeweiligen Vertrag und der aktuellen Zertifizierung. Informationen und Kopien einschlägiger Garantien kannst du über die oben genannte Kontaktadresse anfragen.',
+          'Vercel ist nach eigener Angabe unter dem EU-US Data Privacy Framework einschließlich der Schweizer Erweiterung zertifiziert; für die USA besteht dafür ein Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Ob eine Zertifizierung aktuell besteht, kannst du in der öffentlichen Liste unter dataprivacyframework.gov prüfen. Informationen und Kopien einschlägiger Garantien kannst du über die oben genannte Kontaktadresse anfragen.',
           'Für Nutzerinnen und Nutzer in der Schweiz gelten ergänzend die Rechte nach dem Schweizer Datenschutzgesetz. Empfängerstaaten können insbesondere Deutschland, Frankreich, Irland und die USA sein; weitere Staaten können sich aus den von dir gewählten Apple-, Google- oder Speicherdiensten ergeben.',
         ],
       },
@@ -496,7 +492,7 @@ export const documents = {
         id: 'minderjaehrige',
         title: 'Jüngere Nutzer und Änderungen',
         paragraphs: [
-          'Lean Bulk ist als Fitnessjournal für den App-Store-Start mit einer Altersfreigabe ab 16 vorgesehen. Der Zielrechner verwendet für 16- und 17-Jährige eigene Regeln; unter 16 gibt es keine berechneten Vorschläge. Das ist keine medizinische Freigabe und ersetzt bei Minderjährigen nicht die notwendige Zustimmung der gesetzlichen Vertretung zu kostenpflichtigen Verträgen.',
+          'Lean Bulk ist als Fitnessjournal für Menschen ab 16 Jahren gedacht. Der Zielrechner verwendet für 16- und 17-Jährige eigene Regeln; unter 16 gibt es keine berechneten Vorschläge. Das ist keine medizinische Freigabe und ersetzt bei Minderjährigen nicht die notwendige Zustimmung der gesetzlichen Vertretung zu kostenpflichtigen Verträgen.',
           'Wenn sich Funktionen, Empfänger oder Datenflüsse ändern, wird diese Erklärung angepasst. Der oben genannte Stand kennzeichnet diese Fassung. Eine Datenschutzerklärung ersetzt keine gegebenenfalls separat erforderliche Einwilligung.',
         ],
       },
@@ -597,7 +593,7 @@ export const documents = {
         id: 'preise',
         title: 'Preise, Testphase und Verlängerung',
         paragraphs: [
-          'Geplante deutsche Startpreise: 4,99 Euro pro Monat oder 29,99 Euro pro Jahr. Für berechtigte neue Abonnentinnen und Abonnenten ist beim Jahresabo eine kostenlose Testphase von sieben Tagen vorgesehen. Maßgeblich sind stets Gesamtpreis, Währung, Laufzeit und Testberechtigung im Apple-Kaufdialog. Andere Länder und spätere Angebote können abweichen.',
+          'Deutsche Startpreise: 4,99 Euro pro Monat oder 29,99 Euro pro Jahr. Für berechtigte neue Abonnentinnen und Abonnenten enthält das Jahresabo eine kostenlose Testphase von sieben Tagen. Maßgeblich sind stets Gesamtpreis, Währung, Laufzeit und Testberechtigung im Apple-Kaufdialog. Andere Länder und spätere Angebote können abweichen.',
           'Ein kostenpflichtiges Abo wird erst durch den Kaufabschluss bei Apple ausgelöst. Nach der Testphase beziehungsweise dem bezahlten Zeitraum verlängert es sich automatisch zum angezeigten Preis, sofern es nicht rechtzeitig gekündigt wird. Die Website nimmt keine Bestellungen und keine Zahlungen an.',
           'Die Darstellung eines Tages in einer Testphasen-Zeitleiste ist keine zugesagte Kündigungserinnerung. Verlasse dich auf das bei Apple angezeigte Verlängerungsdatum und stelle bei Bedarf selbst eine Erinnerung ein.',
         ],
