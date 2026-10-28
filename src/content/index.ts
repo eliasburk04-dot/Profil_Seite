@@ -17,7 +17,9 @@ export const site = {
   name: 'Lean Bulk',
   url: 'https://burk-solutions-portfolio.vercel.app',
   email: 'eliasburk04@gmail.com',
-  date: '27. Oktober 2026',
+  phone: '0176 74736492',
+  phoneHref: 'tel:+4917674736492',
+  date: '28. Oktober 2026',
   operator: {
     name: 'Elias Burk',
     street: 'Friedrich-Naumann Straße 11',
@@ -332,7 +334,7 @@ export const documents = {
         id: 'verantwortlicher',
         title: 'Wer verantwortlich ist',
         paragraphs: [
-          'Verantwortlich für diese Website, die Bereitstellung der App und Supportanfragen ist Elias Burk, Friedrich-Naumann Straße 11, 71636 Ludwigsburg, Deutschland. E-Mail: eliasburk04@gmail.com.',
+          'Verantwortlich für diese Website, die Bereitstellung der App und Supportanfragen ist Elias Burk, Friedrich-Naumann Straße 11, 71636 Ludwigsburg, Deutschland. E-Mail: eliasburk04@gmail.com, Telefon: 0176 74736492.',
           'Diese Erklärung beschreibt die Lean-Bulk-App für iPhone und diese Website. Apple, Open Food Facts und von dir gewählte Datei- oder E-Mail-Dienste verarbeiten Daten in ihrem jeweiligen Verantwortungsbereich. Die App hat keinen eigenen Journal-Server und kein Lean-Bulk-Nutzerkonto.',
         ],
       },
@@ -442,7 +444,7 @@ export const documents = {
         id: 'support',
         title: 'Wenn du den Support kontaktierst',
         paragraphs: [
-          'Sendest du eine E-Mail, verarbeiten wir deine Absenderadresse, den Nachrichtentext und freiwillig beigefügte Angaben zur Bearbeitung und Beantwortung. Nutze für normale technische Fragen keine Gesundheitsdaten. Die Supportadresse ist ein Gmail-Postfach; Google verarbeitet E-Mail-Inhalte und Verbindungsdaten nach den für das verwendete Konto geltenden Bedingungen.',
+          'Sendest du eine E-Mail, verarbeiten wir deine Absenderadresse, den Nachrichtentext und freiwillig beigefügte Angaben zur Bearbeitung und Beantwortung. Nutze für normale technische Fragen keine Gesundheitsdaten. Die Supportadresse ist ein Gmail-Postfach; Google verarbeitet E-Mail-Inhalte und Verbindungsdaten nach den für das verwendete Konto geltenden Bedingungen. Rufst du an, verarbeiten wir deine Telefonnummer, sofern sie übermittelt wird, und den Inhalt des Gesprächs zur Beantwortung deiner Anfrage.',
           'Für vertragsbezogene Anfragen gilt Art. 6 Abs. 1 Buchst. b DSGVO, für allgemeine Anfragen Art. 6 Abs. 1 Buchst. f DSGVO (Interesse an der Beantwortung). Für rechtlich erforderliche Aufbewahrung gilt Art. 6 Abs. 1 Buchst. c DSGVO. Eine gewöhnliche Supportanfrage ist keine Einwilligung in eine weitergehende Auswertung von Gesundheitsdaten.',
           'Nach Abschluss wird die Kommunikation gelöscht, sobald sie zur Bearbeitung nicht mehr erforderlich ist und keine gesetzlichen Aufbewahrungspflichten oder Erfordernisse zur Rechtsverteidigung entgegenstehen. Vertrags- oder steuerrelevante Nachrichten werden nur im gesetzlich erforderlichen Umfang aufbewahrt. Frage bei Bedarf nach der für deine konkrete Anfrage geltenden Frist.',
         ],
@@ -518,11 +520,15 @@ export const documents = {
       {
         id: 'kontakt',
         title: 'Kontakt',
-        paragraphs: ['E-Mail: eliasburk04@gmail.com'],
+        paragraphs: ['E-Mail: eliasburk04@gmail.com', 'Telefon: 0176 74736492'],
         links: [
           {
             label: 'E-Mail an Elias Burk',
             href: 'mailto:eliasburk04@gmail.com',
+          },
+          {
+            label: 'Elias Burk anrufen',
+            href: 'tel:+4917674736492',
           },
           {
             label: 'Support für Lean Bulk',

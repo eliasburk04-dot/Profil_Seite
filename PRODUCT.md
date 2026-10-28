@@ -24,8 +24,8 @@ Lean Bulk ist der einzige Produktname. Die bestehende Identität der iPhone-App 
 
 ## Evidence on Hand
 
-App-Icon und Nunito Sans aus dem LeanBulk-Repository. Frische native Simulatoraufnahmen mit synthetischem Showcase-Journal; Herkunft in docs/screenshots.json. Rechtsrecherche und offene Betreiber-/Hostingfragen in docs/legal-research-2026-10-27.md. Betreiberangaben stammen vorläufig aus dem bisherigen öffentlichen Impressum; Bestätigung angefragt.
+App-Icon und Nunito Sans aus dem LeanBulk-Repository. Frische native Simulatoraufnahmen mit synthetischem Showcase-Journal; Herkunft in docs/screenshots.json. Rechtsrecherche und offene Betreiber-/Hostingfragen in docs/legal-research-2026-10-27.md. Betreiberangaben vom Nutzer am 28.10.2026 bestätigt.
 
 ## Open Decisions
 
-Betreiberadresse, zusätzliche Kontakt-/Steuerangaben, Hostingtarif und konkrete Vertrags-/Logkonfiguration vor Veröffentlichung bestätigen. Der Nutzer hat zugesagt, das pausierte Vercel-Projekt zu aktivieren und sich zur Veröffentlichung anzumelden. Eine rechtliche Gesamtfreigabe ist nicht erfolgt.
+Steuerangaben (USt-/W-IdNr., falls vorhanden), Hostingtarif und konkrete Vertrags-/Logkonfiguration vor Veröffentlichung bestätigen. Betreiberadresse und Telefon am 28.10.2026 bestätigt; Website seit 28.10.2026 auf Vercel veröffentlicht. Eine rechtliche Gesamtfreigabe ist nicht erfolgt.

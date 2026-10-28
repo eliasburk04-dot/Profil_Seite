@@ -41,7 +41,7 @@ for (const route of routes) {
       m[1].replaceAll('&amp;', '&')
     );
     for (const href of new Set(hrefs)) {
-      if (/^(?:mailto:|https:)/.test(href)) continue;
+      if (/^(?:mailto:|tel:|https:)/.test(href)) continue;
       const target = new URL(href, origin + route);
       assert.equal(target.origin, origin);
       const targetHTML = await page(target.pathname);

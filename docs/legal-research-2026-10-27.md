@@ -36,7 +36,7 @@ Die Texte wurden eigenständig aus den tatsächlichen Datenflüssen formuliert. 
 
 ## Vor Veröffentlichung der Website noch konkret klären
 
-1. **Betreiber**: bestehende Anschrift und E-Mail, vorhandene USt-/W-IdNr. sowie zweiter direkter Kommunikationskanal. Daten stammen aus dem früheren öffentlichen Impressum; Bestätigung angefragt. Ohne Bestätigung keine erfundenen Nummern eintragen.
+1. **Betreiber**: Anschrift vom Nutzer am 28.10.2026 bestätigt; Telefon als zweiter direkter Kommunikationskanal am 28.10.2026 ergänzt. Offen: vorhandene USt-/W-IdNr. (nur eintragen, wenn vorhanden und vom Nutzer genannt).
 2. **Hosting**: bestehendes Projekt war HTTP 503 `DEPLOYMENT_PAUSED`, lokale Vercel-CLI nicht angemeldet. Nutzer hat Aktivierung/Anmeldung zugesagt. Passender kommerzieller Tarif, DPA, Datenregionen, Subprozessoren, Sicherheits-/Zugriffslogs und konkrete Speicherdauern sind accountabhängig. Die Datenschutzerklärung danach konkretisieren.
 3. **Support-Postfach**: verwendetes Gmail-Kontomodell und seine Vertragsgrundlage prüfen; ein geeignetes geschäftliches Postfach mit nachvollziehbarer Löschroutine erwägen. Keine Gesundheitsdateien anfordern. Eine vorhandene Datenschutzvereinbarung wird nicht fingiert.
 
