@@ -10,8 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/site-contract.test.mjs",
     "format": "prettier --write .",
-    "preview": "npx --yes wrangler@4.154.0 pages dev out --port 3107",
-    "deploy": "npx --yes wrangler@4.154.0 pages deploy out --project-name burk-solutions --branch main"
+    "preview": "npx --yes wrangler@4.154.0 dev --port 3107",
+    "deploy": "npx --yes wrangler@4.154.0 deploy"
   },
   "dependencies": {
     "lucide-react": "1.62.0",
