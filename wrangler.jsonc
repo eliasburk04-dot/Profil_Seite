@@ -4,6 +4,14 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "burk-solutions",
   "compatibility_date": "2026-10-01",
+  // Only the custom domains serve the site; no workers.dev or preview URLs.
+  "workers_dev": false,
+  "preview_urls": false,
+  // Custom domains create their DNS records on deploy; existing records for these names must be removed first.
+  "routes": [
+    { "pattern": "www.burk-solutions.de", "custom_domain": true },
+    { "pattern": "burk-solutions.de", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./out",
     "html_handling": "auto-trailing-slash",
