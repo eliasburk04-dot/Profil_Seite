@@ -32,7 +32,7 @@ Geprüft gegen Art. 13 DSGVO (Pflichtangaben), Art. 6 und 9 DSGVO, Art. 44 ff. D
 | Gesundheitsdaten (Art. 9) | Verarbeitung nur lokal auf dem Gerät; die App sendet Journal- und Health-Daten nicht an den Betreiber. Dann ist umstritten, ob der App-Anbieter überhaupt Verantwortlicher ist (weite Auslegung durch den EuGH, z. B. C‑25/17 *Zeugen Jehovas*, C‑40/17 *Fashion ID*). Die Erklärung beansprucht dafür keine Rechtsgrundlage, sondern beschreibt die Datenflüsse. Eine ausdrückliche Einwilligung nach Art. 9 Abs. 2 a wäre der sichere Weg, falls künftig Daten das Gerät verlassen. | Gelb |
 | Endgerätezugriff (§ 25 TDDDG) | Lokale Speicherung als für den ausdrücklich gewünschten Dienst unbedingt erforderlich begründet (§ 25 Abs. 2 Nr. 2). Website setzt keine Cookies (automatisierter Test). | Grün |
 | Open Food Facts | Direkter Abruf vom Gerät; Verein mit Sitz 21 rue des Iles, 94100 Saint-Maur-des-Fossés, jetzt ergänzt. Rechtsgrundlage Art. 6 Abs. 1 b vertretbar (vom Nutzer ausgelöste Suche). | Grün |
-| Support über privates Gmail | Google verarbeitet Inhalte nach Verbraucherbedingungen. Für geschäftliche Postfächer bietet Google Workspace einen Auftragsverarbeitungsvertrag, die private Gmail-Nutzung nicht. Transparent beschrieben, aber formell schwächer. | Gelb |
+| Support-Postfach | Seit 28.10.2026 `support@burk-solutions.de` bei Hetzner Online GmbH (Gunzenhausen, Server in Deutschland) mit Vertrag zur Auftragsverarbeitung im Hetzner-Konto; vorher privates Gmail ohne AVV. MX, SPF, DKIM (`default2610`) und DMARC (`p=none`) bei Cloudflare gesetzt und geprüft. | Grün |
 
 ## 3. Impressum – Grün
 
@@ -88,7 +88,7 @@ Recherche am 28.10.2026 in [TMview](https://www.tmdn.org/tmview/) (DPMA, EUIPO, 
 ## 8. Offen (Entscheidung des Betreibers)
 
 1. Vercel Hobby: Vertragsverstoß und fehlender Auftragsverarbeitungsvertrag (Abschnitt 1).
-2. Support-Postfach mit Auftragsverarbeitungsvertrag statt privatem Gmail (Abschnitt 2).
+2. Erledigt 28.10.2026: Support-Postfach bei Hetzner (Abschnitt 2).
 3. App-Store-ID für den „Laden im App Store“-Link, sobald die App in App Store Connect angelegt ist.
 4. Vor Store-Einreichung: App-Datenschutzangaben in App Store Connect gegen die direkten Open-Food-Facts-Abrufe prüfen; Guideline 5.1.3(ii) und selbst gewählte iCloud-Drive-Sicherungen (siehe `legal-research-2026-10-27.md`).
 5. Optional: professionelle Markenähnlichkeitsrecherche vor größeren Marketingausgaben.

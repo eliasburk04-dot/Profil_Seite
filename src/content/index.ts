@@ -16,7 +16,7 @@ export type DocumentContent = {
 export const site = {
   name: 'Lean Bulk',
   url: 'https://www.burk-solutions.de',
-  email: 'eliasburk04@gmail.com',
+  email: 'support@burk-solutions.de',
   phone: '0176 74736492',
   phoneHref: 'tel:+4917674736492',
   date: '28. Oktober 2026',
@@ -46,7 +46,7 @@ export const site = {
     offPrivacy: 'https://world.openfoodfacts.org/privacy',
     cloudflarePrivacy: 'https://www.cloudflare.com/de-de/privacypolicy/',
     cloudflareDpa: 'https://www.cloudflare.com/cloudflare-customer-dpa/',
-    googlePrivacy: 'https://policies.google.com/privacy?hl=de',
+    hetznerPrivacy: 'https://www.hetzner.com/de/legal/privacy-policy/',
     complaint: 'https://www.baden-wuerttemberg.datenschutz.de/kontakt-aufnehmen/',
     counselling: 'https://essstoerungen.bioeg.de',
   },
@@ -334,7 +334,7 @@ export const documents = {
         id: 'verantwortlicher',
         title: 'Wer verantwortlich ist',
         paragraphs: [
-          'Verantwortlich für diese Website, die Bereitstellung der App und Supportanfragen ist Elias Burk, Friedrich-Naumann Straße 11, 71636 Ludwigsburg, Deutschland. E-Mail: eliasburk04@gmail.com, Telefon: 0176 74736492.',
+          'Verantwortlich für diese Website, die Bereitstellung der App und Supportanfragen ist Elias Burk, Friedrich-Naumann Straße 11, 71636 Ludwigsburg, Deutschland. E-Mail: support@burk-solutions.de, Telefon: 0176 74736492.',
           'Diese Erklärung beschreibt die Lean-Bulk-App für iPhone und diese Website. Apple, Open Food Facts und von dir gewählte Datei- oder E-Mail-Dienste verarbeiten Daten in ihrem jeweiligen Verantwortungsbereich. Die App hat keinen eigenen Journal-Server und kein Lean-Bulk-Nutzerkonto.',
         ],
       },
@@ -444,14 +444,14 @@ export const documents = {
         id: 'support',
         title: 'Wenn du den Support kontaktierst',
         paragraphs: [
-          'Sendest du eine E-Mail, verarbeiten wir deine Absenderadresse, den Nachrichtentext und freiwillig beigefügte Angaben zur Bearbeitung und Beantwortung. Nutze für normale technische Fragen keine Gesundheitsdaten. Die Supportadresse ist ein Gmail-Postfach; Google verarbeitet E-Mail-Inhalte und Verbindungsdaten nach den für das verwendete Konto geltenden Bedingungen. Rufst du an, verarbeiten wir deine Telefonnummer, sofern sie übermittelt wird, und den Inhalt des Gesprächs zur Beantwortung deiner Anfrage.',
+          'Sendest du eine E-Mail, verarbeiten wir deine Absenderadresse, den Nachrichtentext und freiwillig beigefügte Angaben zur Bearbeitung und Beantwortung. Nutze für normale technische Fragen keine Gesundheitsdaten. Das Postfach wird bei der Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Deutschland, auf Servern in Deutschland betrieben. Hetzner verarbeitet E-Mails und Verbindungsdaten als Auftragsverarbeiter auf Grundlage eines Vertrags zur Auftragsverarbeitung (Art. 28 DSGVO). Rufst du an, verarbeiten wir deine Telefonnummer, sofern sie übermittelt wird, und den Inhalt des Gesprächs zur Beantwortung deiner Anfrage.',
           'Für vertragsbezogene Anfragen gilt Art. 6 Abs. 1 Buchst. b DSGVO, für allgemeine Anfragen Art. 6 Abs. 1 Buchst. f DSGVO (Interesse an der Beantwortung). Für rechtlich erforderliche Aufbewahrung gilt Art. 6 Abs. 1 Buchst. c DSGVO. Eine gewöhnliche Supportanfrage ist keine Einwilligung in eine weitergehende Auswertung von Gesundheitsdaten.',
           'Nach Abschluss wird die Kommunikation gelöscht, sobald sie zur Bearbeitung nicht mehr erforderlich ist und keine gesetzlichen Aufbewahrungspflichten oder Erfordernisse zur Rechtsverteidigung entgegenstehen. Vertrags- oder steuerrelevante Nachrichten werden nur im gesetzlich erforderlichen Umfang aufbewahrt. Frage bei Bedarf nach der für deine konkrete Anfrage geltenden Frist.',
         ],
         links: [
           {
-            label: 'Google-Datenschutzerklärung',
-            href: 'https://policies.google.com/privacy?hl=de',
+            label: 'Hetzner-Datenschutzerklärung',
+            href: 'https://www.hetzner.com/de/legal/privacy-policy/',
           },
         ],
       },
@@ -459,9 +459,9 @@ export const documents = {
         id: 'ausland',
         title: 'Empfänger und Verarbeitung im Ausland',
         paragraphs: [
-          'Cloudflare ist ein US-Anbieter. Auch bei Apple, Google und von dir gewählten Speicheranbietern kann eine Verarbeitung außerhalb der EU beziehungsweise der Schweiz stattfinden. App-Journalwerte gehen nicht automatisch an den Website-Hoster oder per Support-E-Mail an den Entwickler.',
+          'Cloudflare ist ein US-Anbieter. Auch bei Apple und von dir gewählten Speicheranbietern kann eine Verarbeitung außerhalb der EU beziehungsweise der Schweiz stattfinden. App-Journalwerte gehen nicht automatisch an den Website-Hoster oder per Support-E-Mail an den Entwickler.',
           'Cloudflare ist nach eigener Angabe unter dem EU-US Data Privacy Framework zertifiziert; für die USA besteht dafür ein Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Zusätzlich enthält Cloudflares Auftragsverarbeitungsvereinbarung die EU-Standardvertragsklauseln (Art. 46 DSGVO). Ob eine Zertifizierung aktuell besteht, kannst du in der öffentlichen Liste unter dataprivacyframework.gov prüfen. Informationen und Kopien einschlägiger Garantien kannst du über die oben genannte Kontaktadresse anfragen.',
-          'Für Nutzerinnen und Nutzer in der Schweiz gelten ergänzend die Rechte nach dem Schweizer Datenschutzgesetz. Empfängerstaaten können insbesondere Deutschland, Frankreich, Irland und die USA sein; weitere Staaten können sich aus den von dir gewählten Apple-, Google- oder Speicherdiensten ergeben.',
+          'Für Nutzerinnen und Nutzer in der Schweiz gelten ergänzend die Rechte nach dem Schweizer Datenschutzgesetz. Empfängerstaaten können insbesondere Deutschland, Frankreich, Irland und die USA sein; weitere Staaten können sich aus den von dir gewählten Apple- oder Speicherdiensten ergeben.',
         ],
       },
       {
@@ -477,7 +477,7 @@ export const documents = {
         title: 'Deine Rechte',
         paragraphs: [
           'Soweit die jeweiligen gesetzlichen Voraussetzungen erfüllt sind, hast du Rechte auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung (Art. 18) und Datenübertragbarkeit (Art. 20). Eine erteilte Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen; die bis dahin rechtmäßige Verarbeitung bleibt davon unberührt.',
-          'Verarbeiten wir Daten auf Grundlage berechtigter Interessen (Art. 6 Abs. 1 Buchst. f DSGVO), kannst du aus Gründen deiner besonderen Situation widersprechen (Art. 21). Für die Ausübung deiner Rechte genügt eine Nachricht an eliasburk04@gmail.com.',
+          'Verarbeiten wir Daten auf Grundlage berechtigter Interessen (Art. 6 Abs. 1 Buchst. f DSGVO), kannst du aus Gründen deiner besonderen Situation widersprechen (Art. 21). Für die Ausübung deiner Rechte genügt eine Nachricht an support@burk-solutions.de.',
           'Du kannst dich bei einer Datenschutzaufsichtsbehörde beschweren, insbesondere am Ort deines gewöhnlichen Aufenthalts, Arbeitsplatzes oder des vermuteten Verstoßes. Zuständig für den Betreiber in Baden-Württemberg ist der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg. Für die Schweiz kannst du dich auch an den EDÖB wenden.',
           'Die lokalen Zielvorschläge sind freiwillige Rechenhilfen; sie entscheiden nicht über rechtliche Ansprüche oder den Zugang zu Versicherungen oder medizinischer Versorgung. Es findet durch den Betreiber keine ausschließlich automatisierte Entscheidung mit rechtlicher oder vergleichbar erheblicher Wirkung statt.',
         ],
@@ -520,11 +520,11 @@ export const documents = {
       {
         id: 'kontakt',
         title: 'Kontakt',
-        paragraphs: ['E-Mail: eliasburk04@gmail.com', 'Telefon: 0176 74736492'],
+        paragraphs: ['E-Mail: support@burk-solutions.de', 'Telefon: 0176 74736492'],
         links: [
           {
             label: 'E-Mail an Elias Burk',
-            href: 'mailto:eliasburk04@gmail.com',
+            href: 'mailto:support@burk-solutions.de',
           },
           {
             label: 'Elias Burk anrufen',
