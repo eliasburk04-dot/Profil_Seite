@@ -1,120 +1,211 @@
-import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
-import { FAQJsonLd } from '@/components/seo/json-ld';
-import { createPageMetadata } from '@/lib/metadata';
-import {
-  conversion,
-  homeContent,
-  profile,
-  services,
-  servicesContent,
-} from '@/content';
-import {
-  Button,
-  CtaBand,
-  FAQAccordion,
-  GlassCard,
-  HeroRibbonBackground,
-  ProcessTimeline,
-  SectionHeader,
-  SectionReveal,
-  ServiceCard,
-} from '@/components/ui';
-
-export const metadata = createPageMetadata({
-  title: 'Burk-Solutions | Websites, Web Apps & Mobile Apps entwickeln lassen',
-  description:
-    'Burk-Solutions entwickelt professionelle Websites, leistungsfähige Web Apps und native mobile Apps für Unternehmen. Kostenlose Erstberatung – aus Deutschland.',
-  path: '/',
-});
-
-export default function HomePage() {
+import { ArrowRight, Check, ShieldCheck, Heart, ArrowUpRight } from 'lucide-react';
+import { site } from '@/content';
+import { PhoneShot } from '@/components/site-shell';
+export default function Home() {
+  const h = site.home;
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: site.name,
+    applicationCategory: 'HealthApplication',
+    operatingSystem: 'iOS',
+    description: site.metadata.description,
+    url: site.url,
+    author: { '@type': 'Person', name: site.operator.name },
+  };
   return (
-    <div className="section-stack">
-      <FAQJsonLd items={profile.faq} />
-      <SectionReveal>
-        <section className="relative min-h-screen flex flex-col items-center justify-center py-24 px-6 sm:px-8">
-
-          <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto w-full space-y-10">
-            <div className="section-badge w-fit bg-white/5 border border-white/10 text-white/80 rounded-full px-4 py-1.5 flex items-center gap-2 backdrop-blur-md">
-              <Sparkles className="h-3.5 w-3.5" />
-              <span className="text-xs tracking-wider uppercase font-semibold">{homeContent.heroBadge}</span>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+        }}
+      />
+      <section className="hero container">
+        <div className="hero-copy">
+          <h1>
+            {h.headline[0]}
+            <br />
+            <em>{h.headline[1]}</em>
+          </h1>
+          <p className="hero-intro">{h.intro}</p>
+          <a className="button" href="#funktionen">
+            {h.primary}
+            <ArrowRight size={20} aria-hidden="true" />
+          </a>
+          <p className="launch-status">
+            <span />
+            {h.status}
+          </p>
+        </div>
+        <figure className="hero-visual">
+          <div className="hero-visual-title">{h.heroCaption}</div>
+          <PhoneShot src="/screens/today.webp" alt={h.features[0].alt} priority />
+          <figcaption>{site.ui.synthetic}</figcaption>
+        </figure>
+      </section>
+      <div className="trust-line container">
+        {h.trust.map((text) => (
+          <span key={text}>
+            <Check size={19} aria-hidden="true" />
+            {text}
+          </span>
+        ))}
+      </div>
+      <section className="features container" id="funktionen">
+        <div className="section-heading">
+          <h2>{h.featuresTitle}</h2>
+          <p>{h.featuresIntro}</p>
+        </div>
+        {h.features.map((feature, index) => (
+          <article
+            className={'feature-row ' + (index % 2 ? 'reverse' : '')}
+            key={feature.id}
+            id={feature.id}
+          >
+            <div className="feature-copy">
+              <span className="feature-symbol" aria-hidden="true">
+                {index === 0 ? (
+                  <svg viewBox="0 0 32 32" fill="none">
+                    <path
+                      d="M8 4v8m4-8v8M4 4v8c0 3 8 3 8 0M8 15v13M24 28V4c-5 5-6 12 0 13"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                ) : index === 1 ? (
+                  <svg viewBox="0 0 32 32" fill="none">
+                    <path
+                      d="M4 25h25M6 20l6-8 6 4L27 5"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 32 32" fill="none">
+                    <path
+                      d="M11 16h10M4 12v8m4-12v16m16-16v16m4-12v8M4 16h4m16 0h4"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                )}
+              </span>
+              <h3>{feature.title}</h3>
+              <p>{feature.text}</p>
+              <p className="secondary-copy">{feature.detail}</p>
             </div>
-
-            <div className="space-y-6 w-full">
-              <h1 className="text-[clamp(3rem,7vw,5.5rem)] leading-[1.05] tracking-[-0.04em] font-medium max-w-[900px] mx-auto text-white">
-                Websites, Web Apps & <span className="rich-accent">mobile</span> Apps, die den Unterschied <span className="rich-accent">machen.</span>
-              </h1>
-              <p className="max-w-2xl mx-auto text-[clamp(1.1rem,1.5vw,1.25rem)] leading-relaxed text-white/60">
-                {profile.subheadline}
-              </p>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-              <Button asChild variant="primary" size="lg" className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6 text-base font-medium h-auto border border-transparent transition-all">
-                <Link href="/contact">
-                  {conversion.primaryCtaLabel}
-                </Link>
-              </Button>
-              <Button asChild variant="secondary" size="lg" className="bg-[#1c1c1c]/40 text-white hover:bg-[#2c2c2c]/60 border border-white/10 rounded-full px-8 py-6 text-base font-medium h-auto backdrop-blur-xl transition-all">
-                <Link href="/services">{conversion.secondaryCtaLabel}</Link>
-              </Button>
-            </div>
-
-
+            <figure className={'feature-visual visual-' + index}>
+              <PhoneShot src={feature.image} alt={feature.alt} />
+              <figcaption>{site.ui.synthetic}</figcaption>
+            </figure>
+          </article>
+        ))}
+      </section>
+      <section className="privacy-band">
+        <div className="privacy-columns container">
+          <div>
+            <Heart size={30} strokeWidth={1.5} aria-hidden="true" />
+            <h2>{h.healthTitle}</h2>
+            <p>{h.healthText}</p>
           </div>
-        </section>
-      </SectionReveal>
-
-
-
-      <SectionReveal delay={0.08} className="space-y-6">
-        <SectionHeader
-          title={homeContent.servicesPreviewTitle}
-          description={profile.competencies.description}
-          eyebrow={servicesContent.title}
-        />
-        <div className="grid gap-4 lg:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+          <div>
+            <ShieldCheck size={30} strokeWidth={1.5} aria-hidden="true" />
+            <h2>{h.privacyTitle}</h2>
+            <p>{h.privacyText}</p>
+            <a href={site.links.privacy}>
+              {h.privacyLink}
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section className="premium container" id="premium">
+        <div className="section-heading">
+          <h2>{h.premiumTitle}</h2>
+          <p>{h.premiumIntro}</p>
+        </div>
+        <div className="plans">
+          <article className="plan free-plan">
+            <h3>{h.free.name}</h3>
+            <p className="plan-subtitle">{h.free.subtitle}</p>
+            <p className="plan-price">{h.free.price}</p>
+            <ul>
+              {h.free.items.map((item) => (
+                <li key={item}>
+                  <Check size={18} aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
+          <article className="plan premium-plan">
+            <h3>{h.premium.name}</h3>
+            <p className="plan-subtitle">{h.premium.subtitle}</p>
+            <p className="plan-price">
+              {h.premium.year}
+              <span>{h.premium.month}</span>
+            </p>
+            <p className="trial">{h.premium.trial}</p>
+            <ul>
+              {h.premium.items.map((item) => (
+                <li key={item}>
+                  <Check size={18} aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
+        <div className="price-notes">
+          <p>{h.priceNote}</p>
+          <p>{h.renewal}</p>
+          <a href={site.links.usage}>
+            {h.usageLink}
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+        </div>
+      </section>
+      <section className="care container">
+        <h2>{h.careTitle}</h2>
+        <div>
+          <p>{h.careText}</p>
+          <p>{h.careYouth}</p>
+          <a href={site.links.counselling}>
+            {h.careLink}
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+        </div>
+      </section>
+      <section className="faq-section container">
+        <h2>{h.helpTitle}</h2>
+        <div>
+          {h.faq.map((item) => (
+            <details className="faq" key={item.question}>
+              <summary>
+                {item.question}
+                <span aria-hidden="true">+</span>
+              </summary>
+              <p>{item.answer}</p>
+            </details>
           ))}
         </div>
-      </SectionReveal>
-
-      <SectionReveal delay={0.11} className="space-y-6">
-        <SectionHeader title={profile.workflowTitle} description={profile.workflowDescription} />
-        <ProcessTimeline steps={profile.workflow} />
-      </SectionReveal>
-
-
-      <SectionReveal delay={0.17} className="space-y-6">
-        <SectionHeader
-          title={homeContent.miniFaqTitle}
-          description={homeContent.miniFaqDescription}
-        />
-        <FAQAccordion items={profile.miniFaq} />
-      </SectionReveal>
-
-      <SectionReveal delay={0.2}>
-        <CtaBand
-          eyebrow="Projektstart"
-          title={servicesContent.ctaTitle}
-          description={servicesContent.ctaDescription}
-          actions={
-            <>
-              <Button asChild variant="primary" size="lg" data-testid="home-final-cta">
-                <Link href="/contact">
-                  {conversion.primaryCtaLabel}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="secondary" size="lg">
-                <Link href="/services">Leistungen ansehen</Link>
-              </Button>
-            </>
-          }
-        />
-      </SectionReveal>
-    </div>
+      </section>
+      <section className="final-cta container">
+        <div>
+          <h2>{h.finalTitle}</h2>
+          <p>{h.finalText}</p>
+        </div>
+        <a className="button" href={site.links.support}>
+          {site.ui.support}
+          <ArrowRight size={20} aria-hidden="true" />
+        </a>
+      </section>
+    </>
   );
 }

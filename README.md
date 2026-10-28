@@ -1,56 +1,17 @@
-﻿# Burk-Solutions Portfolio
+# Lean Bulk Website
 
-Premium Portfolio-Website für Burk-Solutions auf Basis von Next.js, TypeScript und Tailwind CSS.
+Produkt, Hilfe und Rechtliches für die iPhone-App Lean Bulk. Der frühere Portfolioauftritt und fremde App-Dokumentationen wurden auf Nutzerauftrag ersetzt.
 
-## Stack
+## Entwicklung und Prüfung
 
-- Next.js 14 (App Router)
-- TypeScript (strict)
-- Tailwind CSS
-- Framer Motion (subtil)
-- Radix UI primitives
+Node.js ab 20.9, Installation mit `npm ci`. `npm run dev` startet die Entwicklung, `npm run build` erzeugt den Produktionsstand, `npm run typecheck` prüft TypeScript. `npm run start -- --port 3107` startet die Vorschau; gegen diese prüft `npm test` alle internen Links, Fragmente, Pflichtwege, alte URLs, Ressourcen und Sicherheitsheader. Ein anderer Server wird über `SITE_TEST_URL` angegeben.
 
-## Development
+Texte und Adressen: `src/content/index.ts`. Stabile App-URLs: `/leanbulk/datenschutz`, `/leanbulk/impressum`, `/leanbulk/support`, `/leanbulk/nutzung` und `/leanbulk/quellen`. Root-Pfade für alte eigene Rechtsseiten leiten weiter. Andere App-Dokumentationen sind entfernt und liefern 404.
 
-```bash
-npm install
-npm run dev
-```
+Die Website setzt keine eigenen Cookies, keine Analytics und kein localStorage ein. Fonts und synthetische App-Aufnahmen liegen lokal unter `public/`. Der Support öffnet bewusst nur ein E-Mail-Programm; es existieren weder Upload noch Formular-Backend.
 
-Wichtige Befehle:
+## Veröffentlichung
 
-- `npm run dev` – lokaler Dev-Server
-- `npm run build` – Production Build
-- `npm run start` – Production Server lokal
-- `npm run lint` – ESLint
-- `npm run format` – Prettier
+Bestehendes Vercel-Projekt und bestehende Produktionsadresse beibehalten. Die lokale Kopie ist noch nicht authentifiziert/verknüpft. Das Projekt war am 27.10.2026 pausiert. Vor Veröffentlichung Betreiber-/Kontaktdaten und die Hostingkonfiguration aus `docs/legal-research-2026-10-27.md` klären. Ein kommerzieller Auftritt benötigt bei Vercel einen passenden Tarif. Auftragsverarbeitung und Löschfristen lassen sich nicht durch Quellcode allein bestätigen.
 
-## Content
-
-Alle Inhalte liegen zentral in `src/content/index.ts`.
-
-## Glass Theme Tokens
-
-Die Visual Tokens für das neue Dark-Glass-Design liegen in:
-
-- `src/styles/glass.css` (Single Source of Truth für Farben, Opacity, Blur, Border, Glow, Shadows, Radii, Spacing)
-- `tailwind.config.ts` (Tailwind-Mapping auf die CSS-Variablen)
-
-Wichtige Regler:
-
-- `--glass-opacity-*` steuert Flächen-Transparenz
-- `--blur-*` steuert Weichzeichner
-- `--border-alpha-*` steuert Border-Intensität
-- `--shadow-*` steuert Depth/Glow
-- `--accent-rgb` und `--accent-alpha-*` steuern Cyan-Glow-Farbe und Intensität
-
-## Deployment
-
-```bash
-vercel --prod
-```
-
-## Hinweise
-
-- Design- und Interaktionslogik ist in wiederverwendbaren Komponenten unter `src/components/ui/` gekapselt.
-- Kontaktformular nutzt konsistente Input-Komponenten (`GlassInput`, `GlassSelect`, `GlassTextarea`).
+`docs/screenshots.json` dokumentiert die Herkunft der ausschließlich synthetischen Simulatorbilder. Der App-Store-Start bleibt als in Vorbereitung gekennzeichnet, bis eine echte Store-URL vorliegt.

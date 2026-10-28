@@ -1,68 +1,40 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Strict mode for better development experience
   reactStrictMode: true,
-
-  generateBuildId: async () => {
-    const vercelCommit = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 20);
-    const githubCommit = process.env.GITHUB_SHA?.slice(0, 20);
-
-    return vercelCommit || githubCommit || `build-${Date.now()}`;
+  poweredByHeader: false,
+  images: { formats: ['image/webp'] },
+  async redirects() {
+    return [
+      { source: '/datenschutz', destination: '/leanbulk/datenschutz', permanent: true },
+      { source: '/impressum', destination: '/leanbulk/impressum', permanent: true },
+      { source: '/contact', destination: '/leanbulk/support', permanent: true },
+      { source: '/support', destination: '/leanbulk/support', permanent: true },
+      { source: '/leanbulk', destination: '/', permanent: true },
+      { source: '/about', destination: '/', permanent: true },
+      { source: '/services', destination: '/', permanent: true },
+    ];
   },
-
-  experimental: {
-    optimizePackageImports: ['lucide-react'],
-  },
-
-  // Image optimization
-  images: {
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-  },
-
-  // Headers for security and caching
   async headers() {
     return [
       {
-        source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
         source: '/(.*)',
         headers: [
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'Referrer-Policy', value: 'no-referrer' },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
+            value: 'camera=(), microphone=(), geolocation=(), payment=()',
           },
+          { key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains' },
           {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload',
+            key: 'Content-Security-Policy',
+            value:
+              "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'",
           },
         ],
       },
     ];
   },
 };
-
 module.exports = nextConfig;

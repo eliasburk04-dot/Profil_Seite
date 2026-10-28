@@ -1,14 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { siteMetadata } from '@/content';
-
+import { site } from '@/content';
 export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: [],
-    },
-    sitemap: `${siteMetadata.url}/sitemap.xml`,
-    host: siteMetadata.url,
-  };
+  return { rules: { userAgent: '*', allow: '/' }, sitemap: site.url + '/sitemap.xml' };
 }

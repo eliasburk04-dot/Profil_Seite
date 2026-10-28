@@ -1,88 +1,54 @@
-﻿import type { Metadata, Viewport } from 'next';
-import { Inter, Source_Serif_4 } from 'next/font/google';
-import { AppShell, BackgroundLayer } from '@/components/layout';
-import { OrganizationJsonLd, WebSiteJsonLd, ServiceJsonLd } from '@/components/seo/json-ld';
-import { siteMetadata } from '@/content';
+import type { Metadata, Viewport } from 'next';
+import localFont from 'next/font/local';
+import { Header, Footer } from '@/components/site-shell';
+import { site } from '@/content';
 import './globals.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-geist',
+const nunito = localFont({
+  src: [
+    { path: '../../public/fonts/nunito-sans-800.ttf', weight: '800' },
+    { path: '../../public/fonts/nunito-sans-900.ttf', weight: '900' },
+  ],
+  variable: '--font-display',
+  display: 'swap',
 });
-
-const sourceSerif = Source_Serif_4({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-serif',
-});
-
 export const metadata: Metadata = {
-  title: {
-    default: siteMetadata.title,
-    template: `%s | ${siteMetadata.title}`,
-  },
-  icons: {
-    icon: '/favicon-v2.ico',
-    shortcut: '/favicon-v2.ico',
-    apple: '/apple-touch-icon.png',
-  },
-  description: siteMetadata.description,
-  keywords: siteMetadata.keywords,
-  authors: [{ name: 'Elias Burk' }],
-  creator: 'Elias Burk',
-  metadataBase: new URL(siteMetadata.url),
-  alternates: {
-    canonical: siteMetadata.url,
-  },
+  metadataBase: new URL(site.url),
+  title: { default: site.metadata.title, template: `%s · ${site.name}` },
+  description: site.metadata.description,
+  icons: { icon: '/app-icon.png', apple: '/app-icon.png' },
+  authors: [{ name: site.operator.name }],
+  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
-    locale: siteMetadata.locale,
-    url: siteMetadata.url,
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    siteName: 'Burk-Solutions',
-    images: [
-      {
-        url: siteMetadata.ogImage,
-      },
-    ],
+    siteName: site.name,
+    title: site.metadata.title,
+    description: site.metadata.description,
+    url: '/',
+    locale: site.metadata.locale,
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: [siteMetadata.ogImage],
+    title: site.metadata.title,
+    description: site.metadata.description,
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+  robots: { index: true, follow: true },
 };
-
 export const viewport: Viewport = {
-  themeColor: '#000000',
-  colorScheme: 'dark',
+  themeColor: '#f8f6f3',
   width: 'device-width',
   initialScale: 1,
+  colorScheme: 'light',
 };
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className="dark">
-      <body className={`min-h-screen w-full overflow-x-hidden font-sans ${inter.variable} ${sourceSerif.variable}`}>
-        <OrganizationJsonLd />
-        <WebSiteJsonLd />
-        <ServiceJsonLd />
-        <BackgroundLayer />
-        <AppShell>{children}</AppShell>
+    <html lang="de">
+      <body className={nunito.variable}>
+        <a className="skip-link" href="#main">
+          {site.ui.skip}
+        </a>
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
       </body>
     </html>
   );

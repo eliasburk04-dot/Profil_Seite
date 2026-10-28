@@ -1,0 +1,26 @@
+{
+  "training": {
+    "test": "AppStoreScreenshotTests/testCaptureMainAreas()",
+    "attachment": "5BA7E57F-EF09-40B2-B2C4-98953528D52A.png",
+    "captured": 1793114800.23,
+    "sha256": "e7ccea8fb6474b7c2f7182c7c2e1b6e30eca924d7b4db6740afa0b18100eccb9",
+    "synthetic": true,
+    "sourceCommit": "9c4d8fa + legal website changes 27.10.2026"
+  },
+  "weight": {
+    "test": "AppStoreScreenshotTests/testCaptureMainAreas()",
+    "attachment": "1E16C166-4581-419A-8EB7-0555B4B4A5AD.png",
+    "captured": 1793114795.191,
+    "sha256": "f10829c11b59b1154a82a4661d7ba4f0a9637f500869781148e469831e81e16f",
+    "synthetic": true,
+    "sourceCommit": "9c4d8fa + legal website changes 27.10.2026"
+  },
+  "today": {
+    "test": "AppStoreScreenshotTests/testCaptureMainAreas()",
+    "attachment": "901322DE-01D7-4B13-8C61-32DC9D3526CA.png",
+    "captured": 1793114785.284,
+    "sha256": "b58b98f5b4bfb75de9a1e494ccbdfaa5b802c0e4e40a8620f8de04bd5b2a20b6",
+    "synthetic": true,
+    "sourceCommit": "9c4d8fa + legal website changes 27.10.2026"
+  }
+}
