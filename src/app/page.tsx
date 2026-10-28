@@ -1,4 +1,4 @@
-import { ArrowRight, Check, ShieldCheck, Heart, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Check, ShieldCheck, Heart, ArrowUpRight, Plus } from 'lucide-react';
 import { site } from '@/content';
 import { PhoneShot } from '@/components/site-shell';
 export default function Home() {
@@ -38,9 +38,11 @@ export default function Home() {
             {h.status}
           </p>
         </div>
-        <figure className="hero-visual">
-          <div className="hero-visual-title">{h.heroCaption}</div>
-          <PhoneShot src="/screens/today.webp" alt={h.features[0].alt} priority />
+        <figure className="hero-figure">
+          <div className="hero-visual">
+            <div className="hero-visual-title">{h.heroCaption}</div>
+            <PhoneShot src="/screens/today.webp" alt={h.features[0].alt} priority />
+          </div>
           <figcaption>{site.ui.synthetic}</figcaption>
         </figure>
       </section>
@@ -100,8 +102,10 @@ export default function Home() {
               <p>{feature.text}</p>
               <p className="secondary-copy">{feature.detail}</p>
             </div>
-            <figure className={'feature-visual visual-' + index}>
-              <PhoneShot src={feature.image} alt={feature.alt} />
+            <figure className="feature-figure">
+              <div className={'feature-visual visual-' + index}>
+                <PhoneShot src={feature.image} alt={feature.alt} />
+              </div>
               <figcaption>{site.ui.synthetic}</figcaption>
             </figure>
           </article>
@@ -189,7 +193,7 @@ export default function Home() {
             <details className="faq" key={item.question}>
               <summary>
                 {item.question}
-                <span aria-hidden="true">+</span>
+                <Plus size={22} strokeWidth={1.75} aria-hidden="true" />
               </summary>
               <p>{item.answer}</p>
             </details>
