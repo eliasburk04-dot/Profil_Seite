@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { site, documents } from '@/content';
+export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     '/',

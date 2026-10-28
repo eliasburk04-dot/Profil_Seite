@@ -12,6 +12,6 @@ Die Website setzt keine eigenen Cookies, keine Analytics und kein localStorage e
 
 ## Veröffentlichung
 
-Bestehendes Vercel-Projekt und bestehende Produktionsadresse beibehalten. Die lokale Kopie ist noch nicht authentifiziert/verknüpft. Das Projekt war am 27.10.2026 pausiert. Vor Veröffentlichung Betreiber-/Kontaktdaten und die Hostingkonfiguration aus `docs/legal-research-2026-10-27.md` klären. Ein kommerzieller Auftritt benötigt bei Vercel einen passenden Tarif. Auftragsverarbeitung und Löschfristen lassen sich nicht durch Quellcode allein bestätigen.
+Seit 28.10.2026 über Cloudflare Pages (Projekt `burk-solutions`, Domain www.burk-solutions.de; die DNS-Zone liegt bereits bei Cloudflare). Next.js erzeugt mit `output: 'export'` statische Dateien in `out/`; Weiterleitungen und Sicherheits-Header stehen in `public/_redirects` und `public/_headers`. Ablauf: `npm run build`, lokal mit `npm run preview` (Cloudflare-Laufzeit auf Port 3107) und `npm test` prüfen, dann `npm run deploy` (einmalig `npx wrangler login`). Begründung des Wechsels von Vercel Hobby: `docs/legal-review-2026-10-28.md`, Abschnitt 1.
 
-`docs/screenshots.json` dokumentiert die Herkunft der ausschließlich synthetischen Simulatorbilder. Der App-Store-Start bleibt als in Vorbereitung gekennzeichnet, bis eine echte Store-URL vorliegt.
+`docs/screenshots.json` dokumentiert die Herkunft der ausschließlich synthetischen Simulatorbilder. Der App-Store-Link folgt, sobald die App-ID feststeht.

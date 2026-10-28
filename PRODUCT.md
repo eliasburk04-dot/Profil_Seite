@@ -28,4 +28,4 @@ App-Icon und Nunito Sans aus dem LeanBulk-Repository. Frische native Simulatorau
 
 ## Open Decisions
 
-Hosting bleibt laut Nutzer vorerst Vercel Hobby (Vertrags- und Auftragsverarbeitungsrisiko dokumentiert in docs/legal-review-2026-10-28.md). Keine Steuernummern vorhanden. App-Store-ID für den Store-Link fehlt noch. Eine rechtliche Gesamtfreigabe ist nicht erfolgt.
+Hosting wechselt am 28.10.2026 auf Nutzerwunsch von Vercel Hobby zu Cloudflare Pages (Gratistarif mit Auftragsverarbeitungsvereinbarung; Begründung in docs/legal-review-2026-10-28.md). Keine Steuernummern vorhanden. App-Store-ID für den Store-Link fehlt noch. Eine rechtliche Gesamtfreigabe ist nicht erfolgt.
