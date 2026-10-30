@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     description: site.metadata.description,
   },
   robots: { index: true, follow: true },
+  itunes: { appId: site.appStoreId },
 };
 export const viewport: Viewport = {
   themeColor: '#f8f6f3',

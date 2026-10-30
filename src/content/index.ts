@@ -16,6 +16,8 @@ export type DocumentContent = {
 export const site = {
   name: 'Lean Bulk',
   url: 'https://www.burk-solutions.de',
+  // App Store Apple-ID; drives the Safari Smart App Banner.
+  appStoreId: '6828549696',
   email: 'support@burk-solutions.de',
   phone: '0176 74736492',
   phoneHref: 'tel:+4917674736492',
