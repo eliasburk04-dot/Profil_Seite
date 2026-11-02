@@ -24,7 +24,7 @@ export function ContentSections({ sections }: { sections: readonly ContentSectio
                 <li key={link.href}>
                   <a href={link.href}>
                     {link.label}
-                    <ArrowUpRight size={15} aria-hidden="true" />
+                    <ArrowUpRight size={18} aria-hidden="true" />
                   </a>
                 </li>
               ))}

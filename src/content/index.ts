@@ -108,7 +108,7 @@ export const site = {
     source: 'Weiterlesen',
     mail: 'E-Mail schreiben',
     support: 'Zum Support',
-    synthetic: 'App-Ansichten mit synthetischen Beispieldaten.',
+    synthetic: 'App-Ansichten mit synthetischen Beispieldaten',
     next: 'Weiterlesen',
     external: 'Externer Link',
     notFoundTitle: 'Diese Seite gibt es nicht mehr.',

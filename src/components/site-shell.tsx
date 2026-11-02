@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ArrowUpRight, Menu, ArrowLeft } from 'lucide-react';
+import { ArrowUpRight, Menu, ArrowLeft, ArrowUp } from 'lucide-react';
 import { site } from '@/content';
 
 export function Header() {
@@ -20,7 +20,7 @@ export function Header() {
         <details className="mobile-menu">
           <summary>
             <span>{site.ui.menu}</span>
-            <Menu size={20} aria-hidden="true" />
+            <Menu size={18} aria-hidden="true" />
           </summary>
           <nav aria-label={site.ui.menu}>
             {site.nav.map((item) => (
@@ -63,7 +63,10 @@ export function Footer() {
       <div className="footer-bottom container">
         <span>{site.footer.copyright}</span>
         <span>{site.footer.note}</span>
-        <a href="#top">{site.ui.top} ↑</a>
+        <a href="#top" className="to-top">
+          {site.ui.top}
+          <ArrowUp size={18} aria-hidden="true" />
+        </a>
       </div>
     </footer>
   );

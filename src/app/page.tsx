@@ -1,4 +1,4 @@
-import { ArrowRight, Check, ShieldCheck, Heart, ArrowUpRight, Plus } from 'lucide-react';
+import { ArrowRight, Check, ArrowUpRight, Plus } from 'lucide-react';
 import { site } from '@/content';
 import { PhoneShot, TwoTone } from '@/components/site-shell';
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
           <div className="hero-actions">
             <a className="button button-light" href="#funktionen">
               {h.primary}
-              <ArrowRight size={20} aria-hidden="true" />
+              <ArrowRight size={18} aria-hidden="true" />
             </a>
             <a className="hero-secondary" href={site.links.support}>
               {h.secondary}
@@ -60,7 +60,7 @@ export default function Home() {
       <div className="trust-line container">
         {h.trust.map((text) => (
           <span key={text}>
-            <Check size={19} aria-hidden="true" />
+            <Check size={18} aria-hidden="true" />
             {text}
           </span>
         ))}
@@ -79,38 +79,6 @@ export default function Home() {
             id={feature.id}
           >
             <div className="feature-copy">
-              <span className="feature-symbol" aria-hidden="true">
-                {index === 0 ? (
-                  <svg viewBox="0 0 32 32" fill="none">
-                    <path
-                      d="M8 4v8m4-8v8M4 4v8c0 3 8 3 8 0M8 15v13M24 28V4c-5 5-6 12 0 13"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                ) : index === 1 ? (
-                  <svg viewBox="0 0 32 32" fill="none">
-                    <path
-                      d="M4 25h25M6 20l6-8 6 4L27 5"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                ) : (
-                  <svg viewBox="0 0 32 32" fill="none">
-                    <path
-                      d="M11 16h10M4 12v8m4-12v16m16-16v16m4-12v8M4 16h4m16 0h4"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                )}
-              </span>
               <h3>
                 <TwoTone text={feature.title} />
               </h3>
@@ -129,12 +97,10 @@ export default function Home() {
       <section className="privacy-band">
         <div className="privacy-columns container">
           <div>
-            <Heart size={30} strokeWidth={1.5} aria-hidden="true" />
             <h2>{h.healthTitle}</h2>
             <p>{h.healthText}</p>
           </div>
           <div>
-            <ShieldCheck size={30} strokeWidth={1.5} aria-hidden="true" />
             <h2>{h.privacyTitle}</h2>
             <p>{h.privacyText}</p>
             <a href={site.links.privacy}>
@@ -186,7 +152,7 @@ export default function Home() {
           <p>{h.renewal}</p>
           <a href={site.links.usage}>
             {h.usageLink}
-            <ArrowUpRight size={16} aria-hidden="true" />
+            <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </div>
       </section>
@@ -199,7 +165,7 @@ export default function Home() {
           <p>{h.careYouth}</p>
           <a href={site.links.counselling}>
             {h.careLink}
-            <ArrowUpRight size={16} aria-hidden="true" />
+            <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </div>
       </section>
@@ -210,7 +176,7 @@ export default function Home() {
             <details className="faq" key={item.question}>
               <summary>
                 {item.question}
-                <Plus size={22} strokeWidth={1.75} aria-hidden="true" />
+                <Plus size={18} aria-hidden="true" />
               </summary>
               <p>{item.answer}</p>
             </details>
@@ -223,7 +189,7 @@ export default function Home() {
           <p>{h.finalText}</p>
           <a className="button button-light" href={site.links.support}>
             {site.ui.support}
-            <ArrowRight size={20} aria-hidden="true" />
+            <ArrowRight size={18} aria-hidden="true" />
           </a>
         </div>
       </section>

@@ -23,9 +23,9 @@ export default function Support() {
           className="contact-email"
           href={'mailto:' + site.email + '?subject=' + encodeURIComponent(s.emailSubject)}
         >
-          <Mail size={26} aria-hidden="true" />
+          <Mail size={18} aria-hidden="true" />
           <span>{site.email}</span>
-          <ArrowUpRight size={20} aria-hidden="true" />
+          <ArrowUpRight size={18} aria-hidden="true" />
         </a>
       </section>
       <div className="document-layout">
